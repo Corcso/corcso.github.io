@@ -1,0 +1,415 @@
+/*
+Colour Scheme
+#E7CB14 - Saftey Yellow
+#2A2D34 - Dark Grey (Gunmetal)
+#D0CCD0 - Light Grey
+#FBFCFF - White
+#E9463B - Red (Cinnabar)
+*/
+
+/* General */
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+@font-face {
+    font-family: RubikWide;
+    src: url("./media/RubikMonoOne-Regular.ttf");
+}
+@font-face {
+    font-family: Rubik;
+    src: url("./media/Rubik-VariableFont_wght.ttf");
+}
+
+@font-face {
+    font-family: RubikItalic;
+    src: url("./media/Rubik-Italic-VariableFont_wght.ttf");
+}
+img{
+    object-fit: contain;
+}
+/*Change emphasis tag to bold*/
+em{
+    font-style: normal;
+    font-weight: bold;
+}
+
+/* Navigation */
+nav{
+    padding: 5px 10px;
+    background-color: #2A2D34;
+    color: #FBFCFF;
+    font-family: RubikWide;
+    font-size: 24px;
+    overflow: hidden;
+}
+
+nav p{
+    float: left;
+}
+nav ul{
+    float: right;
+}
+nav p, nav ul, nav a{
+    display: inline-block;
+}
+
+nav a{
+    list-style-type: none;
+    transition-duration: 0.2s;
+    /* Set as a background crop for the transition*/
+    background-color: #FBFCFF;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0px 5px;
+}
+nav a:hover{
+    text-decoration: underline;
+    animation-name: hover;
+    animation-duration: 0.2s;
+    background-color: #E7CB14;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+
+/* Page Hero */
+#hero{
+    background-image: url("./media/background-cliffsBW.jpg");   
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    /*height: calc(100vh - 119px);*/
+}
+#hero h1{
+    font-family: RubikWide;
+    font-size: 10vw;
+    color: #E7CB14;
+}
+
+#comingsoon{
+    text-align: center;
+    color: #2A2D34;
+    font-family: Rubik;
+}
+
+/* Section Defaults */
+main>div{
+    padding: 50px 40px;
+}
+.segment{
+    color: #2A2D34;
+    font-family: Rubik;
+}
+.alternate{
+    background-color: #e4e4e4;
+}
+.segment h1{
+    font-family: RubikWide;
+    font-size: 3rem;
+}
+.segment h2{
+    font-family: Rubik;
+    font-size: 2.5rem;
+}
+.segment h3{
+    font-family: Rubik;
+    font-size: 2rem;
+}
+.segment p{
+    font-size: 1.5rem;
+}
+.segment span{
+    font-size: 1.5rem;
+}
+.segment ul{
+    font-size: 1.5rem;
+    list-style-type: none;
+}
+.segment a{
+    color: #E9463B;
+    border-bottom: #FBFCFF 2px solid;
+    transition-duration: 0.2s;
+    text-decoration: none;
+    display: inline-block;
+    height: 28px;
+}
+.segment a:hover{
+    border-bottom: #E9463B 2px solid;
+    transition-duration: 0.2s;
+}
+
+.col33{
+    display: inline-block;
+    width: 32%;
+    box-sizing: border-box;
+    margin: 0px 10px;
+}
+
+.center{
+    text-align: center;
+}
+.right {text-align: right;}
+.left {text-align: left;}
+.just {text-align: justify;}
+
+.inlineb{
+    display: inline-block;
+}
+
+.expCard{
+    background-color: #FBFCFF;
+    border-radius: 25px;
+    margin: 10px 10px;
+    padding: 10px !important;
+}
+.expCard img{
+    max-width: 400px;
+    object-fit: contain;
+}
+.flexbox{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.flex67{
+    flex-basis: 67%;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+.flex50{
+    flex-basis: 50%;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+.flex33{
+    flex-basis: 33%;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+.flex25{
+    flex-basis: 25%;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+.flex20{
+    flex-basis: 20%;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+.portCard{
+    background-color: #D0CCD0;
+    border-radius: 25px;
+    margin: 10px 10px;
+    padding: 10px;
+    align-items: center;
+}
+.portCard img{
+    width: auto;
+    height: 250px;
+    object-fit: contain;
+}
+.portCard p{
+    font-size: 1.25rem;
+}
+
+.tagsList li{
+    font-size: 1.25rem;
+    background-color: #a4a4a4;
+    border-radius: 0.75rem;
+    display:inline-block;
+    margin-right: 5px;
+    padding: 2px 5px;
+}
+
+.imgCard{
+    object-fit: cover;
+    border-radius: 25px;
+    margin: 10px 0px;
+}
+
+.imgCard.flex33{
+    max-width: 33%;
+}
+
+#aboutImage{
+    padding-right: 20px;
+    height: 300px;
+    border-radius: 8px;
+}
+
+#about p {
+    line-height: 40px;
+    padding: 50px 0;
+}
+
+/*Image Seperators*/
+#aboutToExperience{
+    background-image: url("./media/pc.jpg");      
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    /*height: calc(100vh - 119px);*/
+    padding: 350px 0px;
+}
+#aboutToExperience h1{
+    font-family: RubikWide;
+    font-size: 10vw;
+    color: #E7CB14;
+}
+#experienceToPortfolio{
+    background-image: url("./media/AVDEV.jpg"); 
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    padding: 350px 0px;
+    /*height: calc(100vh - 119px);*/
+}
+#experienceToPortfolio h1{
+    font-family: RubikWide;
+    font-size: 10vw;
+    color: #E7CB14;
+}
+#experienceToAwards{
+    background-image: url("./media/Awards.jpg");      
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    /*height: calc(100vh - 119px);*/
+    padding: 350px 0px;
+}
+
+#portfolio button{
+    background-color: #E7CB14;
+    color: #2A2D34;
+    font-size: 2rem;
+    border: none;
+    border-radius: 12px;
+    padding: 2px 8px;
+    font-family: Rubik;
+    font-weight: 200;
+}
+
+/*Footer*/
+footer{
+    background-color: #2A2D34;
+    color: #D0CCD0;
+    padding: 30px;
+    text-align: center;
+}
+footer img{
+    max-height: 50px;
+}
+
+
+
+@media only screen and (max-width: 1024px) {
+
+    nav ul{
+        float:left;
+        list-style-type: "-";
+    }
+    nav ul a li::before{
+        content: "-";
+    }
+    nav ul a{
+        display: block;
+    }
+    #hero{
+        padding: 1rem;
+    }
+    .segment{
+        padding: 10px 0px;
+    }
+    .segment h1{
+        font-family: RubikWide;
+        font-size: 2.5rem;
+    }
+    .segment h2{
+        font-family: Rubik;
+        font-size: 2rem;
+    }
+    .segment h3{
+        font-family: Rubik;
+        font-size: 1.75rem;
+    }
+    .just{text-align: center;}
+
+    .expCard{
+        background-color: #FBFCFF;
+        border-radius: 0px;
+        margin: 10px 0px;
+        padding: 10px !important;
+    }
+    .expCard img{
+        max-width: 300px;
+    }
+
+    .portCard{
+        background-color: #D0CCD0;
+        border-radius: 0px;
+        margin: 10px 0px;
+        padding: 10px;
+        align-items: center;
+    }
+    .portCard img{
+        max-width: 300px;
+        height: auto;
+        object-fit: contain;
+    }
+    .imgCard{
+        border-radius: 0px;
+    }
+    .imgCard.flex33{
+        max-width: 100%;
+    }
+
+    .flexbox{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .flexReverseMobile{
+        flex-direction: column-reverse;
+    }
+    .flex67{
+        flex-basis: 100%;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .flex50{
+        flex-basis: 100%;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .flex33{
+        flex-basis: 100%;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .flex20{
+        flex-basis: 100%;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    #aboutImage{
+        max-height: 400px;
+        object-fit: cover;
+        margin: 5px;
+        padding-right: 0px;
+    }
+
+    #navTitle{
+        display: none;
+    }
+
+    #aboutToExperience{ padding: 150px 0px; }
+    #experienceToPortfolio{ padding: 150px 0px; }
+    
+}

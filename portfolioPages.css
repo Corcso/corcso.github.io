@@ -1,0 +1,105 @@
+main section{
+    margin: 10px 0px;
+    padding: 20px;
+    align-items: stretch;
+}
+main section img{
+    max-width: 33vw;
+    border-radius: 1rem;
+    margin-top: 10px;
+}
+main section div.flex67{
+    margin: 10px 10px;
+    padding: 10px !important;
+    background-color: #D0CCD0;
+    border-radius: 1rem;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.rightAlign{
+    text-align: right;
+}
+
+#avalancheHero{
+    background-image: url("./media/portfolio/Avalanche/hero.png");   
+}
+#whatTheDuckHero{
+    background-image: url("./media/portfolio/WhatTheDuck/hero.jpg");   
+}
+#karateKevinHero{
+    background-image: url("./media/portfolio/KarateKevin/hero.png");   
+}
+#secondYearGraphicsHero{
+    background-image: url("./media/portfolio/SecondYearGraphics/hero.jpg");
+}
+#theForeverHeistHero{
+    background-image: url("./media/portfolio/TheForeverHeist/hero.png");
+}
+#debuggerHero{
+    background-image: url("./media/portfolio/Debugger/hero.png");
+}
+#blotterHero{
+    background-image: url("./media/portfolio/Blotter/hero.png");
+}
+[id*='Hero']{
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    /*height: calc(100vh - 119px);*/
+}
+[id*='Hero'] h1{
+    font-family: RubikWide;
+    font-size: 10vw;
+    color: #E7CB14;
+}
+[id*='Hero'] h2{
+    font-family: RubikWide;
+    font-size: 3vw;
+    color: #E7CB14;
+}
+[id*='Hero'] .tagsList li{
+    font-family: Rubik;
+    font-size: 1.5vw;
+    background-color: #E7CB14;
+}
+
+.segment a{
+    border-bottom: #D0CCD0 2px solid;
+}
+
+@media only screen and (max-width: 1024px) {
+    main section img{
+        max-width: 100%;
+        border-radius: 0rem;
+        margin-top: 0px;
+    }
+    main section div {
+        background-color: #D0CCD0;
+        box-sizing: border-box;
+    }
+    main section div.flex67{
+        margin: 0px;
+        border-radius: 0rem;
+        width: 100%;
+    }
+    main section p {
+        padding: 0px 10px;
+    }
+    main section{
+        margin: 0px 0px;
+        padding: 0px;
+        align-items: center;
+    }
+    .segment{
+        padding: 0px;
+    }
+
+    [id*='Hero'] .tagsList li{
+        font-family: Rubik;
+        font-size: 2vw;
+        background-color: #E7CB14;
+    }
+}

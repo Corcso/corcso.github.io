@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cormac Somerville | Portfolio Website</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <link rel="stylesheet" href="animations.css">
+        <link rel="stylesheet" href="main.css">
+        <link rel="icon" type="image/x-icon" href="./media/favicon.ico">
+    </head>
+    <body>
+        <nav>
+            <p id="navTitle">Cormac Somerville</p>
+            
+            <ul>
+                <a href="#about"><li>About</li></a>
+                <a href="#portfolio"><li>Portfolio</li></a>
+                <a href="#experience"><li>Experience</li></a>
+                <a href="#awards"><li>Awards</li></a>
+                <a href="https://www.linkedin.com/in/cormac-somerville/"><li>LinkedIn</li></a>
+            </ul>
+        </nav>
+
+        <main>
+            <div id="hero">
+                <h1>Cormac</h1>
+                <h1>Somerville</h1>
+            </div>
+            <!--<div id="comingsoon">
+                <h1> Website coming soon. </h1>
+            </div>-->
+            <div id="about" class="segment center">
+                <h1 class="">About</h1>
+                <div class="flexbox">
+                    <img class="flex33" id="aboutImage" src="./media/about_image_square.jpg">
+                    <p class="flex67 just">Hi There, I'm Cormac, a 20 year old student at <a href="https://www.abertay.ac.uk/">Abertay University</a> currently in my third year studying <a href="https://www.abertay.ac.uk/course-search/undergraduate/computer-games-technology/">BSc Computer Games Technology</a> and working part time at <a href="https://teamfarsight.com">Farsight Digital Solutions</a>. 
+                        I have been awarded the <em>David Potter Memorial Prize </em>, the<em> Hannah Maclure Prize</em>, the <em>Alexander D G Kydd Prize</em> and the <em>A D D McKay Senior Prize</em> for my first and second year academic performance.
+                        <br><br>
+
+
+
+                    </p>
+                </div>
+            </div>
+            <div id="aboutToExperience" class=""></div>  
+            <div id="portfolio" class="segment">
+                <h1 class="center">Portfolio</h1>
+                <p style="text-align: center;">Below is a list of some of my projects, both personal and academic. You can find a <strong>list of things I worked on & some of the tech used in the grey bubbles</strong> and see more details by pressing the buttons below!</p>
+                <!-- Still Forgotten & Squirrel Engine -->
+                <div class="center portCard flexbox">
+                    <div class="flex67">
+                        <h2>Still Forgotten</h2>
+                        <h3>Non-Euclidean Narrative Stealth</h3>
+                        <ul class="tagsList"><li>Team</li><li>C#</li><li>Godot (Custom Fork)</li><li>Portals</li><li>Single Player</li><li>Art Asset Pipeline</li><li>Dialogue & Monologue Systems</li><li>In Game UI</li><li>Team Git Management</li><li>Jira</li><li>Dynamic Scene Loading</li><li>Level Creation Pipeline</li><li>Lighting</li></ul>
+                        <p>Still forgotten is a non-Euclidean narrative stealth game where you are on a mission to discover your past, inspired by works from David Lynch. This game was developed for my professional project, working in a multidisciplinary team of 8. Alongside development we had regular deliverables, client meetings & feedback sessions, required documentation and a press kit to produce. I worked on various systems for this project, the most notable of which are listed above. </p>    
+                        
+                        <button onclick="location.href='https://final-prism-interactive.itch.io/still-forgotten'" type="button">View Itch.io</button>
+                        
+                    </div>
+                    <img class="flex33" src="./media/portfolio/StillForgotten/main.gif">
+                </div>
+                <div class="center portCard flexbox">
+                        <img class="flex33" src="./media/portfolio/SquirrelEngine/main.gif" style="height: 250px;">
+                        <div class="flex67">
+                        <h2>Squirrel Engine</h2>
+                        <h3>3D C++ Game Engine</h3>
+                        <ul class="tagsList"><li>Solo</li><li>C++</li><li>3D</li><li>DirectX11</li><li>Scene Graph</li><li>Platform Independency</li><li>Custom Memory Allocators</li><li>Physics Integration</li><li>Serialization</li><li>Documentation</li></ul>
+                        <p>Squirrel Engine is a C++ 3D game engine. It is currently a work in progress <strong>solo project</strong> which so far uses scene graph representation with a node like object structure to create games. Similar to that of Godot. It makes use of Direct X 11 for rendering which is abstracted away for platform independence. Currently the engine supports scene serialization, physics, threaded loading, custom memory management for performance, and basic lighting. </p>    
+                        <button onclick="location.href='https://github.com/Corcso/SquirrelEngine'" type="button">View Source</button>
+                        <button onclick="location.href='https://corcso.github.io/SquirrelEngine/'" type="button">View Documentation</button>
+                        </div>
+                </div>
+               
+                <!-- Avalanche & Blotter -->
+                <div class="flexbox">
+                    <div class="flex50 center portCard">
+                        <!--<a href="./portfolio/what-the-duck/" style="all: unset;">
+                        <img src="./media/portfolio/WhatTheDuck/LOGO.png">
+                        <h2>What The Duck!?</h2>
+                        <h3>Global Game Jam 2024</h3>
+                        <ul class="tagsList"><li>C#</li><li>Unity</li><li>Git</li><li>Local Multiplayer</li><li>2D</li></ul>
+                        <p>What the Duck!? Is a button masher game inspired by the childhood game Duck Duck Goose which had players pressing changing keys to outrun each other. The game was made for the game jam's theme of "Make Me Laugh". I worked in a large team of 7, 3 Artists, 3 Programmers, and 1 Designer... <a style="border-bottom: #D0CCD0 2px solid;" href="./portfolio/what-the-duck/">Read More</a></p>   
+                        </a> -->
+                        
+                        <img src="./media/portfolio/Avalanche/main.gif">
+                        <h2>Avalanche</h2>
+                        <h3>End of Second Year PS5 Project</h3>
+                        <ul class="tagsList"><li>Team</li><li>C++</li><li>PS5</li><li>Using an In-House Engine</li><li>Git</li><li>2.5D</li><li>Box2D Physics Integration</li><li>Data Oriented Design</li><li>ECS</li><li>Tricks System</li><li>Scene Management</li><li>Local Multiplayer</li></ul>
+                        <p>At the end of second year me and a team of three others were tasked to create a 2.5D game for the PlayStation 5 using the PS5 Devkits at Abertay. We used the university's own inhouse engine which was an educational experience, working with a changing engine which isn't mainstream. This project was fully programmed in C++ using an Entity Component System for object management, ImGui for the in-game GUI and Box2D for in-game physics. I worked alongside 3 other developers using Git source control as well as a development plan... </p>    
+                        
+                    <button onclick="location.href='https://drive.google.com/file/d/1q8JQXCwFZ-R0qhnvSDwDNd_uYFxuibcU/view'" type="button">View Video</button>
+                    <button onclick="location.href='./portfolio/avalanche/'" type="button">Read More</button>    
+                    
+                    </div>
+                    <div class="flex50 center portCard">
+                        
+                        <img src="./media/portfolio/Blotter/main.gif">
+                        <h2>Blotter</h2>
+                        <h3>Online Multiplayer Godot Bingo</h3>
+                        <ul class="tagsList"><li>Solo</li><li>C#</li><li>Godot</li><li>Online Multiplayer</li><li>2D</li><li>Player Customisation</li><li>Interpolation Animations</li><li>Godot UI</li><li>Asset Creation</li></ul>
+                        <p>Blotter is an online multiplayer bingo game for 2-4 players. I wanted to take on a small challenge over the summer by creating a simple online multiplayer game. This <strong>solo project</strong> had me working on all corners of game development, most of the assets for the game were produced by myself. The game was created in the Godot engine using their multiplayer API, adapted from the ENet library. This is my first complete project in Godot and I have been able to transfer my knowledge from work with other engines and use it to accelerate the process of learning how to use Godot...</p>     
+                        
+                        <button onclick="location.href='https://github.com/Corcso/Blotter-Summer24'" type="button">View Source</button>
+                        <button onclick="location.href='https://corcso.itch.io/blotter'" type="button">View Itch.io</button>
+                        <button onclick="location.href='./portfolio/blotter/'" type="button">Read More</button>
+                    
+                    </div>
+                </div>
+                <!-- CMP301, CMP105 and OhWell -->
+                <div class="flexbox">
+                    <div class="flex33 center portCard">
+                        
+                        <img src="./media/portfolio/ThirdYearGraphics/main.gif">
+                        <h2>3rd Year Graphics Project</h2>
+                        <h3>DirectX11 Based Custom Renderer</h3>
+                        <ul class="tagsList"><li>Solo</li><li>C++</li><li>HLSL</li><li>DirectX11</li><li>Git</li><li>3D</li><li>PBR Rendering</li><li>Shadow Mapping</li><li>GPU Tessellation</li><li>CPU GPU Communication</li><li>Height Mapping</li><li>Algorithmic Vertex Manipulation</li><li>Bloom</li><li>Depth of Field</li></ul>
+                        <p>For my third year graphics project I produced a customer renderer using DirectX11. It was able to support shadow mapping for spot, directional and point lights, take in and apply PBR textures like normal maps, display a heightmap and tessellate based on user distance, support multiple lights and shadows, apply post processing like bloom and DoF, and more.</p>    
+                        
+                        <button onclick="location.href='https://github.com/Corcso/Third-Year-Graphics-Project'" type="button">View Source</button>
+                    
+                    </div>
+                    <div class="flex33 center portCard">
+                        
+                        <img src="./media/portfolio/TheForeverHeist/InGame.PNG">
+                        <h2>The Forever Heist</h2>
+                        <h3>End of First Year Project</h3>
+                        <ul class="tagsList"><li>Solo</li><li>C++</li><li>SFML</li><li>2D</li><li>Top Down</li><li>Procedural Generation</li><li>Collisions</li></ul>
+                        <p>The forever heist is a 2D top down game in which you are a robber in an infinitely generating bank vault. The vault is full of guards which you must shoot as well as loot which you must grab and deposit at various garbage disposal chutes. The game was made using SFML and C++. It featured a custom collision detection and resolution system as well as an infinite map generator which was light on resources...</p>    
+
+                        <button onclick="location.href='./portfolio/the-forever-heist/'" type="button">Read More</button>
+                    
+                    </div>
+                    <div class="flex33 center portCard">
+                        <!--<a href="./portfolio/debugger/" style="all: unset;">
+                        <img style="height: 50px; image-rendering: pixelated; padding: 50px 0px;" src="./media/portfolio/Debugger/TitleWithBack.png">
+                        <h1>Debugger</h1>
+                        <h3>Global Game Jam 2023</h3>
+                        <ul class="tagsList"><li>C#</li><li>Unity</li><li>2D</li><li>Top Down</li><li>Git</li></ul>
+                        <p>Debugger is a top down 2D endless shooter which has you shooting a variety of bugs which are coming your way.  We used unity to develop this project and Git for the source control. I worked on the enemy spawning, title screen and parts of the player control. I learned more about unity development from this project as well as source control management and git branching and merging. <a style="border-bottom: #D0CCD0 2px solid;" href="./portfolio/debugger/">Read More</a></p>    
+                        </a>-->
+                        
+                            <img style="image-rendering: pixelated;" src="./media/portfolio/OhWell/main.gif">
+                            <h2>Oh Well</h2>
+                            <h3>AGDS Freshers Jam 2024</h3>
+                            <ul class="tagsList"><li>Team</li><li>C#</li><li>Godot</li><li>2D</li><li>Git</li></ul>
+                            <p>Oh Well is a 2D jump climbing game developed with godot. <strong>I was responsible for project setup, platform systems, tiling, enemy systems, game/scene systems. </strong>The game was made in Godot using C# with a team of 6 others. We focused on polish making sure we scoped small. The source is available on <a style="border-bottom: #D0CCD0 2px solid;" href="https://github.com/Corcso/FreshersJam-24">github</a> and the game can be downloaded from <a style="border-bottom: #D0CCD0 2px solid;" href="https://corcso.itch.io/oh-well">itch</a>. </p>    
+                            <button onclick="location.href='https://github.com/Corcso/FreshersJam-24'" type="button">View Source</button>
+                            <button onclick="location.href='https://corcso.itch.io/oh-well'" type="button">View Itch.io</button>
+                        
+                    </div>
+                </div>
+                <button onclick="document.getElementById('portfolio-see-more').style.display = 'block'; " type="button" style="display: block;margin-left: auto;margin-right: auto;">View Extra Projects</button>
+                <div id="portfolio-see-more" style="display: none;">
+                    <!-- CMP203, CMP304 and Kevin -->
+                    <div class="flexbox">
+                        <div class="flex33 center portCard">
+                            
+                            <img src="./media/portfolio/SecondYearGraphics/Room3.jpg">
+                            <h2>2nd Year Graphics Project</h2>
+                            <h3>OpenGL Fixed Function Pipeline Project</h3>
+                            <ul class="tagsList"><li>Solo</li><li>C++</li><li>OpenGL</li><li>Git</li><li>3D</li><li>Asset Loading</li><li>Lighting</li><li>Mesh Generation</li><li>Volumetric Shadows</li><li>Stencil Buffer Use</li><li>Blending</li></ul>
+                            <p>At the end of the first semester in second year we were tasked with creating an application which showcased our OpenGL graphics knowledge. I decided to challenge myself with this project working on a series of 5 rooms which showcased different 3D graphics principles I had learned over the semester. My most notable achievement from this project would have to be my shadow volumes using Carmack's reverse and configuring them as such to work in reflections too... </p>    
+                            
+                            <button onclick="location.href='./portfolio/second-year-graphics/'" type="button">Read More</button> 
+                            <button onclick="location.href='https://github.com/Corcso/Second-Year-Graphics-Project'" type="button">View Source</button>
+                        
+                        </div>
+                    
+                        <div class="flex33 center portCard">
+                                
+                                <img src="./media/portfolio/KarateKevin/screenshot3.png">
+                                <h2>Karate Kevin</h2>
+                                <h3>AGDS Freshers Jam 2022</h3>
+                                <ul class="tagsList"><li>Team</li><li>C#</li><li>Unity</li><li>Git</li><li>2.5D</li><li>Player Movement & Attacks</li></ul>
+                                <p>Karate Kevin is a game where you play as a seagull who attacks members of the elderly in a karate fashion for sausage rolls. This was my first ever game jam where I was taken under the wing of a team of four fourth year students. The experience was invaluable, I learned lots about game development particularly in unity which helped accelerate my coursework in first year...</p>    
+                                
+                                <button onclick="location.href='https://okaydinos.itch.io/kevin'" type="button">View Itch.io</button> 
+                                <button onclick="location.href='./portfolio/karate-kevin/'" type="button">Read More</button>
+                            
+                        </div>
+                        <div class="flex33 center portCard">
+                                <img src="./media/portfolio/ThirdYearAI/main.gif">
+                                <h2>Genetic Algorithm Fish</h2>
+                                <h3>AI Coursework</h3>
+                                <ul class="tagsList"><li>Solo</li><li>C#</li><li>Godot</li><li>Genetic Algoritms</li><li>ML Integration Research</li></ul>
+                                <p>For my third year AI project I produced a genetic algorithm powered fish simulation. You could set up a generation with initial parameters and then watch them evolve from previous generations, getting faster and more accurately navigating around rocks. The program also featured tracking of generation statistics to allow you to be able to compare different recombination and mutation settings to maximise efficiency. </p>    
+                                
+                                <button onclick="location.href='https://github.com/Corcso/CMP304-Coursework'" type="button">View Source</button>
+                        </div>
+                    </div>
+                    <!-- CMP202 and Debugger -->
+                    <div class="flexbox">
+                        <div class="flex33 center portCard">
+                            <img src="./media/portfolio/SecondYearMultiCPU/main.gif">
+                            <h2>Multithreaded Database Software</h2>
+                            <h3>2nd Year CPU Multithreading Project</h3>
+                            <ul class="tagsList"><li>Solo</li><li>C++</li><li>Multithreading</li><li>Git</li><li>Database programming</li></ul>
+                            <p>For my CPU second year multithreading project I chose to develop a relational database system which makes use of multithreading for large commands. The database can store 3 types of data and can read and write the database to a file. Multithreading is then used for sorting, searching and performing an inner join on tables.</p>    
+                            
+                            <button onclick="location.href='https://github.com/Corcso/CMP202-Unit1-CPU-Project'" type="button">View Source</button>
+                        </div>
+                    
+                        <div class="flex33 center portCard">
+                            <img src="./media/portfolio/SecondYearMultiGPU/mainStatic.PNG">
+                            <h2>Mandelbrot Viewer</h2>
+                            <h3>2nd Year GPU Multithreading Project</h3>
+                            <ul class="tagsList"><li>Solo</li><li>C++</li><li>Multithreading</li><li>GPGPU</li><li>SYCL</li><li>Buffers</li></ul>
+                            <p>For my GPU second year multithreading project I chose to develop a Mandelbrot set viewer. With the program you can zoom into parts of the Mandelbrot set and tweak parameters. The parts in and out of the set are calculated on the GPU using the SYCL framework and rendered using SFML.</p>    
+                            
+                            <button onclick="location.href='https://github.com/Corcso/CMP202-Unit1-GPU-Project'" type="button">View Source</button>
+                        </div>
+                        <div class="flex33 center portCard">
+                            <img src="./media/portfolio/Debugger/screenshot1.png">
+                            <h2>Debugger</h2>
+                            <h3>Global Game Jam 2023</h3>
+                            <ul class="tagsList"><li>Team</li><li>C#</li><li>Unity</li><li>2D</li><li>Top Down</li><li>Git</li><li>Enemy AI & Spawning</li><li>VFX</li></ul>
+                            <p>Debugger is a top down 2D endless shooter which has you shooting a variety of bugs which are coming your way.  We used unity to develop this project and Git for the source control. I worked on the enemy spawning, title screen and parts of the player control. I learned more about unity development from this project as well as source control management and git branching and merging. <a style="border-bottom: #D0CCD0 2px solid;" href="./portfolio/debugger/">Read More</a></p>  
+                            
+                            <button onclick="location.href='./portfolio/debugger/'" type="button">Read More</button>
+                            <button onclick="location.href='https://v3.globalgamejam.org/2023/games/debugger-7'" type="button">View on GGJ</button>
+                            <button onclick="location.href='https://github.com/Corcso/Debugger_GGJ23'" type="button">View Source</button>
+                        </div>
+                    </div>
+                    <button onclick="document.getElementById('portfolio-see-more').style.display = 'none'; " type="button" style="display: block;margin-left: auto;margin-right: auto;">Hide Extra Projects</button>
+                </div>
+            </div> 
+            <div id="experienceToPortfolio" class=""></div>  
+            <div id="experience" class="segment alternate">
+                <h1 class="center">Experience</h1>
+                <div class="flexbox">
+                    <div class="center expCard flex67">
+                        <h2 class="">Farsight Digital Solutions, Ventsys & Todd Workshop</h2>
+                        <h3 class="" style="margin-bottom: 10px;">Platform Architect | 4+ Years</h3>
+                        <img class="inlineb" src="./media/logos/Farsight_Logo.png">
+                        <img class="inlineb" height="109" src="./media/logos/Ventsys_Logo_Full.png">
+                        <img height="109" src="./media/logos/Todd_Workshop.webp">
+                        
+                            
+                            <p class="just">
+                                After meeting Geoff on a search for work experience in high school he offered me some a part time position to gain experience as an <em>assistant web developer</em>. After a few months of learning and showcasing my skills I was taken on officially working for Todd Workshop. After a year of working at Todd Workshop and growing my skillset I was asked to join his new startup <a href="https://ventsys.io">Ventsys</a>, a report creation application for the ventilation cleaning industry. Working there I developed <em>team working skills</em> and was able to apply my technical knowledge in a professional setting. Eventually <a href="https://teamfarsight.com">Farsight Digital Solutions</a> acquired both Ventsys and Todd Workshop and I was taken on as a <em>Platform Architect</em>. I've been with Farsight since it was founded in July of 2023 and it has taught me so much. During my time I have worked on various business systems, from inventory management to job tracking software.
+                            </p>
+                            <!--<span class="flex33 right">
+                                I have experience with:<br>
+                                <ul>
+                                    <li>REST APIs</li>
+                                    <li>Azure Functions</li>
+                                    <li>Working as part of a development team</li>
+                                    <li>Client Communication</li>
+                                    <li>Google Apps Scripts</li>
+                                    <li>Airtable</li>
+                                    <li>Make.com</li>
+                                    <li>Wordpress & Woocommerce</li>
+                                    <li>Business Integrations</li>
+                                </ul>
+                            </span>-->
+                    </div>
+                    <img class="flex33 imgCard" style="object-position: left;" src="./media/farsightTeam.jpg">
+                </div>
+
+                <div class="flexbox">
+                    <div class="flex33 center expCard">
+                        <h2>Wordpress Development</h2>
+                        <p class="just">I have experience in freelance wordpress development. I have been able to advance my skills in web development using wordpress, working on <em>Woocommerce sites</em> and using popular themes, namely <em>Elementor and Divi</em>. I've worked on both <em>front and back end solutions</em>, creating new booking systems, connecting sites to inventory management software, creating pop ups, and marquee style banners.</p>    
+                    </div>
+                    <div class="flex67 center expCard">
+                        <h2>CoderDojo</h2>
+                        <h3>2+ Years</h3>
+                        <!--<div class="flexbox">
+                            <img class="flex33" src="./media/logos/CoderDojo_Logo.png">
+                            <p class="flex67">I was first introduced to coderdojo at the end of 2014 when I started attending as a coder. They helped me along my programming journey with fun sessions and useful assistance. After the pandemic they were starting back up and looking for mentors to help out. I managed to get back in contact with them and sign myself up as a mentor. It runs once a month at codebase in Stirling. I've been able to help some great upcoming talent and see the interesting and wacky projects the kids come up with. It has also allowed me to develop my teaching skills which has been advantageous when helping teammates in game jams or university projects. As well as helping the children with their programming I get to speak with some other great mentors as we share some knowledge amongst ourselves, from students like me to senior developers there is always something interesting to be shared.  </p>    
+                        </div>-->
+                        <p class="just">I was first introduced to coderdojo at the end of 2014 when I started attending as a coder. They helped me along my programming journey with fun sessions and useful assistance. After the pandemic they were starting back up and looking for mentors to help out. I managed to get back in contact with them and sign myself up as a mentor. It runs once a month at <a href="https://www.thisiscodebase.com/stirling">codebase in Stirling</a>. I've been able to help some great upcoming talent and see the interesting and wacky projects the kids come up with. It has also allowed me to develop my <em>teaching skills</em> which has been advantageous when <em>helping teammates in game jams</em> or university projects. As well as helping the children with their programming I get to speak with some other great mentors as we share some knowledge amongst ourselves, from students like me to senior developers there is always something interesting to be shared.  </p>    
+                    </div>
+                </div>
+            </div>
+            <div id="experienceToAwards" class=""></div>  
+            <div id="awards" class="segment">
+                <h1 class="center">Awards</h1>
+                <div class="flexbox">
+                    <div class="flex25 center portCard">
+                            <img src="./media/David Potter Memorial Prize - Cormac Somerville.jpg">
+                            <h2>David Potter Memorial Prize</h2>
+                            <p>Awarded to the student in 1st Year of the BSc (Hons) Computer Games Technology programme who achieves a high level of performance generally and is deemed to be the best student overall.</p>
+                    </div>
+                    <div class="flex25 center portCard">
+                            <img src="./media/Alexander D G Kydd Prize - Cormac Somerville.jpg">
+                            <h2>Alexander D G Kydd Prize</h2>
+                            <p>Awarded to the best student in second year (School of Design & Informatics) who achieves the highest level of performance and is deemed to be the best student overall.</p>
+                    </div>
+                    <div class="flex25 center portCard">
+                            <img src="./media/A D D McKay Senior Prize - Cormac Somerville.jpg">
+                            <h2>A D D McKay Senior Prize</h2>
+                            <p>Awarded to the student in second year of the BSc (Hons) Computer Games Technology programme who achieves a high level of performance in a mathematical component of the programme.</p>
+                    </div>
+                    <div class="flex25 center portCard">
+                            <img src="./media/Hannah Maclure Prize - Cormac Somerville.jpg">
+                            <h2>Hannah Maclure Prize</h2>
+                            <p>Awarded to a 1st Year student who achieves a high level of performance in a mathematical component of their course.</p>
+                    </div>
+                </div>
+            </div>
+            
+        </main>
+        <footer>
+            <a href="https://www.linkedin.com/in/cormac-somerville/"><img src="./media/connectBTN.png"></a>
+        </footer>
+    </body>
+</html>
