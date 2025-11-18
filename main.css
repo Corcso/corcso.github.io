@@ -129,6 +129,7 @@ main>div{
 .segment ul{
     font-size: 1.5rem;
     list-style-type: none;
+    padding-top: 16px;
 }
 .segment a{
     color: #E9463B;
@@ -211,16 +212,19 @@ main>div{
 }
 .portCard img{
     width: auto;
+    border-radius: 12px;
     height: 250px;
     object-fit: contain;
 }
 .portCard p{
     font-size: 1.25rem;
+    margin: 16px 0px;
 }
 
 .tagsList li{
     font-size: 1.25rem;
-    background-color: #a4a4a4;
+    background-color: #414141;
+    color:white;
     border-radius: 0.75rem;
     display:inline-block;
     margin-right: 5px;
@@ -293,7 +297,15 @@ main>div{
     padding: 2px 8px;
     font-family: Rubik;
     font-weight: 200;
+    transition: all ease 0.5s;
 }
+
+#portfolio button:hover{
+    animation-name: hover;
+    animation-duration: 0.2s;
+    translate: 0px -2px;
+}
+
 
 /*Footer*/
 footer{
