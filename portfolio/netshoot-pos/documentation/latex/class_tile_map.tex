@@ -1,0 +1,259 @@
+\doxysection{Tile\+Map Class Reference}
+\hypertarget{class_tile_map}{}\label{class_tile_map}\index{TileMap@{TileMap}}
+
+
+Tile map class. Used for the game map, can load layers from file.  
+
+
+
+
+{\ttfamily \#include $<$Tile\+Map.\+h$>$}
+
+Inheritance diagram for Tile\+Map\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_tile_map}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_tile_map_a1f0551503cd73a8f8c8df158e18e9836}{Ready}} () override
+\begin{DoxyCompactList}\small\item\em Ready function, called on object creation, once. You must call this yourself if you create the object. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_tile_map_aab15943d75682c0df7623d2668ef5e50}{Update}} (float delta\+Time) override
+\begin{DoxyCompactList}\small\item\em Update function, called by core (if object is registered there), every frame. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_tile_map_a2755b20f4aeb6e796d3c726c51d8c069}{Render}} (sf\+::\+Render\+Target \texorpdfstring{$\ast$}{*}target) override
+\begin{DoxyCompactList}\small\item\em Render function, called by core (if object is registered there), every frame. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_tile_map_a49f19bd98b147d063b7657a0feb1b29d}{Resize\+Tile\+Map}} (sf\+::\+Vector2i new\+Size)
+\begin{DoxyCompactList}\small\item\em Resize the tilemap to the provided size. Deletes any tiles which were shrunk away. \end{DoxyCompactList}\item 
+sf\+::\+Vector2i \mbox{\hyperlink{class_tile_map_a10130e057a99531a9e7d91680f2b32ba}{Get\+Tile\+Map\+Size}} ()
+\item 
+void \mbox{\hyperlink{class_tile_map_aaaca5ddadafbd9762901ee9e2a0c0962}{Update\+Tiles}} ()
+\begin{DoxyCompactList}\small\item\em Tweaks the settings of all tiles based on tiledata. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_tile_map_aea69265596a204a95e694db6bd2f8439}{Save\+To\+File}} (std\+::string relative\+Path)
+\begin{DoxyCompactList}\small\item\em Save the tilemap to a relative path, only used for tile editing. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_tile_map_a5b5561c81b3122d584533da6f67abe44}{Load\+From\+File}} (std\+::string relative\+Path)
+\begin{DoxyCompactList}\small\item\em Load a tilemap from its file location. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_game_object}{Game\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_game_object_a224d4f6d9dd75c8a6f9d022eaf586fd9}{\texorpdfstring{$\sim$}{\string~}\+Game\+Object}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_tile_map_aa6495d3b40ebd08b3a7a36f17284884d}{open\+Editor\+GUI}} = false
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{class_game_object}{Game\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{class_game_object_af542b33c8de269343e22c5629e6b66c0}{name}}
+\begin{DoxyCompactList}\small\item\em Name of the object, must be unique at \doxylink{class_core}{Core} level. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_game_object_ab37fe177d93acef64329e2b69583c498}{Render\+Layer}} \mbox{\hyperlink{class_game_object_aa7cebfb2ce9925abcf604b868d2d7be0}{render\+Layer}}
+\begin{DoxyCompactList}\small\item\em Render layer of this object, used by \doxylink{class_core}{Core} to decide when to render this object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_world_tile}{World\+Tile}} $>$ $>$ $>$ \mbox{\hyperlink{class_tile_map_aba863f775ee7c68be23fe568f46abb68}{tile\+Map}}
+\item 
+std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{struct_world_tile_1_1_tile_data}{World\+Tile\+::\+Tile\+Data}} $>$ $>$ \mbox{\hyperlink{class_tile_map_a8c75637129c51f59b6b1596afb757822}{tile\+Data}}
+\item 
+std\+::vector$<$ sf\+::\+Texture $>$ \mbox{\hyperlink{class_tile_map_ac98d24ca5f8101f8670b35b80e2b751a}{all\+Textures\+For\+Editor}}
+\item 
+std\+::vector$<$ std\+::vector$<$ bool $>$ $>$ \mbox{\hyperlink{class_tile_map_a35497b456261213f9482b7ab1f489a07}{editor\+\_\+chosen\+Tile}}
+\item 
+char \mbox{\hyperlink{class_tile_map_a26adb9daf726b7ab5853e3bf140a9ad8}{editor\+\_\+name\+To\+Copy}} \mbox{[}128\mbox{]}
+\item 
+char \mbox{\hyperlink{class_tile_map_ae4189820c014e4403d69056d8c84988e}{editor\+\_\+file\+Name}} \mbox{[}128\mbox{]} = "{}./assets/maps/"{}
+\item 
+std\+::vector$<$ uint8\+\_\+t $>$ \mbox{\hyperlink{class_tile_map_a41e0603763bab6e10c5b53e924add744}{editor\+\_\+tile\+Paths\+\_\+layers\+\_\+detail\+\_\+bool}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{class_game_object}{Game\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{class_game_object_ab37fe177d93acef64329e2b69583c498}{Render\+Layer}} \{ \mbox{\hyperlink{class_game_object_ab37fe177d93acef64329e2b69583c498a87ed58ce5596142e11cb65deb049bb4b}{BACKGROUND}}
+, \mbox{\hyperlink{class_game_object_ab37fe177d93acef64329e2b69583c498ad80d07f9a5629e3684b7764baf58f357}{FOG\+\_\+\+OF\+\_\+\+WAR}}
+, \mbox{\hyperlink{class_game_object_ab37fe177d93acef64329e2b69583c498a1a8e6f9c757af8973978791b895a5d11}{WITHIN\+\_\+\+FOG\+\_\+\+OF\+\_\+\+WAR}}
+, \mbox{\hyperlink{class_game_object_ab37fe177d93acef64329e2b69583c498ae41f4c3e11dd067fd5691da0124b8fd2}{FOREGROUND}}
+ \}
+\begin{DoxyCompactList}\small\item\em Render layers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Tile map class. Used for the game map, can load layers from file. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_tile_map_a10130e057a99531a9e7d91680f2b32ba}\index{TileMap@{TileMap}!GetTileMapSize@{GetTileMapSize}}
+\index{GetTileMapSize@{GetTileMapSize}!TileMap@{TileMap}}
+\doxysubsubsection{\texorpdfstring{GetTileMapSize()}{GetTileMapSize()}}
+{\footnotesize\ttfamily \label{class_tile_map_a10130e057a99531a9e7d91680f2b32ba} 
+sf\+::\+Vector2i Tile\+Map\+::\+Get\+Tile\+Map\+Size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_tile_map_a5b5561c81b3122d584533da6f67abe44}\index{TileMap@{TileMap}!LoadFromFile@{LoadFromFile}}
+\index{LoadFromFile@{LoadFromFile}!TileMap@{TileMap}}
+\doxysubsubsection{\texorpdfstring{LoadFromFile()}{LoadFromFile()}}
+{\footnotesize\ttfamily \label{class_tile_map_a5b5561c81b3122d584533da6f67abe44} 
+bool Tile\+Map\+::\+Load\+From\+File (\begin{DoxyParamCaption}\item[{std\+::string}]{relative\+Path}{}\end{DoxyParamCaption})}
+
+
+
+Load a tilemap from its file location. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em relative\+Path} & Path of file\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If successful
+\end{DoxyReturn}
+\Hypertarget{class_tile_map_a1f0551503cd73a8f8c8df158e18e9836}\index{TileMap@{TileMap}!Ready@{Ready}}
+\index{Ready@{Ready}!TileMap@{TileMap}}
+\doxysubsubsection{\texorpdfstring{Ready()}{Ready()}}
+{\footnotesize\ttfamily \label{class_tile_map_a1f0551503cd73a8f8c8df158e18e9836} 
+void Tile\+Map\+::\+Ready (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Ready function, called on object creation, once. You must call this yourself if you create the object. 
+
+
+
+Implements \mbox{\hyperlink{class_game_object_a0f57fb08f36479414ef51ed176950532}{Game\+Object}}.
+
+\Hypertarget{class_tile_map_a2755b20f4aeb6e796d3c726c51d8c069}\index{TileMap@{TileMap}!Render@{Render}}
+\index{Render@{Render}!TileMap@{TileMap}}
+\doxysubsubsection{\texorpdfstring{Render()}{Render()}}
+{\footnotesize\ttfamily \label{class_tile_map_a2755b20f4aeb6e796d3c726c51d8c069} 
+void Tile\+Map\+::\+Render (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Target \texorpdfstring{$\ast$}{*}}]{target}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Render function, called by core (if object is registered there), every frame. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & The target you should render to, provided by core\\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_game_object_afb9de187a6b4f00723176d429ca4a27c}{Game\+Object}}.
+
+\Hypertarget{class_tile_map_a49f19bd98b147d063b7657a0feb1b29d}\index{TileMap@{TileMap}!ResizeTileMap@{ResizeTileMap}}
+\index{ResizeTileMap@{ResizeTileMap}!TileMap@{TileMap}}
+\doxysubsubsection{\texorpdfstring{ResizeTileMap()}{ResizeTileMap()}}
+{\footnotesize\ttfamily \label{class_tile_map_a49f19bd98b147d063b7657a0feb1b29d} 
+void Tile\+Map\+::\+Resize\+Tile\+Map (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2i}]{new\+Size}{}\end{DoxyParamCaption})}
+
+
+
+Resize the tilemap to the provided size. Deletes any tiles which were shrunk away. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Size} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_tile_map_aea69265596a204a95e694db6bd2f8439}\index{TileMap@{TileMap}!SaveToFile@{SaveToFile}}
+\index{SaveToFile@{SaveToFile}!TileMap@{TileMap}}
+\doxysubsubsection{\texorpdfstring{SaveToFile()}{SaveToFile()}}
+{\footnotesize\ttfamily \label{class_tile_map_aea69265596a204a95e694db6bd2f8439} 
+void Tile\+Map\+::\+Save\+To\+File (\begin{DoxyParamCaption}\item[{std\+::string}]{relative\+Path}{}\end{DoxyParamCaption})}
+
+
+
+Save the tilemap to a relative path, only used for tile editing. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em relative\+Path} & path to save to\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_tile_map_aab15943d75682c0df7623d2668ef5e50}\index{TileMap@{TileMap}!Update@{Update}}
+\index{Update@{Update}!TileMap@{TileMap}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{class_tile_map_aab15943d75682c0df7623d2668ef5e50} 
+void Tile\+Map\+::\+Update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Update function, called by core (if object is registered there), every frame. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & Delta Time\\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_game_object_a44739a8b5e507580ee3100df039ab8e6}{Game\+Object}}.
+
+\Hypertarget{class_tile_map_aaaca5ddadafbd9762901ee9e2a0c0962}\index{TileMap@{TileMap}!UpdateTiles@{UpdateTiles}}
+\index{UpdateTiles@{UpdateTiles}!TileMap@{TileMap}}
+\doxysubsubsection{\texorpdfstring{UpdateTiles()}{UpdateTiles()}}
+{\footnotesize\ttfamily \label{class_tile_map_aaaca5ddadafbd9762901ee9e2a0c0962} 
+void Tile\+Map\+::\+Update\+Tiles (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Tweaks the settings of all tiles based on tiledata. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_tile_map_ac98d24ca5f8101f8670b35b80e2b751a}\index{TileMap@{TileMap}!allTexturesForEditor@{allTexturesForEditor}}
+\index{allTexturesForEditor@{allTexturesForEditor}!TileMap@{TileMap}}
+\doxysubsubsection{\texorpdfstring{allTexturesForEditor}{allTexturesForEditor}}
+{\footnotesize\ttfamily \label{class_tile_map_ac98d24ca5f8101f8670b35b80e2b751a} 
+std\+::vector$<$sf\+::\+Texture$>$ Tile\+Map\+::all\+Textures\+For\+Editor\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_tile_map_a35497b456261213f9482b7ab1f489a07}\index{TileMap@{TileMap}!editor\_chosenTile@{editor\_chosenTile}}
+\index{editor\_chosenTile@{editor\_chosenTile}!TileMap@{TileMap}}
+\doxysubsubsection{\texorpdfstring{editor\_chosenTile}{editor\_chosenTile}}
+{\footnotesize\ttfamily \label{class_tile_map_a35497b456261213f9482b7ab1f489a07} 
+std\+::vector$<$std\+::vector$<$bool$>$ $>$ Tile\+Map\+::editor\+\_\+chosen\+Tile\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_tile_map_ae4189820c014e4403d69056d8c84988e}\index{TileMap@{TileMap}!editor\_fileName@{editor\_fileName}}
+\index{editor\_fileName@{editor\_fileName}!TileMap@{TileMap}}
+\doxysubsubsection{\texorpdfstring{editor\_fileName}{editor\_fileName}}
+{\footnotesize\ttfamily \label{class_tile_map_ae4189820c014e4403d69056d8c84988e} 
+char Tile\+Map\+::editor\+\_\+file\+Name\mbox{[}128\mbox{]} = "{}./assets/maps/"{}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_tile_map_a26adb9daf726b7ab5853e3bf140a9ad8}\index{TileMap@{TileMap}!editor\_nameToCopy@{editor\_nameToCopy}}
+\index{editor\_nameToCopy@{editor\_nameToCopy}!TileMap@{TileMap}}
+\doxysubsubsection{\texorpdfstring{editor\_nameToCopy}{editor\_nameToCopy}}
+{\footnotesize\ttfamily \label{class_tile_map_a26adb9daf726b7ab5853e3bf140a9ad8} 
+char Tile\+Map\+::editor\+\_\+name\+To\+Copy\mbox{[}128\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_tile_map_a41e0603763bab6e10c5b53e924add744}\index{TileMap@{TileMap}!editor\_tilePaths\_layers\_detail\_bool@{editor\_tilePaths\_layers\_detail\_bool}}
+\index{editor\_tilePaths\_layers\_detail\_bool@{editor\_tilePaths\_layers\_detail\_bool}!TileMap@{TileMap}}
+\doxysubsubsection{\texorpdfstring{editor\_tilePaths\_layers\_detail\_bool}{editor\_tilePaths\_layers\_detail\_bool}}
+{\footnotesize\ttfamily \label{class_tile_map_a41e0603763bab6e10c5b53e924add744} 
+std\+::vector$<$uint8\+\_\+t$>$ Tile\+Map\+::editor\+\_\+tile\+Paths\+\_\+layers\+\_\+detail\+\_\+bool\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_tile_map_aa6495d3b40ebd08b3a7a36f17284884d}\index{TileMap@{TileMap}!openEditorGUI@{openEditorGUI}}
+\index{openEditorGUI@{openEditorGUI}!TileMap@{TileMap}}
+\doxysubsubsection{\texorpdfstring{openEditorGUI}{openEditorGUI}}
+{\footnotesize\ttfamily \label{class_tile_map_aa6495d3b40ebd08b3a7a36f17284884d} 
+bool Tile\+Map\+::open\+Editor\+GUI = false}
+
+\Hypertarget{class_tile_map_a8c75637129c51f59b6b1596afb757822}\index{TileMap@{TileMap}!tileData@{tileData}}
+\index{tileData@{tileData}!TileMap@{TileMap}}
+\doxysubsubsection{\texorpdfstring{tileData}{tileData}}
+{\footnotesize\ttfamily \label{class_tile_map_a8c75637129c51f59b6b1596afb757822} 
+std\+::vector$<$std\+::vector$<$\mbox{\hyperlink{struct_world_tile_1_1_tile_data}{World\+Tile\+::\+Tile\+Data}}$>$ $>$ Tile\+Map\+::tile\+Data\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_tile_map_aba863f775ee7c68be23fe568f46abb68}\index{TileMap@{TileMap}!tileMap@{tileMap}}
+\index{tileMap@{tileMap}!TileMap@{TileMap}}
+\doxysubsubsection{\texorpdfstring{tileMap}{tileMap}}
+{\footnotesize\ttfamily \label{class_tile_map_aba863f775ee7c68be23fe568f46abb68} 
+std\+::vector$<$std\+::vector$<$std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{class_world_tile}{World\+Tile}}$>$ $>$ $>$ Tile\+Map\+::tile\+Map\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+assessment-\/project-\/\+Corcso/\+CMP425\+Coursework/\mbox{\hyperlink{_tile_map_8h}{Tile\+Map.\+h}}\item 
+assessment-\/project-\/\+Corcso/\+CMP425\+Coursework/\mbox{\hyperlink{_tile_map_8cpp}{Tile\+Map.\+cpp}}\end{DoxyCompactItemize}

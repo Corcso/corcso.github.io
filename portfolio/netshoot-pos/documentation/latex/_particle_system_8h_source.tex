@@ -1,0 +1,33 @@
+\doxysection{Particle\+System.\+h}
+\hypertarget{_particle_system_8h_source}{}\label{_particle_system_8h_source}\index{assessment-\/project-\/Corcso/CMP425Coursework/ParticleSystem.h@{assessment-\/project-\/Corcso/CMP425Coursework/ParticleSystem.h}}
+\mbox{\hyperlink{_particle_system_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_game_object_8h}{GameObject.h}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_particle_system}{ParticleSystem}}\ :}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_game_object}{GameObject}}}
+\DoxyCodeLine{00008\ \{}
+\DoxyCodeLine{00009\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_particle_system_1_1_particle}{Particle}}\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ sf::RectangleShape\ \mbox{\hyperlink{struct_particle_system_1_1_particle_ad8e99033a976372995e1464f140b528f}{part}};}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ sf::Vector2f\ \mbox{\hyperlink{struct_particle_system_1_1_particle_ada69ab6a48c5306d7a68a732f1e96116}{startingPosition}};}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ sf::Vector2f\ \mbox{\hyperlink{struct_particle_system_1_1_particle_a1e4bcc295f47284e137d3486727492ee}{direction}};}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_particle_system_1_1_particle_a111a9e64e99795dff30c702677da0259}{speed}};}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_particle_system_1_1_particle_a44c668cc493ca1ac28a75b2f8614931f}{lifeTime}};}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_particle_system_1_1_particle_a6400cc8600bcad13ed904b110046a3f2}{aliveFor}};}
+\DoxyCodeLine{00020\ \ \ \ \ \};}
+\DoxyCodeLine{00021\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_particle_system_a61f903bdc7d5c8c938d8b58d1bbdc0b1}{Ready}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_particle_system_a97d3ef8e3a769198afa121c90165a69d}{Update}}(\textcolor{keywordtype}{float}\ deltaTime)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_particle_system_a238c350155361943accb5a1a10a7a9af}{Render}}(sf::RenderTarget*\ target)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_particle_system_a3f97239c3b3f8847db9bc83a33027dfe}{AddBulletLandParticle}}(sf::Color\ color,\ sf::Vector2f\ at);}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{comment}{//\ Lots\ of\ looping\ and\ additions\ and\ removals,\ but\ looping\ happens\ more\ frequently\ than\ the\ latter.\ }}
+\DoxyCodeLine{00036\ \ \ \ \ std::vector<Particle>\ \mbox{\hyperlink{class_particle_system_afedb39255610d354421e7820daaefa79}{activeParticles}};}
+\DoxyCodeLine{00037\ \};}
+\DoxyCodeLine{00038\ }
+
+\end{DoxyCode}

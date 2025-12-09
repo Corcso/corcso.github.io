@@ -1,0 +1,41 @@
+\doxysection{Physics\+Object.\+h}
+\hypertarget{_physics_object_8h_source}{}\label{_physics_object_8h_source}\index{assessment-\/project-\/Corcso/CMP425Coursework/PhysicsObject.h@{assessment-\/project-\/Corcso/CMP425Coursework/PhysicsObject.h}}
+\mbox{\hyperlink{_physics_object_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_p_c_h_8h}{PCH.h}}"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_game_object_8h}{GameObject.h}}"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_physics_object}{PhysicsObject}}\ :}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_game_object}{GameObject}}}
+\DoxyCodeLine{00012\ \{}
+\DoxyCodeLine{00013\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{class_physics_object_a382d9a2336e2205f4e8e44d323fe847f}{PhysicsLayer}}\ :\ uint64\_t\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_physics_object_a382d9a2336e2205f4e8e44d323fe847faeac9f95f880e5fe80d83a5821ba5111e}{TILE}}\ =\ 0x0001,}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_physics_object_a382d9a2336e2205f4e8e44d323fe847fa07c80e2a355d91402a00d82b1fa13855}{PLAYER}}\ =\ 0x0002,}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_physics_object_a382d9a2336e2205f4e8e44d323fe847fa0d7b74a5bcb1cea80c9869b3b95b24fc}{TILE\_DETAIL}}\ =\ 0x0004,}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_physics_object_a382d9a2336e2205f4e8e44d323fe847fa752dc123d813f629a475280b33456e00}{FAUX\_PLAYER}}\ =\ 0x0008,}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_physics_object_a382d9a2336e2205f4e8e44d323fe847fa180bb5e381e316e2246b88c92770ee75}{FIVE}}\ =\ 0x0010,}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_physics_object_a382d9a2336e2205f4e8e44d323fe847fa48041ef8474caedcbcf2fe8996056b7f}{SIX}}\ =\ 0x0020,}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_physics_object_a382d9a2336e2205f4e8e44d323fe847faebcf71d9bbc715c43f24a10cce77dab4}{SEVEN}}\ =\ 0x0040,}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_physics_object_a382d9a2336e2205f4e8e44d323fe847fa960df6d77e65cd185ca4f3501db634eb}{EIGHT}}\ =\ 0x0080}
+\DoxyCodeLine{00026\ \ \ \ \ \};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_physics_object_a6601dd71ae7306ec2e02585fa8a576e4}{Ready}}()\ =\ 0;}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_physics_object_a0bc5e189371b03d7ac67db851dc3d5b1}{Update}}(\textcolor{keywordtype}{float}\ deltaTime)\ =\ 0;}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_physics_object_a583b371abd3a8184306d185878fae06a}{Render}}(sf::RenderTarget*\ target)\ =\ 0;}
+\DoxyCodeLine{00032\ \ \ \ \ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_physics_object_ade6588d8622cff10e979118e0f8a076e}{\string~PhysicsObject}}()\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(b2Body\_IsValid(\mbox{\hyperlink{class_physics_object_af89e9afbdc275526b18936ed1b7f150c}{physicsBodyId}}))\ b2DestroyBody(\mbox{\hyperlink{class_physics_object_af89e9afbdc275526b18936ed1b7f150c}{physicsBodyId}});}
+\DoxyCodeLine{00038\ \ \ \ \ \}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_physics_object_a9d1e8ac3355e1fc45be28fed34fad4eb}{RegisterMePhysically}}(b2BodyDef\&\ bodyDef,\ b2ShapeDef\&\ shapeDef,\ b2Polygon\&\ polygon);}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_physics_object_a9d1e8ac3355e1fc45be28fed34fad4eb}{RegisterMePhysically}}(b2BodyDef\&\ bodyDef,\ b2ShapeDef\&\ shapeDef,\ b2Circle\&\ circle);}
+\DoxyCodeLine{00054\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00055\ \ \ \ \ b2BodyId\ \mbox{\hyperlink{class_physics_object_af89e9afbdc275526b18936ed1b7f150c}{physicsBodyId}};}
+\DoxyCodeLine{00056\ \};}
+\DoxyCodeLine{00057\ }
+
+\end{DoxyCode}

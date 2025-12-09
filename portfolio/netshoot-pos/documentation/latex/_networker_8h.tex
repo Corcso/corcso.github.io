@@ -1,0 +1,63 @@
+\doxysection{assessment-\/project-\/\+Corcso/\+CMP425\+Coursework/\+Networker.h File Reference}
+\hypertarget{_networker_8h}{}\label{_networker_8h}\index{assessment-\/project-\/Corcso/CMP425Coursework/Networker.h@{assessment-\/project-\/Corcso/CMP425Coursework/Networker.h}}
+{\ttfamily \#include "{}PCH.\+h"{}}\newline
+{\ttfamily \#include "{}Player.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_networker}{Networker}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_networker}{Networker}, this is the helper and client network singleton. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_networker_1_1_packet_log_entry}{Networker\+::\+Packet\+Log\+Entry}}
+\begin{DoxyCompactList}\small\item\em A packet log entry, used for debug. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Packet \& \mbox{\hyperlink{_networker_8h_af4aec2f2b5d72e3d7f93ee3cdcb3c53c}{operator$<$$<$}} (sf\+::\+Packet \&packet, const \mbox{\hyperlink{class_networker_aef8da723a9b165f9522d6e22105a53cc}{Networker\+::\+Packet\+Reason}} \&m)
+\item 
+sf\+::\+Packet \& \mbox{\hyperlink{_networker_8h_a3a3186c9078af794750e1f6e4e419c74}{operator$>$$>$}} (sf\+::\+Packet \&packet, \mbox{\hyperlink{class_networker_aef8da723a9b165f9522d6e22105a53cc}{Networker\+::\+Packet\+Reason}} \&m)
+\item 
+sf\+::\+Packet \& \mbox{\hyperlink{_networker_8h_aa10c66f3ce7f8a59b68cdfa2be85aec1}{operator$<$$<$}} (sf\+::\+Packet \&packet, const sf\+::\+Vector2f \&m)
+\item 
+sf\+::\+Packet \& \mbox{\hyperlink{_networker_8h_ac95622c36499e9f245c7b2cb299478e1}{operator$>$$>$}} (sf\+::\+Packet \&packet, sf\+::\+Vector2f \&m)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+constexpr uint16\+\_\+t \mbox{\hyperlink{_networker_8h_ad123bdbc185fc71f5b5594e0d5bed63f}{SERVER\+\_\+\+PORT}} = 41081
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_networker_8h_af4aec2f2b5d72e3d7f93ee3cdcb3c53c}\index{Networker.h@{Networker.h}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Networker.h@{Networker.h}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{_networker_8h_af4aec2f2b5d72e3d7f93ee3cdcb3c53c} 
+sf\+::\+Packet \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{sf\+::\+Packet \&}]{packet}{, }\item[{const \mbox{\hyperlink{class_networker_aef8da723a9b165f9522d6e22105a53cc}{Networker\+::\+Packet\+Reason}} \&}]{m}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_networker_8h_aa10c66f3ce7f8a59b68cdfa2be85aec1}\index{Networker.h@{Networker.h}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Networker.h@{Networker.h}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{_networker_8h_aa10c66f3ce7f8a59b68cdfa2be85aec1} 
+sf\+::\+Packet \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{sf\+::\+Packet \&}]{packet}{, }\item[{const sf\+::\+Vector2f \&}]{m}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_networker_8h_a3a3186c9078af794750e1f6e4e419c74}\index{Networker.h@{Networker.h}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!Networker.h@{Networker.h}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{_networker_8h_a3a3186c9078af794750e1f6e4e419c74} 
+sf\+::\+Packet \& operator$>$$>$ (\begin{DoxyParamCaption}\item[{sf\+::\+Packet \&}]{packet}{, }\item[{\mbox{\hyperlink{class_networker_aef8da723a9b165f9522d6e22105a53cc}{Networker\+::\+Packet\+Reason}} \&}]{m}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_networker_8h_ac95622c36499e9f245c7b2cb299478e1}\index{Networker.h@{Networker.h}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!Networker.h@{Networker.h}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{_networker_8h_ac95622c36499e9f245c7b2cb299478e1} 
+sf\+::\+Packet \& operator$>$$>$ (\begin{DoxyParamCaption}\item[{sf\+::\+Packet \&}]{packet}{, }\item[{sf\+::\+Vector2f \&}]{m}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{_networker_8h_ad123bdbc185fc71f5b5594e0d5bed63f}\index{Networker.h@{Networker.h}!SERVER\_PORT@{SERVER\_PORT}}
+\index{SERVER\_PORT@{SERVER\_PORT}!Networker.h@{Networker.h}}
+\doxysubsubsection{\texorpdfstring{SERVER\_PORT}{SERVER\_PORT}}
+{\footnotesize\ttfamily \label{_networker_8h_ad123bdbc185fc71f5b5594e0d5bed63f} 
+uint16\+\_\+t SERVER\+\_\+\+PORT = 41081\hspace{0.3cm}{\ttfamily [constexpr]}}
+

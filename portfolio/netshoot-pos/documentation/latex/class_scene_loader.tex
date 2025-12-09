@@ -1,0 +1,90 @@
+\doxysection{Scene\+Loader Class Reference}
+\hypertarget{class_scene_loader}{}\label{class_scene_loader}\index{SceneLoader@{SceneLoader}}
+
+
+Scene Loader class, has a load and destroy function per scene, and the scene map allows loading via names.  
+
+
+
+
+{\ttfamily \#include $<$Scene\+Loader.\+h$>$}
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_scene_loader_1_1_scene_functions}{Scene\+Functions}}
+\begin{DoxyCompactList}\small\item\em Structure for holding load and unload functions for the scene name map. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_scene_loader_a9abdddaa42b38ef81f1a7f4d1bdfc418}{Clear\+All\+Objects}} ()
+\item 
+static void \mbox{\hyperlink{class_scene_loader_a96e9e1fb25cedbfe331616608dfb7c57}{Load\+Main\+Game}} ()
+\item 
+static void \mbox{\hyperlink{class_scene_loader_a98ee6103c52fe830509f91b2e6840fc6}{Load\+Main\+Game\+Server}} ()
+\item 
+static void \mbox{\hyperlink{class_scene_loader_adc9c020cb8bc747731962e291f83af7b}{Load\+Main\+Menu}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::map$<$ std\+::string, \mbox{\hyperlink{struct_scene_loader_1_1_scene_functions}{Scene\+Functions}} $>$ \mbox{\hyperlink{class_scene_loader_ad6593fe0c698f06eb177cab5b8666325}{scene\+Name\+Map}}
+\begin{DoxyCompactList}\small\item\em Map of scene names to functions for loading and destroying. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Scene Loader class, has a load and destroy function per scene, and the scene map allows loading via names. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_scene_loader_a9abdddaa42b38ef81f1a7f4d1bdfc418}\index{SceneLoader@{SceneLoader}!ClearAllObjects@{ClearAllObjects}}
+\index{ClearAllObjects@{ClearAllObjects}!SceneLoader@{SceneLoader}}
+\doxysubsubsection{\texorpdfstring{ClearAllObjects()}{ClearAllObjects()}}
+{\footnotesize\ttfamily \label{class_scene_loader_a9abdddaa42b38ef81f1a7f4d1bdfc418} 
+void Scene\+Loader\+::\+Clear\+All\+Objects (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_scene_loader_a96e9e1fb25cedbfe331616608dfb7c57}\index{SceneLoader@{SceneLoader}!LoadMainGame@{LoadMainGame}}
+\index{LoadMainGame@{LoadMainGame}!SceneLoader@{SceneLoader}}
+\doxysubsubsection{\texorpdfstring{LoadMainGame()}{LoadMainGame()}}
+{\footnotesize\ttfamily \label{class_scene_loader_a96e9e1fb25cedbfe331616608dfb7c57} 
+void Scene\+Loader\+::\+Load\+Main\+Game (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_scene_loader_a98ee6103c52fe830509f91b2e6840fc6}\index{SceneLoader@{SceneLoader}!LoadMainGameServer@{LoadMainGameServer}}
+\index{LoadMainGameServer@{LoadMainGameServer}!SceneLoader@{SceneLoader}}
+\doxysubsubsection{\texorpdfstring{LoadMainGameServer()}{LoadMainGameServer()}}
+{\footnotesize\ttfamily \label{class_scene_loader_a98ee6103c52fe830509f91b2e6840fc6} 
+void Scene\+Loader\+::\+Load\+Main\+Game\+Server (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_scene_loader_adc9c020cb8bc747731962e291f83af7b}\index{SceneLoader@{SceneLoader}!LoadMainMenu@{LoadMainMenu}}
+\index{LoadMainMenu@{LoadMainMenu}!SceneLoader@{SceneLoader}}
+\doxysubsubsection{\texorpdfstring{LoadMainMenu()}{LoadMainMenu()}}
+{\footnotesize\ttfamily \label{class_scene_loader_adc9c020cb8bc747731962e291f83af7b} 
+void Scene\+Loader\+::\+Load\+Main\+Menu (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_scene_loader_ad6593fe0c698f06eb177cab5b8666325}\index{SceneLoader@{SceneLoader}!sceneNameMap@{sceneNameMap}}
+\index{sceneNameMap@{sceneNameMap}!SceneLoader@{SceneLoader}}
+\doxysubsubsection{\texorpdfstring{sceneNameMap}{sceneNameMap}}
+{\footnotesize\ttfamily \label{class_scene_loader_ad6593fe0c698f06eb177cab5b8666325} 
+std\+::map$<$ std\+::string, \mbox{\hyperlink{struct_scene_loader_1_1_scene_functions}{Scene\+Loader\+::\+Scene\+Functions}} $>$ Scene\+Loader\+::scene\+Name\+Map\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}main"{}},\ \{\mbox{\hyperlink{class_scene_loader_a96e9e1fb25cedbfe331616608dfb7c57}{SceneLoader::LoadMainGame}},\ \mbox{\hyperlink{class_scene_loader_a9abdddaa42b38ef81f1a7f4d1bdfc418}{SceneLoader::ClearAllObjects}}\}\},}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}menu"{}},\ \{\mbox{\hyperlink{class_scene_loader_adc9c020cb8bc747731962e291f83af7b}{SceneLoader::LoadMainMenu}},\ \mbox{\hyperlink{class_scene_loader_a9abdddaa42b38ef81f1a7f4d1bdfc418}{SceneLoader::ClearAllObjects}}\}\},}
+\DoxyCodeLine{\ \ \ \ \{\textcolor{stringliteral}{"{}mainServer"{}},\ \{\mbox{\hyperlink{class_scene_loader_a98ee6103c52fe830509f91b2e6840fc6}{SceneLoader::LoadMainGameServer}},\ \mbox{\hyperlink{class_scene_loader_a9abdddaa42b38ef81f1a7f4d1bdfc418}{SceneLoader::ClearAllObjects}}\}\}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Map of scene names to functions for loading and destroying. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+assessment-\/project-\/\+Corcso/\+CMP425\+Coursework/\mbox{\hyperlink{_scene_loader_8h}{Scene\+Loader.\+h}}\item 
+assessment-\/project-\/\+Corcso/\+CMP425\+Coursework/\mbox{\hyperlink{_scene_loader_8cpp}{Scene\+Loader.\+cpp}}\end{DoxyCompactItemize}

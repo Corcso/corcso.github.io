@@ -1,0 +1,501 @@
+\doxysection{Player Class Reference}
+\hypertarget{class_player}{}\label{class_player}\index{Player@{Player}}
+
+
+The player class. Controls player movement. Also contains code for other players.  
+
+
+
+
+{\ttfamily \#include $<$Player.\+h$>$}
+
+Inheritance diagram for Player\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_player}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{class_player_a70bccb2d11b97956011a2552ff8cc44d}{Costume}} \{ \mbox{\hyperlink{class_player_a70bccb2d11b97956011a2552ff8cc44da08d0012388564e95c3b4a7407cf04965}{BLACK}}
+, \mbox{\hyperlink{class_player_a70bccb2d11b97956011a2552ff8cc44da1b3e1ee9bff86431dea6b181365ba65f}{BLUE}}
+, \mbox{\hyperlink{class_player_a70bccb2d11b97956011a2552ff8cc44da493cacf6f6a2ae4798b319b8b9ba9488}{BROWN}}
+, \mbox{\hyperlink{class_player_a70bccb2d11b97956011a2552ff8cc44da9de0e5dd94e861317e74964bed179fa0}{GREEN}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{class_physics_object}{Physics\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{class_physics_object_a382d9a2336e2205f4e8e44d323fe847f}{Physics\+Layer}} \+: uint64\+\_\+t \{ \newline
+\mbox{\hyperlink{class_physics_object_a382d9a2336e2205f4e8e44d323fe847faeac9f95f880e5fe80d83a5821ba5111e}{TILE}} = 0x0001
+, \mbox{\hyperlink{class_physics_object_a382d9a2336e2205f4e8e44d323fe847fa07c80e2a355d91402a00d82b1fa13855}{PLAYER}} = 0x0002
+, \mbox{\hyperlink{class_physics_object_a382d9a2336e2205f4e8e44d323fe847fa0d7b74a5bcb1cea80c9869b3b95b24fc}{TILE\+\_\+\+DETAIL}} = 0x0004
+, \mbox{\hyperlink{class_physics_object_a382d9a2336e2205f4e8e44d323fe847fa752dc123d813f629a475280b33456e00}{FAUX\+\_\+\+PLAYER}} = 0x0008
+, \newline
+\mbox{\hyperlink{class_physics_object_a382d9a2336e2205f4e8e44d323fe847fa180bb5e381e316e2246b88c92770ee75}{FIVE}} = 0x0010
+, \mbox{\hyperlink{class_physics_object_a382d9a2336e2205f4e8e44d323fe847fa48041ef8474caedcbcf2fe8996056b7f}{SIX}} = 0x0020
+, \mbox{\hyperlink{class_physics_object_a382d9a2336e2205f4e8e44d323fe847faebcf71d9bbc715c43f24a10cce77dab4}{SEVEN}} = 0x0040
+, \mbox{\hyperlink{class_physics_object_a382d9a2336e2205f4e8e44d323fe847fa960df6d77e65cd185ca4f3501db634eb}{EIGHT}} = 0x0080
+ \}
+\begin{DoxyCompactList}\small\item\em Layers for the physics engine. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{class_game_object}{Game\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{class_game_object_ab37fe177d93acef64329e2b69583c498}{Render\+Layer}} \{ \mbox{\hyperlink{class_game_object_ab37fe177d93acef64329e2b69583c498a87ed58ce5596142e11cb65deb049bb4b}{BACKGROUND}}
+, \mbox{\hyperlink{class_game_object_ab37fe177d93acef64329e2b69583c498ad80d07f9a5629e3684b7764baf58f357}{FOG\+\_\+\+OF\+\_\+\+WAR}}
+, \mbox{\hyperlink{class_game_object_ab37fe177d93acef64329e2b69583c498a1a8e6f9c757af8973978791b895a5d11}{WITHIN\+\_\+\+FOG\+\_\+\+OF\+\_\+\+WAR}}
+, \mbox{\hyperlink{class_game_object_ab37fe177d93acef64329e2b69583c498ae41f4c3e11dd067fd5691da0124b8fd2}{FOREGROUND}}
+ \}
+\begin{DoxyCompactList}\small\item\em Render layers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_player_a5a421cc9bdd3176beee4cc0d30571b0f}{Ready}} () override
+\begin{DoxyCompactList}\small\item\em Ready function, called on object creation, once. You must call this yourself if you create the object. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_player_a20bfb1cb738f6b00f589207ce460491e}{Update}} (float delta\+Time) override
+\begin{DoxyCompactList}\small\item\em Update function, called by core (if object is registered there), every frame. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_player_ab3886e576c95a93e49fa78f29e440730}{Render}} (sf\+::\+Render\+Target \texorpdfstring{$\ast$}{*}target) override
+\begin{DoxyCompactList}\small\item\em Render function, called by core (if object is registered there), every frame. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_a27f58f8c25517f4222a611af56898170}{Update\+Fog}} ()
+\begin{DoxyCompactList}\small\item\em Upadte the fog of war mask for this player. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_a2142f88c3c2695d4ad38cc016a9af80d}{Set\+My\+Costume}} (\mbox{\hyperlink{class_player_a70bccb2d11b97956011a2552ff8cc44d}{Costume}} costume)
+\begin{DoxyCompactList}\small\item\em Sets the player\textquotesingle{}s costume, currently Unused. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_ab3c2bc83e2801b95b804fdab603195b0}{Update\+Player\+ID}} (uint32\+\_\+t new\+ID)
+\begin{DoxyCompactList}\small\item\em Updates this players ID, called from networker to let this player object know which player they represent. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_player_acebc8ed26772d447817ceecefbbaa323}{Am\+IThis\+Player}} ()
+\begin{DoxyCompactList}\small\item\em Check if this player is the controling player. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_player_a4b591f03046ec36250ae9e51891dc1e3}{Is\+Alive}} () const
+\begin{DoxyCompactList}\small\item\em Check if this player is alive. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_a14805570bdc53ad812a2ef1dda884abc}{Shoot\+Bullet}} ()
+\begin{DoxyCompactList}\small\item\em Shoot a bullet. Informs the networker of the shot, also calculates if another player was hit. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_a866bba2efb20929e680c5544c663bdc1}{Update\+Transform}} (sf\+::\+Vector2f new\+Position, float rotation)
+\begin{DoxyCompactList}\small\item\em Used for all non controling players to update their most recent movement for the interpolator. \end{DoxyCompactList}\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_player_abdfbf2ec0ee2d2655345cbbe741d2048}{Get\+Position}} () const
+\begin{DoxyCompactList}\small\item\em Gets this players position. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_player_a652ff16be020cf8b143661bd3ddce5f6}{Get\+Rotation}} () const
+\begin{DoxyCompactList}\small\item\em Gets this players rotation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_a7bd82bc89a4069740072b8f92d5030ef}{Die}} (uint32\+\_\+t killer)
+\begin{DoxyCompactList}\small\item\em Kills this player. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_a5dfb41c096b4511cce820fd72c6cb729}{Respawn}} (sf\+::\+Vector2f position)
+\begin{DoxyCompactList}\small\item\em Respawns this player on said position, must be authorized by the server, called by networker. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_aa708c21922975eec9c40b27525f3dfab}{Set\+In\+Game\+Name}} (std\+::string new\+Name)
+\begin{DoxyCompactList}\small\item\em Sets my in game name. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_player_a06d6ccf3fc3c35905b0e3e7a41bcf28b}{Get\+In\+Game\+Name}} () const
+\begin{DoxyCompactList}\small\item\em Gets my in game name. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_a8154c16a59b62952963e2d1e994c3b63}{Cheat\+\_\+\+Teleport}} (sf\+::\+Vector2f new\+Position)
+\begin{DoxyCompactList}\small\item\em Special Cheat Added function to set the players position. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_physics_object}{Physics\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_physics_object_ade6588d8622cff10e979118e0f8a076e}{\texorpdfstring{$\sim$}{\string~}\+Physics\+Object}} ()
+\begin{DoxyCompactList}\small\item\em On destruct, remove the physics body from the world if it is still there. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_physics_object_a9d1e8ac3355e1fc45be28fed34fad4eb}{Register\+Me\+Physically}} (b2\+Body\+Def \&body\+Def, b2\+Shape\+Def \&shape\+Def, b2\+Polygon \&polygon)
+\begin{DoxyCompactList}\small\item\em Create a body in the world with the provided parameters. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_physics_object_a22096a6eb23195e0bf97a47a955cd61c}{Register\+Me\+Physically}} (b2\+Body\+Def \&body\+Def, b2\+Shape\+Def \&shape\+Def, b2\+Circle \&circle)
+\begin{DoxyCompactList}\small\item\em Create a body in the world with the provided parameters. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_game_object}{Game\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_game_object_a224d4f6d9dd75c8a6f9d022eaf586fd9}{\texorpdfstring{$\sim$}{\string~}\+Game\+Object}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Circle\+Shape \mbox{\hyperlink{class_player_a316840bc4a90ac1fce5cf72f0a2a5d39}{body}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{class_player_a3ea90de421402813cc0ef0f1083dd37e}{player\+Id}}
+\item 
+sf\+::\+Texture \mbox{\hyperlink{class_player_a3d966a6f9aadc2ed927c0e91eec31f91}{my\+Costume\+Texture}}
+\item 
+std\+::string \mbox{\hyperlink{class_player_acab59897a0a6f1a7655147b4f91d030b}{in\+Game\+Name}}
+\item 
+bool \mbox{\hyperlink{class_player_af6ac9227d5db4826d9a0fa697681e469}{alive}}
+\item 
+std\+::string \mbox{\hyperlink{class_player_a595ac6f184f04dc45c3097e60b1f2737}{last\+Killed\+By\+Name}}
+\item 
+\mbox{\hyperlink{class_interpolator}{Interpolator}}$<$ sf\+::\+Vector2f $>$ \mbox{\hyperlink{class_player_a4bd98d7827c1e642bfef54a8fd33813f}{position\+Interpolator}}
+\item 
+\mbox{\hyperlink{class_interpolator}{Interpolator}}$<$ b2\+Rot $>$ \mbox{\hyperlink{class_player_af2b7e6b4b614dfa29b4e324ad8764c3d}{rotation\+Interpolator}}
+\item 
+std\+::unique\+\_\+ptr$<$ sf\+::\+Sound $>$ \mbox{\hyperlink{class_player_aa5134098a49d07568a8b6865dccde082}{shoot}}
+\item 
+std\+::unique\+\_\+ptr$<$ sf\+::\+Sound $>$ \mbox{\hyperlink{class_player_ae404b40d40acca4b196a376ddcb50380}{killed}}
+\item 
+sf\+::\+Sound\+Buffer \mbox{\hyperlink{class_player_afca77c12914c544bccf1d3d11c28d609}{shoot\+Buffer}}
+\item 
+sf\+::\+Sound\+Buffer \mbox{\hyperlink{class_player_a9a8b82022bb02ff84275d2f13eab4633}{killed\+Buffer}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{class_game_object}{Game\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{class_game_object_af542b33c8de269343e22c5629e6b66c0}{name}}
+\begin{DoxyCompactList}\small\item\em Name of the object, must be unique at \doxylink{class_core}{Core} level. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_game_object_ab37fe177d93acef64329e2b69583c498}{Render\+Layer}} \mbox{\hyperlink{class_game_object_aa7cebfb2ce9925abcf604b868d2d7be0}{render\+Layer}}
+\begin{DoxyCompactList}\small\item\em Render layer of this object, used by \doxylink{class_core}{Core} to decide when to render this object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_physics_object}{Physics\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+b2\+Body\+Id \mbox{\hyperlink{class_physics_object_af89e9afbdc275526b18936ed1b7f150c}{physics\+Body\+Id}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The player class. Controls player movement. Also contains code for other players. 
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{class_player_a70bccb2d11b97956011a2552ff8cc44d}\index{Player@{Player}!Costume@{Costume}}
+\index{Costume@{Costume}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{Costume}{Costume}}
+{\footnotesize\ttfamily \label{class_player_a70bccb2d11b97956011a2552ff8cc44d} 
+enum class \mbox{\hyperlink{class_player_a70bccb2d11b97956011a2552ff8cc44d}{Player\+::\+Costume}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BLACK@{BLACK}!Player@{Player}}\index{Player@{Player}!BLACK@{BLACK}}}\Hypertarget{class_player_a70bccb2d11b97956011a2552ff8cc44da08d0012388564e95c3b4a7407cf04965}\label{class_player_a70bccb2d11b97956011a2552ff8cc44d} 
+BLACK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BLUE@{BLUE}!Player@{Player}}\index{Player@{Player}!BLUE@{BLUE}}}\Hypertarget{class_player_a70bccb2d11b97956011a2552ff8cc44da1b3e1ee9bff86431dea6b181365ba65f}\label{class_player_a70bccb2d11b97956011a2552ff8cc44d} 
+BLUE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BROWN@{BROWN}!Player@{Player}}\index{Player@{Player}!BROWN@{BROWN}}}\Hypertarget{class_player_a70bccb2d11b97956011a2552ff8cc44da493cacf6f6a2ae4798b319b8b9ba9488}\label{class_player_a70bccb2d11b97956011a2552ff8cc44d} 
+BROWN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GREEN@{GREEN}!Player@{Player}}\index{Player@{Player}!GREEN@{GREEN}}}\Hypertarget{class_player_a70bccb2d11b97956011a2552ff8cc44da9de0e5dd94e861317e74964bed179fa0}\label{class_player_a70bccb2d11b97956011a2552ff8cc44d} 
+GREEN&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_player_acebc8ed26772d447817ceecefbbaa323}\index{Player@{Player}!AmIThisPlayer@{AmIThisPlayer}}
+\index{AmIThisPlayer@{AmIThisPlayer}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{AmIThisPlayer()}{AmIThisPlayer()}}
+{\footnotesize\ttfamily \label{class_player_acebc8ed26772d447817ceecefbbaa323} 
+bool Player\+::\+Am\+IThis\+Player (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Check if this player is the controling player. 
+
+\begin{DoxyReturn}{Returns}
+If this player is the controling player
+\end{DoxyReturn}
+\Hypertarget{class_player_a8154c16a59b62952963e2d1e994c3b63}\index{Player@{Player}!Cheat\_Teleport@{Cheat\_Teleport}}
+\index{Cheat\_Teleport@{Cheat\_Teleport}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{Cheat\_Teleport()}{Cheat\_Teleport()}}
+{\footnotesize\ttfamily \label{class_player_a8154c16a59b62952963e2d1e994c3b63} 
+void Player\+::\+Cheat\+\_\+\+Teleport (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2f}]{new\+Position}{}\end{DoxyParamCaption})}
+
+
+
+Special Cheat Added function to set the players position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Position} & New position of the player.\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_player_a7bd82bc89a4069740072b8f92d5030ef}\index{Player@{Player}!Die@{Die}}
+\index{Die@{Die}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{Die()}{Die()}}
+{\footnotesize\ttfamily \label{class_player_a7bd82bc89a4069740072b8f92d5030ef} 
+void Player\+::\+Die (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{killer}{}\end{DoxyParamCaption})}
+
+
+
+Kills this player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em killer} & \doxylink{class_player}{Player} ID of the killer\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_player_a06d6ccf3fc3c35905b0e3e7a41bcf28b}\index{Player@{Player}!GetInGameName@{GetInGameName}}
+\index{GetInGameName@{GetInGameName}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{GetInGameName()}{GetInGameName()}}
+{\footnotesize\ttfamily \label{class_player_a06d6ccf3fc3c35905b0e3e7a41bcf28b} 
+std\+::string Player\+::\+Get\+In\+Game\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets my in game name. 
+
+\begin{DoxyReturn}{Returns}
+In game name of this player
+\end{DoxyReturn}
+\Hypertarget{class_player_abdfbf2ec0ee2d2655345cbbe741d2048}\index{Player@{Player}!GetPosition@{GetPosition}}
+\index{GetPosition@{GetPosition}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{GetPosition()}{GetPosition()}}
+{\footnotesize\ttfamily \label{class_player_abdfbf2ec0ee2d2655345cbbe741d2048} 
+sf\+::\+Vector2f Player\+::\+Get\+Position (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets this players position. 
+
+\begin{DoxyReturn}{Returns}
+The players position
+\end{DoxyReturn}
+\Hypertarget{class_player_a652ff16be020cf8b143661bd3ddce5f6}\index{Player@{Player}!GetRotation@{GetRotation}}
+\index{GetRotation@{GetRotation}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{GetRotation()}{GetRotation()}}
+{\footnotesize\ttfamily \label{class_player_a652ff16be020cf8b143661bd3ddce5f6} 
+float Player\+::\+Get\+Rotation (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets this players rotation. 
+
+\begin{DoxyReturn}{Returns}
+The players rotation
+\end{DoxyReturn}
+\Hypertarget{class_player_a4b591f03046ec36250ae9e51891dc1e3}\index{Player@{Player}!IsAlive@{IsAlive}}
+\index{IsAlive@{IsAlive}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{IsAlive()}{IsAlive()}}
+{\footnotesize\ttfamily \label{class_player_a4b591f03046ec36250ae9e51891dc1e3} 
+bool Player\+::\+Is\+Alive (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Check if this player is alive. 
+
+\begin{DoxyReturn}{Returns}
+If this player is alive
+\end{DoxyReturn}
+\Hypertarget{class_player_a5a421cc9bdd3176beee4cc0d30571b0f}\index{Player@{Player}!Ready@{Ready}}
+\index{Ready@{Ready}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{Ready()}{Ready()}}
+{\footnotesize\ttfamily \label{class_player_a5a421cc9bdd3176beee4cc0d30571b0f} 
+void Player\+::\+Ready (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Ready function, called on object creation, once. You must call this yourself if you create the object. 
+
+
+
+Implements \mbox{\hyperlink{class_physics_object_a6601dd71ae7306ec2e02585fa8a576e4}{Physics\+Object}}.
+
+\Hypertarget{class_player_ab3886e576c95a93e49fa78f29e440730}\index{Player@{Player}!Render@{Render}}
+\index{Render@{Render}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{Render()}{Render()}}
+{\footnotesize\ttfamily \label{class_player_ab3886e576c95a93e49fa78f29e440730} 
+void Player\+::\+Render (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Target \texorpdfstring{$\ast$}{*}}]{target}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Render function, called by core (if object is registered there), every frame. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & The target you should render to, provided by core\\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_physics_object_a583b371abd3a8184306d185878fae06a}{Physics\+Object}}.
+
+\Hypertarget{class_player_a5dfb41c096b4511cce820fd72c6cb729}\index{Player@{Player}!Respawn@{Respawn}}
+\index{Respawn@{Respawn}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{Respawn()}{Respawn()}}
+{\footnotesize\ttfamily \label{class_player_a5dfb41c096b4511cce820fd72c6cb729} 
+void Player\+::\+Respawn (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2f}]{position}{}\end{DoxyParamCaption})}
+
+
+
+Respawns this player on said position, must be authorized by the server, called by networker. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & Respawn position\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_player_aa708c21922975eec9c40b27525f3dfab}\index{Player@{Player}!SetInGameName@{SetInGameName}}
+\index{SetInGameName@{SetInGameName}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{SetInGameName()}{SetInGameName()}}
+{\footnotesize\ttfamily \label{class_player_aa708c21922975eec9c40b27525f3dfab} 
+void Player\+::\+Set\+In\+Game\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{new\+Name}{}\end{DoxyParamCaption})}
+
+
+
+Sets my in game name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Name} & New in game name\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_player_a2142f88c3c2695d4ad38cc016a9af80d}\index{Player@{Player}!SetMyCostume@{SetMyCostume}}
+\index{SetMyCostume@{SetMyCostume}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{SetMyCostume()}{SetMyCostume()}}
+{\footnotesize\ttfamily \label{class_player_a2142f88c3c2695d4ad38cc016a9af80d} 
+void Player\+::\+Set\+My\+Costume (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player_a70bccb2d11b97956011a2552ff8cc44d}{Costume}}}]{costume}{}\end{DoxyParamCaption})}
+
+
+
+Sets the player\textquotesingle{}s costume, currently Unused. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em costume} & Costume Enum\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_player_a14805570bdc53ad812a2ef1dda884abc}\index{Player@{Player}!ShootBullet@{ShootBullet}}
+\index{ShootBullet@{ShootBullet}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{ShootBullet()}{ShootBullet()}}
+{\footnotesize\ttfamily \label{class_player_a14805570bdc53ad812a2ef1dda884abc} 
+void Player\+::\+Shoot\+Bullet (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Shoot a bullet. Informs the networker of the shot, also calculates if another player was hit. 
+
+\Hypertarget{class_player_a20bfb1cb738f6b00f589207ce460491e}\index{Player@{Player}!Update@{Update}}
+\index{Update@{Update}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{class_player_a20bfb1cb738f6b00f589207ce460491e} 
+void Player\+::\+Update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Update function, called by core (if object is registered there), every frame. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & Delta Time\\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_physics_object_a0bc5e189371b03d7ac67db851dc3d5b1}{Physics\+Object}}.
+
+\Hypertarget{class_player_a27f58f8c25517f4222a611af56898170}\index{Player@{Player}!UpdateFog@{UpdateFog}}
+\index{UpdateFog@{UpdateFog}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{UpdateFog()}{UpdateFog()}}
+{\footnotesize\ttfamily \label{class_player_a27f58f8c25517f4222a611af56898170} 
+void Player\+::\+Update\+Fog (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Upadte the fog of war mask for this player. 
+
+\Hypertarget{class_player_ab3c2bc83e2801b95b804fdab603195b0}\index{Player@{Player}!UpdatePlayerID@{UpdatePlayerID}}
+\index{UpdatePlayerID@{UpdatePlayerID}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{UpdatePlayerID()}{UpdatePlayerID()}}
+{\footnotesize\ttfamily \label{class_player_ab3c2bc83e2801b95b804fdab603195b0} 
+void Player\+::\+Update\+Player\+ID (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{new\+ID}{}\end{DoxyParamCaption})}
+
+
+
+Updates this players ID, called from networker to let this player object know which player they represent. 
+
+If the ID is that of a differnt player, recreates the physics object as a kinematic body.
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+ID} & The new player id\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_player_a866bba2efb20929e680c5544c663bdc1}\index{Player@{Player}!UpdateTransform@{UpdateTransform}}
+\index{UpdateTransform@{UpdateTransform}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{UpdateTransform()}{UpdateTransform()}}
+{\footnotesize\ttfamily \label{class_player_a866bba2efb20929e680c5544c663bdc1} 
+void Player\+::\+Update\+Transform (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2f}]{new\+Position}{, }\item[{float}]{rotation}{}\end{DoxyParamCaption})}
+
+
+
+Used for all non controling players to update their most recent movement for the interpolator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Position} & New position\\
+\hline
+{\em rotation} & New rotation in radians\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_player_af6ac9227d5db4826d9a0fa697681e469}\index{Player@{Player}!alive@{alive}}
+\index{alive@{alive}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{alive}{alive}}
+{\footnotesize\ttfamily \label{class_player_af6ac9227d5db4826d9a0fa697681e469} 
+bool Player\+::alive\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_player_a316840bc4a90ac1fce5cf72f0a2a5d39}\index{Player@{Player}!body@{body}}
+\index{body@{body}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{body}{body}}
+{\footnotesize\ttfamily \label{class_player_a316840bc4a90ac1fce5cf72f0a2a5d39} 
+sf\+::\+Circle\+Shape Player\+::body\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_player_acab59897a0a6f1a7655147b4f91d030b}\index{Player@{Player}!inGameName@{inGameName}}
+\index{inGameName@{inGameName}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{inGameName}{inGameName}}
+{\footnotesize\ttfamily \label{class_player_acab59897a0a6f1a7655147b4f91d030b} 
+std\+::string Player\+::in\+Game\+Name\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_player_ae404b40d40acca4b196a376ddcb50380}\index{Player@{Player}!killed@{killed}}
+\index{killed@{killed}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{killed}{killed}}
+{\footnotesize\ttfamily \label{class_player_ae404b40d40acca4b196a376ddcb50380} 
+std\+::unique\+\_\+ptr$<$sf\+::\+Sound$>$ Player\+::killed\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_player_a9a8b82022bb02ff84275d2f13eab4633}\index{Player@{Player}!killedBuffer@{killedBuffer}}
+\index{killedBuffer@{killedBuffer}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{killedBuffer}{killedBuffer}}
+{\footnotesize\ttfamily \label{class_player_a9a8b82022bb02ff84275d2f13eab4633} 
+sf\+::\+Sound\+Buffer Player\+::killed\+Buffer\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_player_a595ac6f184f04dc45c3097e60b1f2737}\index{Player@{Player}!lastKilledByName@{lastKilledByName}}
+\index{lastKilledByName@{lastKilledByName}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{lastKilledByName}{lastKilledByName}}
+{\footnotesize\ttfamily \label{class_player_a595ac6f184f04dc45c3097e60b1f2737} 
+std\+::string Player\+::last\+Killed\+By\+Name\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_player_a3d966a6f9aadc2ed927c0e91eec31f91}\index{Player@{Player}!myCostumeTexture@{myCostumeTexture}}
+\index{myCostumeTexture@{myCostumeTexture}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{myCostumeTexture}{myCostumeTexture}}
+{\footnotesize\ttfamily \label{class_player_a3d966a6f9aadc2ed927c0e91eec31f91} 
+sf\+::\+Texture Player\+::my\+Costume\+Texture\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_player_a3ea90de421402813cc0ef0f1083dd37e}\index{Player@{Player}!playerId@{playerId}}
+\index{playerId@{playerId}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{playerId}{playerId}}
+{\footnotesize\ttfamily \label{class_player_a3ea90de421402813cc0ef0f1083dd37e} 
+uint32\+\_\+t Player\+::player\+Id\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_player_a4bd98d7827c1e642bfef54a8fd33813f}\index{Player@{Player}!positionInterpolator@{positionInterpolator}}
+\index{positionInterpolator@{positionInterpolator}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{positionInterpolator}{positionInterpolator}}
+{\footnotesize\ttfamily \label{class_player_a4bd98d7827c1e642bfef54a8fd33813f} 
+\mbox{\hyperlink{class_interpolator}{Interpolator}}$<$sf\+::\+Vector2f$>$ Player\+::position\+Interpolator\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_player_af2b7e6b4b614dfa29b4e324ad8764c3d}\index{Player@{Player}!rotationInterpolator@{rotationInterpolator}}
+\index{rotationInterpolator@{rotationInterpolator}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{rotationInterpolator}{rotationInterpolator}}
+{\footnotesize\ttfamily \label{class_player_af2b7e6b4b614dfa29b4e324ad8764c3d} 
+\mbox{\hyperlink{class_interpolator}{Interpolator}}$<$b2\+Rot$>$ Player\+::rotation\+Interpolator\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_player_aa5134098a49d07568a8b6865dccde082}\index{Player@{Player}!shoot@{shoot}}
+\index{shoot@{shoot}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{shoot}{shoot}}
+{\footnotesize\ttfamily \label{class_player_aa5134098a49d07568a8b6865dccde082} 
+std\+::unique\+\_\+ptr$<$sf\+::\+Sound$>$ Player\+::shoot\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_player_afca77c12914c544bccf1d3d11c28d609}\index{Player@{Player}!shootBuffer@{shootBuffer}}
+\index{shootBuffer@{shootBuffer}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{shootBuffer}{shootBuffer}}
+{\footnotesize\ttfamily \label{class_player_afca77c12914c544bccf1d3d11c28d609} 
+sf\+::\+Sound\+Buffer Player\+::shoot\+Buffer\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+assessment-\/project-\/\+Corcso/\+CMP425\+Coursework/\mbox{\hyperlink{_player_8h}{Player.\+h}}\item 
+assessment-\/project-\/\+Corcso/\+CMP425\+Coursework/\mbox{\hyperlink{_player_8cpp}{Player.\+cpp}}\end{DoxyCompactItemize}

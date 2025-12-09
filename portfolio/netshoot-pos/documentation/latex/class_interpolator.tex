@@ -1,0 +1,184 @@
+\doxysection{Interpolator\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{class_interpolator}{}\label{class_interpolator}\index{Interpolator$<$ T $>$@{Interpolator$<$ T $>$}}
+
+
+Linear interpolator helper class.  
+
+
+
+
+{\ttfamily \#include $<$Interpolator.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_interpolator_a757c6868c30c626c1df8ed4f96e683bf}{Interpolator}} ()=default
+\item 
+T \mbox{\hyperlink{class_interpolator_a7f58929b95860bf0e944149dd713c923}{Get\+Value}} ()
+\begin{DoxyCompactList}\small\item\em Get the currently interpolated value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_interpolator_af82883ae58adc49179bec058515dd4d1}{Update}} (float delta\+Time)
+\begin{DoxyCompactList}\small\item\em Update the interpolator. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_interpolator_a2606d9215c375b04c7fd1c29df295b8c}{Get\+InterpolationT}} ()
+\begin{DoxyCompactList}\small\item\em Get the t value of the current interpolation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_interpolator_ac1dc82b1da6819f9b5893b1a6a79e8c9}{New\+Value}} (T new\+Value, float new\+Timestamp)
+\begin{DoxyCompactList}\small\item\em Add a new value into the interpolator, moving the old new one to the last value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_interpolator_a21c7c3ec2bff4ce0436b6f52c68c849a}{Update}} (float delta\+Time)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+T \mbox{\hyperlink{class_interpolator_a71ea71bc1af7be0e61c51bfa99779383}{last\+Value}}
+\item 
+T \mbox{\hyperlink{class_interpolator_aba83828c5d7c268240622bacf735f0f2}{second\+Last\+Value}}
+\item 
+float \mbox{\hyperlink{class_interpolator_a1a8b5186daace43818596a9c418640f1}{last\+Timestamp}}
+\item 
+float \mbox{\hyperlink{class_interpolator_ad03b6f104c87ef533b23bc0372282461}{second\+Last\+Timestamp}}
+\item 
+T \mbox{\hyperlink{class_interpolator_ad1dd96b322d66ba11f44d0476e4b6ad1}{current\+Value}}
+\item 
+float \mbox{\hyperlink{class_interpolator_a039c1ed1022d1901d5b4fd999dc4c831}{t}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class Interpolator$<$ T $>$}
+Linear interpolator helper class. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Type of value to interpolate, must have +self -\/self and \texorpdfstring{$\ast$}{*}float support\\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_interpolator_a757c6868c30c626c1df8ed4f96e683bf}\index{Interpolator$<$ T $>$@{Interpolator$<$ T $>$}!Interpolator@{Interpolator}}
+\index{Interpolator@{Interpolator}!Interpolator$<$ T $>$@{Interpolator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Interpolator()}{Interpolator()}}
+{\footnotesize\ttfamily \label{class_interpolator_a757c6868c30c626c1df8ed4f96e683bf} 
+template$<$typename T $>$ \\
+\mbox{\hyperlink{class_interpolator}{Interpolator}}$<$ T $>$\mbox{\hyperlink{class_interpolator}{\+::\+Interpolator}} (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_interpolator_a2606d9215c375b04c7fd1c29df295b8c}\index{Interpolator$<$ T $>$@{Interpolator$<$ T $>$}!GetInterpolationT@{GetInterpolationT}}
+\index{GetInterpolationT@{GetInterpolationT}!Interpolator$<$ T $>$@{Interpolator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{GetInterpolationT()}{GetInterpolationT()}}
+{\footnotesize\ttfamily \label{class_interpolator_a2606d9215c375b04c7fd1c29df295b8c} 
+template$<$typename T $>$ \\
+float \mbox{\hyperlink{class_interpolator}{Interpolator}}$<$ T $>$\+::\+Get\+InterpolationT (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the t value of the current interpolation. 
+
+\begin{DoxyReturn}{Returns}
+Current t value
+\end{DoxyReturn}
+\Hypertarget{class_interpolator_a7f58929b95860bf0e944149dd713c923}\index{Interpolator$<$ T $>$@{Interpolator$<$ T $>$}!GetValue@{GetValue}}
+\index{GetValue@{GetValue}!Interpolator$<$ T $>$@{Interpolator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{GetValue()}{GetValue()}}
+{\footnotesize\ttfamily \label{class_interpolator_a7f58929b95860bf0e944149dd713c923} 
+template$<$typename T $>$ \\
+T \mbox{\hyperlink{class_interpolator}{Interpolator}}$<$ T $>$\+::\+Get\+Value (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the currently interpolated value. 
+
+\begin{DoxyReturn}{Returns}
+The currently interpolated value
+\end{DoxyReturn}
+\Hypertarget{class_interpolator_ac1dc82b1da6819f9b5893b1a6a79e8c9}\index{Interpolator$<$ T $>$@{Interpolator$<$ T $>$}!NewValue@{NewValue}}
+\index{NewValue@{NewValue}!Interpolator$<$ T $>$@{Interpolator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{NewValue()}{NewValue()}}
+{\footnotesize\ttfamily \label{class_interpolator_ac1dc82b1da6819f9b5893b1a6a79e8c9} 
+template$<$typename T $>$ \\
+void \mbox{\hyperlink{class_interpolator}{Interpolator}}$<$ T $>$\+::\+New\+Value (\begin{DoxyParamCaption}\item[{T}]{new\+Value}{, }\item[{float}]{new\+Timestamp}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a new value into the interpolator, moving the old new one to the last value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Value} & New value\\
+\hline
+{\em new\+Timestamp} & Time of new value\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_interpolator_af82883ae58adc49179bec058515dd4d1}\index{Interpolator$<$ T $>$@{Interpolator$<$ T $>$}!Update@{Update}}
+\index{Update@{Update}!Interpolator$<$ T $>$@{Interpolator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_interpolator_af82883ae58adc49179bec058515dd4d1} 
+template$<$typename T $>$ \\
+void \mbox{\hyperlink{class_interpolator}{Interpolator}}$<$ T $>$\+::\+Update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Update the interpolator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & delta\+Time\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_interpolator_a21c7c3ec2bff4ce0436b6f52c68c849a}\index{Interpolator$<$ T $>$@{Interpolator$<$ T $>$}!Update@{Update}}
+\index{Update@{Update}!Interpolator$<$ T $>$@{Interpolator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_interpolator_a21c7c3ec2bff4ce0436b6f52c68c849a} 
+void \mbox{\hyperlink{class_interpolator}{Interpolator}}$<$ b2\+Rot $>$\+::\+Update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_interpolator_ad1dd96b322d66ba11f44d0476e4b6ad1}\index{Interpolator$<$ T $>$@{Interpolator$<$ T $>$}!currentValue@{currentValue}}
+\index{currentValue@{currentValue}!Interpolator$<$ T $>$@{Interpolator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{currentValue}{currentValue}}
+{\footnotesize\ttfamily \label{class_interpolator_ad1dd96b322d66ba11f44d0476e4b6ad1} 
+template$<$typename T $>$ \\
+T \mbox{\hyperlink{class_interpolator}{Interpolator}}$<$ T $>$\+::current\+Value\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_interpolator_a1a8b5186daace43818596a9c418640f1}\index{Interpolator$<$ T $>$@{Interpolator$<$ T $>$}!lastTimestamp@{lastTimestamp}}
+\index{lastTimestamp@{lastTimestamp}!Interpolator$<$ T $>$@{Interpolator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{lastTimestamp}{lastTimestamp}}
+{\footnotesize\ttfamily \label{class_interpolator_a1a8b5186daace43818596a9c418640f1} 
+template$<$typename T $>$ \\
+float \mbox{\hyperlink{class_interpolator}{Interpolator}}$<$ T $>$\+::last\+Timestamp\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_interpolator_a71ea71bc1af7be0e61c51bfa99779383}\index{Interpolator$<$ T $>$@{Interpolator$<$ T $>$}!lastValue@{lastValue}}
+\index{lastValue@{lastValue}!Interpolator$<$ T $>$@{Interpolator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{lastValue}{lastValue}}
+{\footnotesize\ttfamily \label{class_interpolator_a71ea71bc1af7be0e61c51bfa99779383} 
+template$<$typename T $>$ \\
+T \mbox{\hyperlink{class_interpolator}{Interpolator}}$<$ T $>$\+::last\+Value\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_interpolator_ad03b6f104c87ef533b23bc0372282461}\index{Interpolator$<$ T $>$@{Interpolator$<$ T $>$}!secondLastTimestamp@{secondLastTimestamp}}
+\index{secondLastTimestamp@{secondLastTimestamp}!Interpolator$<$ T $>$@{Interpolator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{secondLastTimestamp}{secondLastTimestamp}}
+{\footnotesize\ttfamily \label{class_interpolator_ad03b6f104c87ef533b23bc0372282461} 
+template$<$typename T $>$ \\
+float \mbox{\hyperlink{class_interpolator}{Interpolator}}$<$ T $>$\+::second\+Last\+Timestamp\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_interpolator_aba83828c5d7c268240622bacf735f0f2}\index{Interpolator$<$ T $>$@{Interpolator$<$ T $>$}!secondLastValue@{secondLastValue}}
+\index{secondLastValue@{secondLastValue}!Interpolator$<$ T $>$@{Interpolator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{secondLastValue}{secondLastValue}}
+{\footnotesize\ttfamily \label{class_interpolator_aba83828c5d7c268240622bacf735f0f2} 
+template$<$typename T $>$ \\
+T \mbox{\hyperlink{class_interpolator}{Interpolator}}$<$ T $>$\+::second\+Last\+Value\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_interpolator_a039c1ed1022d1901d5b4fd999dc4c831}\index{Interpolator$<$ T $>$@{Interpolator$<$ T $>$}!t@{t}}
+\index{t@{t}!Interpolator$<$ T $>$@{Interpolator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{t}{t}}
+{\footnotesize\ttfamily \label{class_interpolator_a039c1ed1022d1901d5b4fd999dc4c831} 
+template$<$typename T $>$ \\
+float \mbox{\hyperlink{class_interpolator}{Interpolator}}$<$ T $>$\+::t\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+assessment-\/project-\/\+Corcso/\+CMP425\+Coursework/\mbox{\hyperlink{_interpolator_8h}{Interpolator.\+h}}\end{DoxyCompactItemize}

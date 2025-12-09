@@ -1,0 +1,391 @@
+\doxysection{Core Class Reference}
+\hypertarget{class_core}{}\label{class_core}\index{Core@{Core}}
+
+
+\doxylink{class_core}{Core} game loop class Items inside this could be split out but due to lightweight nature of game it will remain a sort of uberclass.  
+
+
+
+
+{\ttfamily \#include $<$Core.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_core_aa79abb5b5e7f4e8ce8232a42213d16ab}{Core}} ()=default
+\item 
+\mbox{\hyperlink{class_core_a6a219d981cf94d771e18ef2b2746e0ac}{Core}} (\mbox{\hyperlink{class_core}{Core}} \&copy)=delete
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_core_a73de4e2e9d178353d4a3ba6e42182563}{Initialize}} (sf\+::\+Render\+Window \&window)
+\begin{DoxyCompactList}\small\item\em Setup core class. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\static T \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_core_a366edea26dff08b69b3e5f11b6f8d9d0}{Instantiate}} (std\+::string name, \mbox{\hyperlink{class_game_object_ab37fe177d93acef64329e2b69583c498}{Game\+Object\+::\+Render\+Layer}} render\+Layer)
+\begin{DoxyCompactList}\small\item\em Creates a new object at core level. \doxylink{class_core}{Core} owns this new object. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_core_acae91cf6f217c568746ce7ea7cd66db8}{Load\+Scene}} (std\+::string scene\+To\+Load)
+\begin{DoxyCompactList}\small\item\em Loads the scene by name, \doxylink{_scene_loader_8cpp}{Scene\+Loader.\+cpp} contains scene to name mappings. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_core_a28b7be16fcd9baa3f46180e13233a3a4}{Step\+Physics}} ()
+\begin{DoxyCompactList}\small\item\em Step the physics world, doesn\textquotesingle{}t move objects renderwise, that is up to the child class. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_core_a6260a8ca24efab4e062c6ff799204d93}{Update}} (float delta\+Time)
+\begin{DoxyCompactList}\small\item\em Updates all objects at core level. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_core_a34df01b462bfc8109e067c84b25e5519}{Render}} ()
+\begin{DoxyCompactList}\small\item\em Renders all objects at core level. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_core_abcaf38b9be33096edb2f7af735192713}{Destroy\+Object}} (std\+::string to\+Destroy)
+\begin{DoxyCompactList}\small\item\em Mark a core level object for destruction, will happen at the end of the frame. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_core_a1c8a05d297c76dcab26a26831a1ac5ec}{Destroy\+All\+Objects}} ()
+\begin{DoxyCompactList}\small\item\em Mark all core level objects for destruction, will happen at the end of the frame. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_core_a3a029bdb68e3b236cd9d1059d823e7ae}{Free\+Object}} (std\+::string to\+Destroy)
+\begin{DoxyCompactList}\small\item\em Destroy a core level object, will happen instantly. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_core_ad22e361624f4fa54805e537a6c1f36e2}{Free\+All\+Objects}} ()
+\begin{DoxyCompactList}\small\item\em Destroy all core level objects, will happen instantly. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_core_a70bf3e73a3eb5a20098b890d243d932f}{Destroy\+Objects}} ()
+\begin{DoxyCompactList}\small\item\em Should be ran at the end of frame, frees all core level obejcts marked for destruction. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_game_object}{Game\+Object}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_core_af77fa91d7bc6dcb677648360ef1e701e}{Get\+Object}} (std\+::string name\+To\+Find)
+\begin{DoxyCompactList}\small\item\em Return a core level object by name. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\static T \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_core_a3ca1c4c0a04c52ea14d1a62165d63818}{Get\+Object}} (std\+::string name\+To\+Find)
+\begin{DoxyCompactList}\small\item\em Return a core level object by name. \end{DoxyCompactList}\item 
+static b2\+World\+Id \mbox{\hyperlink{class_core_a440adfb77fbe4d679048c05584775858}{Get\+Physics\+World\+ID}} ()
+\begin{DoxyCompactList}\small\item\em Returns the physics world ID. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_core_a435d4ce5ae27d85ac427873396ff7e1c}{Shutdown}} ()
+\begin{DoxyCompactList}\small\item\em Call this on application closure, cleans up all objects \& physics world, does not shutdown SFML. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{class_core_a7f44889cf2b3724e1f7007fb772284ab}{current\+Scene}}
+\item 
+std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_game_object}{Game\+Object}} $>$ $>$ \mbox{\hyperlink{class_core_af41af8b73437360f817a84cce1035ae3}{objects\+Live}}
+\item 
+std\+::set$<$ std\+::string $>$ \mbox{\hyperlink{class_core_a19c73c804d34d46d623053ed850ddfdd}{to\+Destroy\+At\+End\+Of\+Frame}}
+\item 
+sf\+::\+Render\+Texture \mbox{\hyperlink{class_core_a3f25fbf8649c24d848a6a67f8f5179da}{fog\+Of\+War\+Layer}}
+\item 
+sf\+::\+Render\+Texture \mbox{\hyperlink{class_core_a43e2f378e1293823410354ed6d725bb6}{fog\+Of\+War\+Objects\+Layer}}
+\item 
+sf\+::\+Render\+Texture \mbox{\hyperlink{class_core_a0804e742c0374b65fde41ec1e0aea9ff}{fog\+Of\+War\+Combined\+Layer}}
+\item 
+sf\+::\+Blend\+Mode \mbox{\hyperlink{class_core_aed2f4c8b0ac963b588483ea5e32bd95d}{fog\+Of\+War\+Blend\+Mode}}
+\item 
+sf\+::\+Render\+Window \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_core_a5a8d62d7af070bbef8fbb90fa0c6afd2}{game\+Window}}
+\item 
+b2\+World\+Id \mbox{\hyperlink{class_core_a3cd92577c1b506da9d9a59cff822589a}{physics\+World}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_core}{Core}} \mbox{\hyperlink{class_core_ac606bfae78711fe77919f09f3d24e7db}{instance}}
+\item 
+static const int \mbox{\hyperlink{class_core_a943694e417095d7aeaaf3ae58819b044}{PHYSICS\+\_\+\+SUB\+\_\+\+STEPS}} = 4
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{class_core}{Core} game loop class Items inside this could be split out but due to lightweight nature of game it will remain a sort of uberclass. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_core_aa79abb5b5e7f4e8ce8232a42213d16ab}\index{Core@{Core}!Core@{Core}}
+\index{Core@{Core}!Core@{Core}}
+\doxysubsubsection{\texorpdfstring{Core()}{Core()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_core_aa79abb5b5e7f4e8ce8232a42213d16ab} 
+Core\+::\+Core (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{class_core_a6a219d981cf94d771e18ef2b2746e0ac}\index{Core@{Core}!Core@{Core}}
+\index{Core@{Core}!Core@{Core}}
+\doxysubsubsection{\texorpdfstring{Core()}{Core()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_core_a6a219d981cf94d771e18ef2b2746e0ac} 
+Core\+::\+Core (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_core}{Core}} \&}]{copy}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_core_a1c8a05d297c76dcab26a26831a1ac5ec}\index{Core@{Core}!DestroyAllObjects@{DestroyAllObjects}}
+\index{DestroyAllObjects@{DestroyAllObjects}!Core@{Core}}
+\doxysubsubsection{\texorpdfstring{DestroyAllObjects()}{DestroyAllObjects()}}
+{\footnotesize\ttfamily \label{class_core_a1c8a05d297c76dcab26a26831a1ac5ec} 
+void Core\+::\+Destroy\+All\+Objects (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Mark all core level objects for destruction, will happen at the end of the frame. 
+
+\Hypertarget{class_core_abcaf38b9be33096edb2f7af735192713}\index{Core@{Core}!DestroyObject@{DestroyObject}}
+\index{DestroyObject@{DestroyObject}!Core@{Core}}
+\doxysubsubsection{\texorpdfstring{DestroyObject()}{DestroyObject()}}
+{\footnotesize\ttfamily \label{class_core_abcaf38b9be33096edb2f7af735192713} 
+void Core\+::\+Destroy\+Object (\begin{DoxyParamCaption}\item[{std\+::string}]{to\+Destroy}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Mark a core level object for destruction, will happen at the end of the frame. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em to\+Destroy} & name of object to destroy\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_core_a70bf3e73a3eb5a20098b890d243d932f}\index{Core@{Core}!DestroyObjects@{DestroyObjects}}
+\index{DestroyObjects@{DestroyObjects}!Core@{Core}}
+\doxysubsubsection{\texorpdfstring{DestroyObjects()}{DestroyObjects()}}
+{\footnotesize\ttfamily \label{class_core_a70bf3e73a3eb5a20098b890d243d932f} 
+void Core\+::\+Destroy\+Objects (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Should be ran at the end of frame, frees all core level obejcts marked for destruction. 
+
+\Hypertarget{class_core_ad22e361624f4fa54805e537a6c1f36e2}\index{Core@{Core}!FreeAllObjects@{FreeAllObjects}}
+\index{FreeAllObjects@{FreeAllObjects}!Core@{Core}}
+\doxysubsubsection{\texorpdfstring{FreeAllObjects()}{FreeAllObjects()}}
+{\footnotesize\ttfamily \label{class_core_ad22e361624f4fa54805e537a6c1f36e2} 
+void Core\+::\+Free\+All\+Objects (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Destroy all core level objects, will happen instantly. 
+
+\Hypertarget{class_core_a3a029bdb68e3b236cd9d1059d823e7ae}\index{Core@{Core}!FreeObject@{FreeObject}}
+\index{FreeObject@{FreeObject}!Core@{Core}}
+\doxysubsubsection{\texorpdfstring{FreeObject()}{FreeObject()}}
+{\footnotesize\ttfamily \label{class_core_a3a029bdb68e3b236cd9d1059d823e7ae} 
+void Core\+::\+Free\+Object (\begin{DoxyParamCaption}\item[{std\+::string}]{to\+Destroy}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Destroy a core level object, will happen instantly. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em to\+Destroy} & name of object to destroy\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_core_af77fa91d7bc6dcb677648360ef1e701e}\index{Core@{Core}!GetObject@{GetObject}}
+\index{GetObject@{GetObject}!Core@{Core}}
+\doxysubsubsection{\texorpdfstring{GetObject()}{GetObject()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_core_af77fa91d7bc6dcb677648360ef1e701e} 
+static \mbox{\hyperlink{class_game_object}{Game\+Object}} \texorpdfstring{$\ast$}{*} Core\+::\+Get\+Object (\begin{DoxyParamCaption}\item[{std\+::string}]{name\+To\+Find}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Return a core level object by name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name\+To\+Find} & name of object\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to object, nullptr if not found
+\end{DoxyReturn}
+\Hypertarget{class_core_a3ca1c4c0a04c52ea14d1a62165d63818}\index{Core@{Core}!GetObject@{GetObject}}
+\index{GetObject@{GetObject}!Core@{Core}}
+\doxysubsubsection{\texorpdfstring{GetObject()}{GetObject()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_core_a3ca1c4c0a04c52ea14d1a62165d63818} 
+template$<$typename T $>$ \\
+static T \texorpdfstring{$\ast$}{*} Core\+::\+Get\+Object (\begin{DoxyParamCaption}\item[{std\+::string}]{name\+To\+Find}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Return a core level object by name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name\+To\+Find} & name of object\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Type of Object\\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+pointer to object, nullptr if incorrect type or not found
+\end{DoxyReturn}
+\Hypertarget{class_core_a440adfb77fbe4d679048c05584775858}\index{Core@{Core}!GetPhysicsWorldID@{GetPhysicsWorldID}}
+\index{GetPhysicsWorldID@{GetPhysicsWorldID}!Core@{Core}}
+\doxysubsubsection{\texorpdfstring{GetPhysicsWorldID()}{GetPhysicsWorldID()}}
+{\footnotesize\ttfamily \label{class_core_a440adfb77fbe4d679048c05584775858} 
+b2\+World\+Id Core\+::\+Get\+Physics\+World\+ID (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Returns the physics world ID. 
+
+\begin{DoxyReturn}{Returns}
+Physics world ID
+\end{DoxyReturn}
+\Hypertarget{class_core_a73de4e2e9d178353d4a3ba6e42182563}\index{Core@{Core}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!Core@{Core}}
+\doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily \label{class_core_a73de4e2e9d178353d4a3ba6e42182563} 
+void Core\+::\+Initialize (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Setup core class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & Reference to render window, pointer will be copied in\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_core_a366edea26dff08b69b3e5f11b6f8d9d0}\index{Core@{Core}!Instantiate@{Instantiate}}
+\index{Instantiate@{Instantiate}!Core@{Core}}
+\doxysubsubsection{\texorpdfstring{Instantiate()}{Instantiate()}}
+{\footnotesize\ttfamily \label{class_core_a366edea26dff08b69b3e5f11b6f8d9d0} 
+template$<$typename T $>$ \\
+static T \texorpdfstring{$\ast$}{*} Core\+::\+Instantiate (\begin{DoxyParamCaption}\item[{std\+::string}]{name}{, }\item[{\mbox{\hyperlink{class_game_object_ab37fe177d93acef64329e2b69583c498}{Game\+Object\+::\+Render\+Layer}}}]{render\+Layer}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Creates a new object at core level. \doxylink{class_core}{Core} owns this new object. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Type of object to create, must be child of \doxylink{class_game_object}{Game\+Object}\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of object to create\\
+\hline
+{\em render\+Layer} & Renderlayer of object to create\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to newly created object
+\end{DoxyReturn}
+\Hypertarget{class_core_acae91cf6f217c568746ce7ea7cd66db8}\index{Core@{Core}!LoadScene@{LoadScene}}
+\index{LoadScene@{LoadScene}!Core@{Core}}
+\doxysubsubsection{\texorpdfstring{LoadScene()}{LoadScene()}}
+{\footnotesize\ttfamily \label{class_core_acae91cf6f217c568746ce7ea7cd66db8} 
+void Core\+::\+Load\+Scene (\begin{DoxyParamCaption}\item[{std\+::string}]{scene\+To\+Load}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Loads the scene by name, \doxylink{_scene_loader_8cpp}{Scene\+Loader.\+cpp} contains scene to name mappings. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scene\+To\+Load} & Name of scene to load\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_core_a34df01b462bfc8109e067c84b25e5519}\index{Core@{Core}!Render@{Render}}
+\index{Render@{Render}!Core@{Core}}
+\doxysubsubsection{\texorpdfstring{Render()}{Render()}}
+{\footnotesize\ttfamily \label{class_core_a34df01b462bfc8109e067c84b25e5519} 
+void Core\+::\+Render (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Renders all objects at core level. 
+
+\Hypertarget{class_core_a435d4ce5ae27d85ac427873396ff7e1c}\index{Core@{Core}!Shutdown@{Shutdown}}
+\index{Shutdown@{Shutdown}!Core@{Core}}
+\doxysubsubsection{\texorpdfstring{Shutdown()}{Shutdown()}}
+{\footnotesize\ttfamily \label{class_core_a435d4ce5ae27d85ac427873396ff7e1c} 
+void Core\+::\+Shutdown (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Call this on application closure, cleans up all objects \& physics world, does not shutdown SFML. 
+
+\Hypertarget{class_core_a28b7be16fcd9baa3f46180e13233a3a4}\index{Core@{Core}!StepPhysics@{StepPhysics}}
+\index{StepPhysics@{StepPhysics}!Core@{Core}}
+\doxysubsubsection{\texorpdfstring{StepPhysics()}{StepPhysics()}}
+{\footnotesize\ttfamily \label{class_core_a28b7be16fcd9baa3f46180e13233a3a4} 
+void Core\+::\+Step\+Physics (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Step the physics world, doesn\textquotesingle{}t move objects renderwise, that is up to the child class. 
+
+\Hypertarget{class_core_a6260a8ca24efab4e062c6ff799204d93}\index{Core@{Core}!Update@{Update}}
+\index{Update@{Update}!Core@{Core}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{class_core_a6260a8ca24efab4e062c6ff799204d93} 
+void Core\+::\+Update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Updates all objects at core level. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & Delta Time\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_core_a7f44889cf2b3724e1f7007fb772284ab}\index{Core@{Core}!currentScene@{currentScene}}
+\index{currentScene@{currentScene}!Core@{Core}}
+\doxysubsubsection{\texorpdfstring{currentScene}{currentScene}}
+{\footnotesize\ttfamily \label{class_core_a7f44889cf2b3724e1f7007fb772284ab} 
+std\+::string Core\+::current\+Scene\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_core_aed2f4c8b0ac963b588483ea5e32bd95d}\index{Core@{Core}!fogOfWarBlendMode@{fogOfWarBlendMode}}
+\index{fogOfWarBlendMode@{fogOfWarBlendMode}!Core@{Core}}
+\doxysubsubsection{\texorpdfstring{fogOfWarBlendMode}{fogOfWarBlendMode}}
+{\footnotesize\ttfamily \label{class_core_aed2f4c8b0ac963b588483ea5e32bd95d} 
+sf\+::\+Blend\+Mode Core\+::fog\+Of\+War\+Blend\+Mode\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_core_a0804e742c0374b65fde41ec1e0aea9ff}\index{Core@{Core}!fogOfWarCombinedLayer@{fogOfWarCombinedLayer}}
+\index{fogOfWarCombinedLayer@{fogOfWarCombinedLayer}!Core@{Core}}
+\doxysubsubsection{\texorpdfstring{fogOfWarCombinedLayer}{fogOfWarCombinedLayer}}
+{\footnotesize\ttfamily \label{class_core_a0804e742c0374b65fde41ec1e0aea9ff} 
+sf\+::\+Render\+Texture Core\+::fog\+Of\+War\+Combined\+Layer\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_core_a3f25fbf8649c24d848a6a67f8f5179da}\index{Core@{Core}!fogOfWarLayer@{fogOfWarLayer}}
+\index{fogOfWarLayer@{fogOfWarLayer}!Core@{Core}}
+\doxysubsubsection{\texorpdfstring{fogOfWarLayer}{fogOfWarLayer}}
+{\footnotesize\ttfamily \label{class_core_a3f25fbf8649c24d848a6a67f8f5179da} 
+sf\+::\+Render\+Texture Core\+::fog\+Of\+War\+Layer\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_core_a43e2f378e1293823410354ed6d725bb6}\index{Core@{Core}!fogOfWarObjectsLayer@{fogOfWarObjectsLayer}}
+\index{fogOfWarObjectsLayer@{fogOfWarObjectsLayer}!Core@{Core}}
+\doxysubsubsection{\texorpdfstring{fogOfWarObjectsLayer}{fogOfWarObjectsLayer}}
+{\footnotesize\ttfamily \label{class_core_a43e2f378e1293823410354ed6d725bb6} 
+sf\+::\+Render\+Texture Core\+::fog\+Of\+War\+Objects\+Layer\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_core_a5a8d62d7af070bbef8fbb90fa0c6afd2}\index{Core@{Core}!gameWindow@{gameWindow}}
+\index{gameWindow@{gameWindow}!Core@{Core}}
+\doxysubsubsection{\texorpdfstring{gameWindow}{gameWindow}}
+{\footnotesize\ttfamily \label{class_core_a5a8d62d7af070bbef8fbb90fa0c6afd2} 
+sf\+::\+Render\+Window\texorpdfstring{$\ast$}{*} Core\+::game\+Window\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_core_ac606bfae78711fe77919f09f3d24e7db}\index{Core@{Core}!instance@{instance}}
+\index{instance@{instance}!Core@{Core}}
+\doxysubsubsection{\texorpdfstring{instance}{instance}}
+{\footnotesize\ttfamily \label{class_core_ac606bfae78711fe77919f09f3d24e7db} 
+\mbox{\hyperlink{class_core}{Core}} Core\+::instance\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\Hypertarget{class_core_af41af8b73437360f817a84cce1035ae3}\index{Core@{Core}!objectsLive@{objectsLive}}
+\index{objectsLive@{objectsLive}!Core@{Core}}
+\doxysubsubsection{\texorpdfstring{objectsLive}{objectsLive}}
+{\footnotesize\ttfamily \label{class_core_af41af8b73437360f817a84cce1035ae3} 
+std\+::vector$<$std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{class_game_object}{Game\+Object}}$>$ $>$ Core\+::objects\+Live\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_core_a943694e417095d7aeaaf3ae58819b044}\index{Core@{Core}!PHYSICS\_SUB\_STEPS@{PHYSICS\_SUB\_STEPS}}
+\index{PHYSICS\_SUB\_STEPS@{PHYSICS\_SUB\_STEPS}!Core@{Core}}
+\doxysubsubsection{\texorpdfstring{PHYSICS\_SUB\_STEPS}{PHYSICS\_SUB\_STEPS}}
+{\footnotesize\ttfamily \label{class_core_a943694e417095d7aeaaf3ae58819b044} 
+const int Core\+::\+PHYSICS\+\_\+\+SUB\+\_\+\+STEPS = 4\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\Hypertarget{class_core_a3cd92577c1b506da9d9a59cff822589a}\index{Core@{Core}!physicsWorld@{physicsWorld}}
+\index{physicsWorld@{physicsWorld}!Core@{Core}}
+\doxysubsubsection{\texorpdfstring{physicsWorld}{physicsWorld}}
+{\footnotesize\ttfamily \label{class_core_a3cd92577c1b506da9d9a59cff822589a} 
+b2\+World\+Id Core\+::physics\+World\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_core_a19c73c804d34d46d623053ed850ddfdd}\index{Core@{Core}!toDestroyAtEndOfFrame@{toDestroyAtEndOfFrame}}
+\index{toDestroyAtEndOfFrame@{toDestroyAtEndOfFrame}!Core@{Core}}
+\doxysubsubsection{\texorpdfstring{toDestroyAtEndOfFrame}{toDestroyAtEndOfFrame}}
+{\footnotesize\ttfamily \label{class_core_a19c73c804d34d46d623053ed850ddfdd} 
+std\+::set$<$std\+::string$>$ Core\+::to\+Destroy\+At\+End\+Of\+Frame\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+assessment-\/project-\/\+Corcso/\+CMP425\+Coursework/\mbox{\hyperlink{_core_8h}{Core.\+h}}\item 
+assessment-\/project-\/\+Corcso/\+CMP425\+Coursework/\mbox{\hyperlink{_core_8cpp}{Core.\+cpp}}\end{DoxyCompactItemize}

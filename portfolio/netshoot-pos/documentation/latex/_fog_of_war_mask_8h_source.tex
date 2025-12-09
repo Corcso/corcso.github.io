@@ -1,0 +1,21 @@
+\doxysection{Fog\+Of\+War\+Mask.\+h}
+\hypertarget{_fog_of_war_mask_8h_source}{}\label{_fog_of_war_mask_8h_source}\index{assessment-\/project-\/Corcso/CMP425Coursework/FogOfWarMask.h@{assessment-\/project-\/Corcso/CMP425Coursework/FogOfWarMask.h}}
+\mbox{\hyperlink{_fog_of_war_mask_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_game_object_8h}{GameObject.h}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_fog_of_war_mask}{FogOfWarMask}}\ :}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_game_object}{GameObject}}}
+\DoxyCodeLine{00008\ \{}
+\DoxyCodeLine{00009\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_fog_of_war_mask_ac581e4c50de53c43457e41f9c5bfb959}{Ready}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_fog_of_war_mask_aeda02a14631e6824032bf3bc801e30c6}{Update}}(\textcolor{keywordtype}{float}\ deltaTime)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_fog_of_war_mask_afdb1dc41dce675ce50f7907b5661835c}{Render}}(sf::RenderTarget*\ target)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_fog_of_war_mask_a45be525659aabc1b848dd6a1ea9b452e}{SetPoints}}(sf::Vector2f\ player,\ sf::Vector2f\ left,\ sf::Vector2f\ right);}
+\DoxyCodeLine{00021\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00022\ \ \ \ \ sf::ConvexShape\ \mbox{\hyperlink{class_fog_of_war_mask_a62677a23413b7acd27299388aaa3b6b2}{triangle}};}
+\DoxyCodeLine{00023\ \};}
+\DoxyCodeLine{00024\ }
+
+\end{DoxyCode}

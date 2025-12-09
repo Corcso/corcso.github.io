@@ -1,0 +1,13 @@
+digraph "Player::Render"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="Player::Render",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Render function, called by core (if object is registered there), every frame."];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="Player::AmIThisPlayer",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_player.html#acebc8ed26772d447817ceecefbbaa323",tooltip="Check if this player is the controling player."];
+  Node2 -> Node3 [id="edge2_Node000002_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="Networker::GetMyMultiplayerID",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_networker.html#af3cb7ae11756fc116afcf3bbcb01adff",tooltip="Returns this players multiplayer ID."];
+}

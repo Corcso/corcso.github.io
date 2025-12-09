@@ -1,0 +1,712 @@
+\doxysection{Networker Class Reference}
+\hypertarget{class_networker}{}\label{class_networker}\index{Networker@{Networker}}
+
+
+\doxylink{class_networker}{Networker}, this is the helper and client network singleton.  
+
+
+
+
+{\ttfamily \#include $<$Networker.\+h$>$}
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_networker_1_1_packet_log_entry}{Packet\+Log\+Entry}}
+\begin{DoxyCompactList}\small\item\em A packet log entry, used for debug. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{class_networker_a82b20125c606028ca2787751c28507a7}{Network\+Status}} \+: uint8\+\_\+t \{ \mbox{\hyperlink{class_networker_a82b20125c606028ca2787751c28507a7a69481bb4d21aa34f06e06759a7cae7d5}{DISONNECTED}}
+, \mbox{\hyperlink{class_networker_a82b20125c606028ca2787751c28507a7aa5afd6edd5336d91316964e493936858}{CONNECTED}}
+ \}
+\begin{DoxyCompactList}\small\item\em Network status of this networker. \end{DoxyCompactList}\item 
+enum class \mbox{\hyperlink{class_networker_aef8da723a9b165f9522d6e22105a53cc}{Packet\+Reason}} \+: uint16\+\_\+t \{ \newline
+\mbox{\hyperlink{class_networker_aef8da723a9b165f9522d6e22105a53cca4901858edd810b0f560825b5d5faba0d}{WELCOME\+\_\+\+MESSAGE}}
+, \mbox{\hyperlink{class_networker_aef8da723a9b165f9522d6e22105a53cca5933ba40c36942af6d85eae2b87d1ac5}{INTRODUCTION}}
+, \mbox{\hyperlink{class_networker_aef8da723a9b165f9522d6e22105a53ccae07ff41a486c27c095a15898dcca34d1}{PING}}
+, \mbox{\hyperlink{class_networker_aef8da723a9b165f9522d6e22105a53cca15c94917c8795679ecb650ed760c27f0}{PONG}}
+, \newline
+\mbox{\hyperlink{class_networker_aef8da723a9b165f9522d6e22105a53ccaebec77afb84a9623d70636c120fc493b}{NEW\+\_\+\+PLAYER\+\_\+\+JOINED}}
+, \mbox{\hyperlink{class_networker_aef8da723a9b165f9522d6e22105a53cca20887523dca92a9741ea1dcaa7e96ed9}{PLAYER\+\_\+\+DISCONNECTED}}
+, \mbox{\hyperlink{class_networker_aef8da723a9b165f9522d6e22105a53ccabfcf2c5fc47ab40be0f8a53bc3b086b1}{PLAYER\+\_\+\+TRANSFORM\+\_\+\+UPDATE}}
+, \mbox{\hyperlink{class_networker_aef8da723a9b165f9522d6e22105a53ccac3d9346eb523373b81782b9fd1eb4a0b}{SHOOT\+\_\+\+NOTIFICATION}}
+, \newline
+\mbox{\hyperlink{class_networker_aef8da723a9b165f9522d6e22105a53ccad122da1650c96167bd172487e86c4854}{RESPAWN}}
+, \mbox{\hyperlink{class_networker_aef8da723a9b165f9522d6e22105a53cca959a795d5524bd9054026703a33afb87}{KICK}}
+ \}
+\begin{DoxyCompactList}\small\item\em Packet reasons, these are all possible meanings for a packet, each has its own data required, which can be different if its client -\/\texorpdfstring{$>$}{>} server or server -\/\texorpdfstring{$>$}{>} client. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static sf\+::\+Socket\+::\+Status \mbox{\hyperlink{class_networker_a0384d1699c0a718e0986ee3d01115af8}{Tcp\+Non\+Blocking\+Send}} (sf\+::\+Tcp\+Socket \&socket, sf\+::\+Packet \&packet)
+\begin{DoxyCompactList}\small\item\em Helper function for non blocking TCP sockets to do a blocking send. Will fail after TCP\+\_\+\+NON\+\_\+\+BLOCKING\+\_\+\+SEND\+\_\+\+MAX\+\_\+\+ATTEMPTS attempts. \end{DoxyCompactList}\item 
+static sf\+::\+Socket\+::\+Status \mbox{\hyperlink{class_networker_a489cfa74ae7beee616069f423ddefa99}{Tcp\+Non\+Blocking\+Guarantee\+Recieve}} (sf\+::\+Tcp\+Socket \&socket, sf\+::\+Packet \&packet)
+\begin{DoxyCompactList}\small\item\em Treats the non blocking TCP socket like a blocking 1, waiting up to X attempts time to recieve before failing. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_networker_af643581d09c22b37d65f3be2f245cae2}{Initialize}} ()
+\begin{DoxyCompactList}\small\item\em Setup the instance, like a reset function. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_networker_a5f6670cdda178a60b3e9f44031314098}{Connect\+To\+Server}} (sf\+::\+Ip\+Address address, uint16\+\_\+t port, \mbox{\hyperlink{class_player}{Player}} \texorpdfstring{$\ast$}{*}player\+Object)
+\begin{DoxyCompactList}\small\item\em Connect to a server, and perform the connection handshake over TCP. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_networker_ac9fa8c356a92fb12cebb1135ef5a1ac0}{Disconnect}} (std\+::string error="{}"{})
+\begin{DoxyCompactList}\small\item\em Disconenct from the server, with optional error. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_networker_a00922d0a777e4861a4f68e6ed8a95972}{Kicked}} (sf\+::\+Packet packet)
+\begin{DoxyCompactList}\small\item\em Deal with a kick packet. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_networker_ad1a926825e66c82fcd3d087c2b1111d1}{Ping}} ()
+\begin{DoxyCompactList}\small\item\em Send a ping to the server, will not send if one already in transit. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_networker_a9e399dcc88e585c1dd7b2657d877201b}{Ponged}} (sf\+::\+Packet packet)
+\begin{DoxyCompactList}\small\item\em Recieve a pong from the server, used to measure latency and sync with server clock. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_networker_ac672b1c659ba59e97f36b9e28ec2198a}{Dispatch\+Incoming\+Packets}} ()
+\begin{DoxyCompactList}\small\item\em Called once a frame, dispatch all pending packets to their functions based on reason. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_networker_a49734eae00b1ec67fc343964f855c388}{Sync\+Send\+My\+Gamestate}} (float delta\+Time)
+\begin{DoxyCompactList}\small\item\em Called once a frame, sync any sync objects (player) and ping server. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_networker_a2cdb1a98d9493445e086fba5281d1ae2}{Add\+New\+Player\+To\+Game}} (sf\+::\+Packet packet)
+\begin{DoxyCompactList}\small\item\em Adds a new player to the game when notified from server. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_networker_a58b50f17fe34b628ddcc2480915a1e6a}{Update\+Player\+Position}} (sf\+::\+Packet packet)
+\begin{DoxyCompactList}\small\item\em Updates a player position and rotation when notified from server. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_networker_a2787a669bd30163ab8f3d3247bd22e2c}{Remove\+Player\+From\+Game}} (sf\+::\+Packet packet)
+\begin{DoxyCompactList}\small\item\em Removes a player from the game when notified from the server. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_networker_ac008355e5fb5034424e562b184a9ffbd}{Respawn\+Player}} (sf\+::\+Packet packet)
+\begin{DoxyCompactList}\small\item\em Respawns a player, when notified from the server. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_networker_ae079fdaa8ab015b18ac0cd7663a7f045}{Request\+Respawn}} ()
+\begin{DoxyCompactList}\small\item\em Used to request a respawn from the server. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_networker_a2a957c1fe29af457c2fa81d2192985aa}{Inform\+Server\+Of\+Shot}} (sf\+::\+Vector2f shot\+Landed\+Position, uint32\+\_\+t \mbox{\hyperlink{class_networker_ab5bf837db2c44e55d55812d898a6c11e}{player\+Hit}}, float interpolationT)
+\begin{DoxyCompactList}\small\item\em Inform the server of a shot. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_networker_a34df2b159135b12c9c6d0cf51dee1ad3}{Recieve\+Shot\+Information}} (sf\+::\+Packet packet)
+\begin{DoxyCompactList}\small\item\em Recieve information of a shot, kill any players, and add particles. Notified by server. \end{DoxyCompactList}\item 
+static uint32\+\_\+t \mbox{\hyperlink{class_networker_af3cb7ae11756fc116afcf3bbcb01adff}{Get\+My\+Multiplayer\+ID}} ()
+\begin{DoxyCompactList}\small\item\em Returns this players multiplayer ID. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{class_networker_ae216edb516b9eff20fc69b37e30ba9fa}{Get\+APlayers\+In\+Game\+Name}} (uint32\+\_\+t player\+ID)
+\begin{DoxyCompactList}\small\item\em Returns the players in game name, when given their ID. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_networker_a23c6b975acd73c23f8e628bd5ca57316}{Render\+Network\+Information}} ()
+\begin{DoxyCompactList}\small\item\em Debug render of network information. \end{DoxyCompactList}\item 
+static float \mbox{\hyperlink{class_networker_aed1fa383933b86820a48b993edfea259}{Get\+Synced\+Clock\+Time}} ()
+\begin{DoxyCompactList}\small\item\em Returns this client\textquotesingle{}s value for server time. \end{DoxyCompactList}\item 
+static std\+::map$<$ uint32\+\_\+t, \mbox{\hyperlink{class_player}{Player}} \texorpdfstring{$\ast$}{*} $>$ \& \mbox{\hyperlink{class_networker_a24c79833bd7ba0fa0868766ad4f7f5c2}{Cheat\+\_\+\+Get\+Player\+References}} ()
+\begin{DoxyCompactList}\small\item\em Helper function for the cheat class to access all players. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+friend \mbox{\hyperlink{class_networker_a7f19358405c013b3a2bf3e0368bda715}{Server}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_networker_a064aa4eadabc9157409763926f241838}{client\+Clock}}
+\item 
+std\+::chrono\+::high\+\_\+resolution\+\_\+clock\+::time\+\_\+point \mbox{\hyperlink{class_networker_aaedb605e03234664d980f6b0da3acf8c}{ping\+Start}}
+\item 
+std\+::chrono\+::high\+\_\+resolution\+\_\+clock\+::time\+\_\+point \mbox{\hyperlink{class_networker_a73e23f34f2274798eb75a8fc501c6531}{ping\+End}}
+\item 
+std\+::map$<$ uint32\+\_\+t, float $>$ \mbox{\hyperlink{class_networker_ab43296a104c3d7d3caff3c7d980196a7}{server\+Time\+Of\+Last\+Sync\+Per\+Player}}
+\item 
+float \mbox{\hyperlink{class_networker_a4cca4bca5c0deecb80d11f114793b623}{time\+Since\+Last\+Sync}}
+\item 
+float \mbox{\hyperlink{class_networker_adbc1f71ad4bf91dc1f84e39bdaa212b3}{time\+Since\+Last\+Ping}}
+\item 
+bool \mbox{\hyperlink{class_networker_aa691c5b1634afc7f10a91e9ef52d4cdd}{ping\+In\+The\+Air}}
+\item 
+float \mbox{\hyperlink{class_networker_ad880798131d73fb6e0879cab25b39c57}{current\+Ms\+Latency}}
+\item 
+\mbox{\hyperlink{class_networker_a82b20125c606028ca2787751c28507a7}{Network\+Status}} \mbox{\hyperlink{class_networker_a9a6756b7043d61a90cc25a4d03dc56e6}{current\+Status}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{class_networker_a2ea22eaaf29cf748d3c8c8c79a0fd3a5}{my\+Player\+Id}}
+\item 
+std\+::unique\+\_\+ptr$<$ sf\+::\+Tcp\+Socket $>$ \mbox{\hyperlink{class_networker_a83d2a208d0078aab2c9aaa4cf2ce6a1b}{tcp\+Socket}}
+\item 
+std\+::optional$<$ sf\+::\+Ip\+Address $>$ \mbox{\hyperlink{class_networker_a5c6ed6ae1766a597d6226765bae1aae1}{server\+Ip}}
+\item 
+std\+::unique\+\_\+ptr$<$ sf\+::\+Udp\+Socket $>$ \mbox{\hyperlink{class_networker_a8239e7c1a74da7ac837d9d2d1cee3302}{udp\+Socket}}
+\item 
+std\+::map$<$ uint32\+\_\+t, \mbox{\hyperlink{class_player}{Player}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_networker_afbebba8d538dd1a761f10d6be49f5172}{player\+References}}
+\item 
+sf\+::\+Sound\+Buffer \mbox{\hyperlink{class_networker_a0d6f50cc89d1588a4c240b3dad7a85c8}{player\+Hit\+Buffer}}
+\item 
+std\+::unique\+\_\+ptr$<$ sf\+::\+Sound $>$ \mbox{\hyperlink{class_networker_ab5bf837db2c44e55d55812d898a6c11e}{player\+Hit}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_networker}{Networker}} \mbox{\hyperlink{class_networker_a374626f3ec796fd5a8186d5bbe60f10c}{instance}}
+\item 
+static const uint8\+\_\+t \mbox{\hyperlink{class_networker_ac9e5ca5ad92862ed44024cfda8e1f200}{TCP\+\_\+\+NON\+\_\+\+BLOCKING\+\_\+\+SEND\+\_\+\+MAX\+\_\+\+ATTEMPTS}} = 100
+\item 
+static const uint8\+\_\+t \mbox{\hyperlink{class_networker_ab1ba1ea398dc7996c8e5d929ec69701b}{MAX\+\_\+\+GUARANTEED\+\_\+\+TCP\+\_\+\+RECIEVE\+\_\+\+WAIT\+\_\+\+ATTEMPTS}} = 6
+\item 
+static const float \mbox{\hyperlink{class_networker_a6c23b10b343d636f9f8de1d91ddd9ada}{MAX\+\_\+\+GUARANTEED\+\_\+\+TCP\+\_\+\+RECIEVE\+\_\+\+WAIT\+\_\+\+INTERVAL}} = 0.\+5f
+\item 
+static const float \mbox{\hyperlink{class_networker_ad14a055987f20e0438bb6fdf70861352}{SYNC\+\_\+\+SEND\+\_\+\+INTERVAL}} = 0.\+2f
+\item 
+static const float \mbox{\hyperlink{class_networker_a105281ca601beda7296de99dab133b0f}{PING\+\_\+\+INTERVAL}} = 1.\+0f
+\item 
+static std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{class_networker_aef8da723a9b165f9522d6e22105a53cc}{Packet\+Reason}}, std\+::function$<$ void(sf\+::\+Packet)$>$ $>$ \mbox{\hyperlink{class_networker_ada799f1f3899ae9a98c6fd07a6ac56a6}{reason\+Events}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{class_networker}{Networker}, this is the helper and client network singleton. 
+
+\doxylink{class_server}{Server} uses some functions from this class too.
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{class_networker_a82b20125c606028ca2787751c28507a7}\index{Networker@{Networker}!NetworkStatus@{NetworkStatus}}
+\index{NetworkStatus@{NetworkStatus}!Networker@{Networker}}
+\doxysubsubsection{\texorpdfstring{NetworkStatus}{NetworkStatus}}
+{\footnotesize\ttfamily \label{class_networker_a82b20125c606028ca2787751c28507a7} 
+enum class \mbox{\hyperlink{class_networker_a82b20125c606028ca2787751c28507a7}{Networker\+::\+Network\+Status}} \+: uint8\+\_\+t\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Network status of this networker. 
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DISONNECTED@{DISONNECTED}!Networker@{Networker}}\index{Networker@{Networker}!DISONNECTED@{DISONNECTED}}}\Hypertarget{class_networker_a82b20125c606028ca2787751c28507a7a69481bb4d21aa34f06e06759a7cae7d5}\label{class_networker_a82b20125c606028ca2787751c28507a7} 
+DISONNECTED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CONNECTED@{CONNECTED}!Networker@{Networker}}\index{Networker@{Networker}!CONNECTED@{CONNECTED}}}\Hypertarget{class_networker_a82b20125c606028ca2787751c28507a7aa5afd6edd5336d91316964e493936858}\label{class_networker_a82b20125c606028ca2787751c28507a7} 
+CONNECTED&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{class_networker_aef8da723a9b165f9522d6e22105a53cc}\index{Networker@{Networker}!PacketReason@{PacketReason}}
+\index{PacketReason@{PacketReason}!Networker@{Networker}}
+\doxysubsubsection{\texorpdfstring{PacketReason}{PacketReason}}
+{\footnotesize\ttfamily \label{class_networker_aef8da723a9b165f9522d6e22105a53cc} 
+enum class \mbox{\hyperlink{class_networker_aef8da723a9b165f9522d6e22105a53cc}{Networker\+::\+Packet\+Reason}} \+: uint16\+\_\+t\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Packet reasons, these are all possible meanings for a packet, each has its own data required, which can be different if its client -\/\texorpdfstring{$>$}{>} server or server -\/\texorpdfstring{$>$}{>} client. 
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WELCOME\_MESSAGE@{WELCOME\_MESSAGE}!Networker@{Networker}}\index{Networker@{Networker}!WELCOME\_MESSAGE@{WELCOME\_MESSAGE}}}\Hypertarget{class_networker_aef8da723a9b165f9522d6e22105a53cca4901858edd810b0f560825b5d5faba0d}\label{class_networker_aef8da723a9b165f9522d6e22105a53cc} 
+WELCOME\+\_\+\+MESSAGE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INTRODUCTION@{INTRODUCTION}!Networker@{Networker}}\index{Networker@{Networker}!INTRODUCTION@{INTRODUCTION}}}\Hypertarget{class_networker_aef8da723a9b165f9522d6e22105a53cca5933ba40c36942af6d85eae2b87d1ac5}\label{class_networker_aef8da723a9b165f9522d6e22105a53cc} 
+INTRODUCTION&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PING@{PING}!Networker@{Networker}}\index{Networker@{Networker}!PING@{PING}}}\Hypertarget{class_networker_aef8da723a9b165f9522d6e22105a53ccae07ff41a486c27c095a15898dcca34d1}\label{class_networker_aef8da723a9b165f9522d6e22105a53cc} 
+PING&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PONG@{PONG}!Networker@{Networker}}\index{Networker@{Networker}!PONG@{PONG}}}\Hypertarget{class_networker_aef8da723a9b165f9522d6e22105a53cca15c94917c8795679ecb650ed760c27f0}\label{class_networker_aef8da723a9b165f9522d6e22105a53cc} 
+PONG&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NEW\_PLAYER\_JOINED@{NEW\_PLAYER\_JOINED}!Networker@{Networker}}\index{Networker@{Networker}!NEW\_PLAYER\_JOINED@{NEW\_PLAYER\_JOINED}}}\Hypertarget{class_networker_aef8da723a9b165f9522d6e22105a53ccaebec77afb84a9623d70636c120fc493b}\label{class_networker_aef8da723a9b165f9522d6e22105a53cc} 
+NEW\+\_\+\+PLAYER\+\_\+\+JOINED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PLAYER\_DISCONNECTED@{PLAYER\_DISCONNECTED}!Networker@{Networker}}\index{Networker@{Networker}!PLAYER\_DISCONNECTED@{PLAYER\_DISCONNECTED}}}\Hypertarget{class_networker_aef8da723a9b165f9522d6e22105a53cca20887523dca92a9741ea1dcaa7e96ed9}\label{class_networker_aef8da723a9b165f9522d6e22105a53cc} 
+PLAYER\+\_\+\+DISCONNECTED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PLAYER\_TRANSFORM\_UPDATE@{PLAYER\_TRANSFORM\_UPDATE}!Networker@{Networker}}\index{Networker@{Networker}!PLAYER\_TRANSFORM\_UPDATE@{PLAYER\_TRANSFORM\_UPDATE}}}\Hypertarget{class_networker_aef8da723a9b165f9522d6e22105a53ccabfcf2c5fc47ab40be0f8a53bc3b086b1}\label{class_networker_aef8da723a9b165f9522d6e22105a53cc} 
+PLAYER\+\_\+\+TRANSFORM\+\_\+\+UPDATE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SHOOT\_NOTIFICATION@{SHOOT\_NOTIFICATION}!Networker@{Networker}}\index{Networker@{Networker}!SHOOT\_NOTIFICATION@{SHOOT\_NOTIFICATION}}}\Hypertarget{class_networker_aef8da723a9b165f9522d6e22105a53ccac3d9346eb523373b81782b9fd1eb4a0b}\label{class_networker_aef8da723a9b165f9522d6e22105a53cc} 
+SHOOT\+\_\+\+NOTIFICATION&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RESPAWN@{RESPAWN}!Networker@{Networker}}\index{Networker@{Networker}!RESPAWN@{RESPAWN}}}\Hypertarget{class_networker_aef8da723a9b165f9522d6e22105a53ccad122da1650c96167bd172487e86c4854}\label{class_networker_aef8da723a9b165f9522d6e22105a53cc} 
+RESPAWN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KICK@{KICK}!Networker@{Networker}}\index{Networker@{Networker}!KICK@{KICK}}}\Hypertarget{class_networker_aef8da723a9b165f9522d6e22105a53cca959a795d5524bd9054026703a33afb87}\label{class_networker_aef8da723a9b165f9522d6e22105a53cc} 
+KICK&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_networker_a2cdb1a98d9493445e086fba5281d1ae2}\index{Networker@{Networker}!AddNewPlayerToGame@{AddNewPlayerToGame}}
+\index{AddNewPlayerToGame@{AddNewPlayerToGame}!Networker@{Networker}}
+\doxysubsubsection{\texorpdfstring{AddNewPlayerToGame()}{AddNewPlayerToGame()}}
+{\footnotesize\ttfamily \label{class_networker_a2cdb1a98d9493445e086fba5281d1ae2} 
+void Networker\+::\+Add\+New\+Player\+To\+Game (\begin{DoxyParamCaption}\item[{sf\+::\+Packet}]{packet}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Adds a new player to the game when notified from server. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em packet} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_networker_a24c79833bd7ba0fa0868766ad4f7f5c2}\index{Networker@{Networker}!Cheat\_GetPlayerReferences@{Cheat\_GetPlayerReferences}}
+\index{Cheat\_GetPlayerReferences@{Cheat\_GetPlayerReferences}!Networker@{Networker}}
+\doxysubsubsection{\texorpdfstring{Cheat\_GetPlayerReferences()}{Cheat\_GetPlayerReferences()}}
+{\footnotesize\ttfamily \label{class_networker_a24c79833bd7ba0fa0868766ad4f7f5c2} 
+std\+::map$<$ uint32\+\_\+t, \mbox{\hyperlink{class_player}{Player}} \texorpdfstring{$\ast$}{*} $>$ \& Networker\+::\+Cheat\+\_\+\+Get\+Player\+References (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Helper function for the cheat class to access all players. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{class_player}{Player} map
+\end{DoxyReturn}
+\Hypertarget{class_networker_a5f6670cdda178a60b3e9f44031314098}\index{Networker@{Networker}!ConnectToServer@{ConnectToServer}}
+\index{ConnectToServer@{ConnectToServer}!Networker@{Networker}}
+\doxysubsubsection{\texorpdfstring{ConnectToServer()}{ConnectToServer()}}
+{\footnotesize\ttfamily \label{class_networker_a5f6670cdda178a60b3e9f44031314098} 
+void Networker\+::\+Connect\+To\+Server (\begin{DoxyParamCaption}\item[{sf\+::\+Ip\+Address}]{address}{, }\item[{uint16\+\_\+t}]{port}{, }\item[{\mbox{\hyperlink{class_player}{Player}} \texorpdfstring{$\ast$}{*}}]{player\+Object}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Connect to a server, and perform the connection handshake over TCP. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em address} & Address of server\\
+\hline
+{\em port} & Port of server\\
+\hline
+{\em player\+Object} & Main player object\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_networker_ac9fa8c356a92fb12cebb1135ef5a1ac0}\index{Networker@{Networker}!Disconnect@{Disconnect}}
+\index{Disconnect@{Disconnect}!Networker@{Networker}}
+\doxysubsubsection{\texorpdfstring{Disconnect()}{Disconnect()}}
+{\footnotesize\ttfamily \label{class_networker_ac9fa8c356a92fb12cebb1135ef5a1ac0} 
+void Networker\+::\+Disconnect (\begin{DoxyParamCaption}\item[{std\+::string}]{error}{ = {\ttfamily "{}"{}}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Disconenct from the server, with optional error. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em error} & Error to display on main menu\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_networker_ac672b1c659ba59e97f36b9e28ec2198a}\index{Networker@{Networker}!DispatchIncomingPackets@{DispatchIncomingPackets}}
+\index{DispatchIncomingPackets@{DispatchIncomingPackets}!Networker@{Networker}}
+\doxysubsubsection{\texorpdfstring{DispatchIncomingPackets()}{DispatchIncomingPackets()}}
+{\footnotesize\ttfamily \label{class_networker_ac672b1c659ba59e97f36b9e28ec2198a} 
+void Networker\+::\+Dispatch\+Incoming\+Packets (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Called once a frame, dispatch all pending packets to their functions based on reason. 
+
+\Hypertarget{class_networker_ae216edb516b9eff20fc69b37e30ba9fa}\index{Networker@{Networker}!GetAPlayersInGameName@{GetAPlayersInGameName}}
+\index{GetAPlayersInGameName@{GetAPlayersInGameName}!Networker@{Networker}}
+\doxysubsubsection{\texorpdfstring{GetAPlayersInGameName()}{GetAPlayersInGameName()}}
+{\footnotesize\ttfamily \label{class_networker_ae216edb516b9eff20fc69b37e30ba9fa} 
+std\+::string Networker\+::\+Get\+APlayers\+In\+Game\+Name (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{player\+ID}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Returns the players in game name, when given their ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player\+ID} & \doxylink{class_player}{Player}\textquotesingle{}s ID\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{class_player}{Player}\textquotesingle{}s In game name
+\end{DoxyReturn}
+\Hypertarget{class_networker_af3cb7ae11756fc116afcf3bbcb01adff}\index{Networker@{Networker}!GetMyMultiplayerID@{GetMyMultiplayerID}}
+\index{GetMyMultiplayerID@{GetMyMultiplayerID}!Networker@{Networker}}
+\doxysubsubsection{\texorpdfstring{GetMyMultiplayerID()}{GetMyMultiplayerID()}}
+{\footnotesize\ttfamily \label{class_networker_af3cb7ae11756fc116afcf3bbcb01adff} 
+static uint32\+\_\+t Networker\+::\+Get\+My\+Multiplayer\+ID (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Returns this players multiplayer ID. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{class_networker_aed1fa383933b86820a48b993edfea259}\index{Networker@{Networker}!GetSyncedClockTime@{GetSyncedClockTime}}
+\index{GetSyncedClockTime@{GetSyncedClockTime}!Networker@{Networker}}
+\doxysubsubsection{\texorpdfstring{GetSyncedClockTime()}{GetSyncedClockTime()}}
+{\footnotesize\ttfamily \label{class_networker_aed1fa383933b86820a48b993edfea259} 
+static float Networker\+::\+Get\+Synced\+Clock\+Time (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Returns this client\textquotesingle{}s value for server time. 
+
+\begin{DoxyReturn}{Returns}
+Client clock, the clients value of server time
+\end{DoxyReturn}
+\Hypertarget{class_networker_a2a957c1fe29af457c2fa81d2192985aa}\index{Networker@{Networker}!InformServerOfShot@{InformServerOfShot}}
+\index{InformServerOfShot@{InformServerOfShot}!Networker@{Networker}}
+\doxysubsubsection{\texorpdfstring{InformServerOfShot()}{InformServerOfShot()}}
+{\footnotesize\ttfamily \label{class_networker_a2a957c1fe29af457c2fa81d2192985aa} 
+void Networker\+::\+Inform\+Server\+Of\+Shot (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2f}]{shot\+Landed\+Position}{, }\item[{uint32\+\_\+t}]{player\+Hit}{, }\item[{float}]{interpolationT}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Inform the server of a shot. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em shot\+Landed\+Position} & Where the shot landed\\
+\hline
+{\em player\+Hit} & The player the shot hit, if no player = 0\\
+\hline
+{\em interpolationT} & Interpolation\textquotesingle{}s t value for that player, if no player = 0\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_networker_af643581d09c22b37d65f3be2f245cae2}\index{Networker@{Networker}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!Networker@{Networker}}
+\doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily \label{class_networker_af643581d09c22b37d65f3be2f245cae2} 
+void Networker\+::\+Initialize (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Setup the instance, like a reset function. 
+
+\Hypertarget{class_networker_a00922d0a777e4861a4f68e6ed8a95972}\index{Networker@{Networker}!Kicked@{Kicked}}
+\index{Kicked@{Kicked}!Networker@{Networker}}
+\doxysubsubsection{\texorpdfstring{Kicked()}{Kicked()}}
+{\footnotesize\ttfamily \label{class_networker_a00922d0a777e4861a4f68e6ed8a95972} 
+void Networker\+::\+Kicked (\begin{DoxyParamCaption}\item[{sf\+::\+Packet}]{packet}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Deal with a kick packet. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em packet} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_networker_ad1a926825e66c82fcd3d087c2b1111d1}\index{Networker@{Networker}!Ping@{Ping}}
+\index{Ping@{Ping}!Networker@{Networker}}
+\doxysubsubsection{\texorpdfstring{Ping()}{Ping()}}
+{\footnotesize\ttfamily \label{class_networker_ad1a926825e66c82fcd3d087c2b1111d1} 
+void Networker\+::\+Ping (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Send a ping to the server, will not send if one already in transit. 
+
+\Hypertarget{class_networker_a9e399dcc88e585c1dd7b2657d877201b}\index{Networker@{Networker}!Ponged@{Ponged}}
+\index{Ponged@{Ponged}!Networker@{Networker}}
+\doxysubsubsection{\texorpdfstring{Ponged()}{Ponged()}}
+{\footnotesize\ttfamily \label{class_networker_a9e399dcc88e585c1dd7b2657d877201b} 
+void Networker\+::\+Ponged (\begin{DoxyParamCaption}\item[{sf\+::\+Packet}]{packet}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Recieve a pong from the server, used to measure latency and sync with server clock. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em packet} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_networker_a34df2b159135b12c9c6d0cf51dee1ad3}\index{Networker@{Networker}!RecieveShotInformation@{RecieveShotInformation}}
+\index{RecieveShotInformation@{RecieveShotInformation}!Networker@{Networker}}
+\doxysubsubsection{\texorpdfstring{RecieveShotInformation()}{RecieveShotInformation()}}
+{\footnotesize\ttfamily \label{class_networker_a34df2b159135b12c9c6d0cf51dee1ad3} 
+void Networker\+::\+Recieve\+Shot\+Information (\begin{DoxyParamCaption}\item[{sf\+::\+Packet}]{packet}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Recieve information of a shot, kill any players, and add particles. Notified by server. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em packet} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_networker_a2787a669bd30163ab8f3d3247bd22e2c}\index{Networker@{Networker}!RemovePlayerFromGame@{RemovePlayerFromGame}}
+\index{RemovePlayerFromGame@{RemovePlayerFromGame}!Networker@{Networker}}
+\doxysubsubsection{\texorpdfstring{RemovePlayerFromGame()}{RemovePlayerFromGame()}}
+{\footnotesize\ttfamily \label{class_networker_a2787a669bd30163ab8f3d3247bd22e2c} 
+void Networker\+::\+Remove\+Player\+From\+Game (\begin{DoxyParamCaption}\item[{sf\+::\+Packet}]{packet}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Removes a player from the game when notified from the server. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em packet} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_networker_a23c6b975acd73c23f8e628bd5ca57316}\index{Networker@{Networker}!RenderNetworkInformation@{RenderNetworkInformation}}
+\index{RenderNetworkInformation@{RenderNetworkInformation}!Networker@{Networker}}
+\doxysubsubsection{\texorpdfstring{RenderNetworkInformation()}{RenderNetworkInformation()}}
+{\footnotesize\ttfamily \label{class_networker_a23c6b975acd73c23f8e628bd5ca57316} 
+void Networker\+::\+Render\+Network\+Information (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Debug render of network information. 
+
+\Hypertarget{class_networker_ae079fdaa8ab015b18ac0cd7663a7f045}\index{Networker@{Networker}!RequestRespawn@{RequestRespawn}}
+\index{RequestRespawn@{RequestRespawn}!Networker@{Networker}}
+\doxysubsubsection{\texorpdfstring{RequestRespawn()}{RequestRespawn()}}
+{\footnotesize\ttfamily \label{class_networker_ae079fdaa8ab015b18ac0cd7663a7f045} 
+void Networker\+::\+Request\+Respawn (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Used to request a respawn from the server. 
+
+\Hypertarget{class_networker_ac008355e5fb5034424e562b184a9ffbd}\index{Networker@{Networker}!RespawnPlayer@{RespawnPlayer}}
+\index{RespawnPlayer@{RespawnPlayer}!Networker@{Networker}}
+\doxysubsubsection{\texorpdfstring{RespawnPlayer()}{RespawnPlayer()}}
+{\footnotesize\ttfamily \label{class_networker_ac008355e5fb5034424e562b184a9ffbd} 
+void Networker\+::\+Respawn\+Player (\begin{DoxyParamCaption}\item[{sf\+::\+Packet}]{packet}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Respawns a player, when notified from the server. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em packet} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_networker_a49734eae00b1ec67fc343964f855c388}\index{Networker@{Networker}!SyncSendMyGamestate@{SyncSendMyGamestate}}
+\index{SyncSendMyGamestate@{SyncSendMyGamestate}!Networker@{Networker}}
+\doxysubsubsection{\texorpdfstring{SyncSendMyGamestate()}{SyncSendMyGamestate()}}
+{\footnotesize\ttfamily \label{class_networker_a49734eae00b1ec67fc343964f855c388} 
+void Networker\+::\+Sync\+Send\+My\+Gamestate (\begin{DoxyParamCaption}\item[{float}]{delta\+Time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Called once a frame, sync any sync objects (player) and ping server. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & Delta time\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_networker_a489cfa74ae7beee616069f423ddefa99}\index{Networker@{Networker}!TcpNonBlockingGuaranteeRecieve@{TcpNonBlockingGuaranteeRecieve}}
+\index{TcpNonBlockingGuaranteeRecieve@{TcpNonBlockingGuaranteeRecieve}!Networker@{Networker}}
+\doxysubsubsection{\texorpdfstring{TcpNonBlockingGuaranteeRecieve()}{TcpNonBlockingGuaranteeRecieve()}}
+{\footnotesize\ttfamily \label{class_networker_a489cfa74ae7beee616069f423ddefa99} 
+sf\+::\+Socket\+::\+Status Networker\+::\+Tcp\+Non\+Blocking\+Guarantee\+Recieve (\begin{DoxyParamCaption}\item[{sf\+::\+Tcp\+Socket \&}]{socket}{, }\item[{sf\+::\+Packet \&}]{packet}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Treats the non blocking TCP socket like a blocking 1, waiting up to X attempts time to recieve before failing. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em socket} & Socket to recieve on\\
+\hline
+{\em packet} & Packet to reviece\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status, Error if max attempts overran, will not return Not\+Ready
+\end{DoxyReturn}
+\Hypertarget{class_networker_a0384d1699c0a718e0986ee3d01115af8}\index{Networker@{Networker}!TcpNonBlockingSend@{TcpNonBlockingSend}}
+\index{TcpNonBlockingSend@{TcpNonBlockingSend}!Networker@{Networker}}
+\doxysubsubsection{\texorpdfstring{TcpNonBlockingSend()}{TcpNonBlockingSend()}}
+{\footnotesize\ttfamily \label{class_networker_a0384d1699c0a718e0986ee3d01115af8} 
+sf\+::\+Socket\+::\+Status Networker\+::\+Tcp\+Non\+Blocking\+Send (\begin{DoxyParamCaption}\item[{sf\+::\+Tcp\+Socket \&}]{socket}{, }\item[{sf\+::\+Packet \&}]{packet}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Helper function for non blocking TCP sockets to do a blocking send. Will fail after TCP\+\_\+\+NON\+\_\+\+BLOCKING\+\_\+\+SEND\+\_\+\+MAX\+\_\+\+ATTEMPTS attempts. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em socket} & Socket to send on\\
+\hline
+{\em packet} & Packet to send\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status, Error if max attempts overran, will not return Partial
+\end{DoxyReturn}
+\Hypertarget{class_networker_a58b50f17fe34b628ddcc2480915a1e6a}\index{Networker@{Networker}!UpdatePlayerPosition@{UpdatePlayerPosition}}
+\index{UpdatePlayerPosition@{UpdatePlayerPosition}!Networker@{Networker}}
+\doxysubsubsection{\texorpdfstring{UpdatePlayerPosition()}{UpdatePlayerPosition()}}
+{\footnotesize\ttfamily \label{class_networker_a58b50f17fe34b628ddcc2480915a1e6a} 
+void Networker\+::\+Update\+Player\+Position (\begin{DoxyParamCaption}\item[{sf\+::\+Packet}]{packet}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Updates a player position and rotation when notified from server. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em packet} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_networker_a064aa4eadabc9157409763926f241838}\index{Networker@{Networker}!clientClock@{clientClock}}
+\index{clientClock@{clientClock}!Networker@{Networker}}
+\doxysubsubsection{\texorpdfstring{clientClock}{clientClock}}
+{\footnotesize\ttfamily \label{class_networker_a064aa4eadabc9157409763926f241838} 
+float Networker\+::client\+Clock\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_networker_ad880798131d73fb6e0879cab25b39c57}\index{Networker@{Networker}!currentMsLatency@{currentMsLatency}}
+\index{currentMsLatency@{currentMsLatency}!Networker@{Networker}}
+\doxysubsubsection{\texorpdfstring{currentMsLatency}{currentMsLatency}}
+{\footnotesize\ttfamily \label{class_networker_ad880798131d73fb6e0879cab25b39c57} 
+float Networker\+::current\+Ms\+Latency\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_networker_a9a6756b7043d61a90cc25a4d03dc56e6}\index{Networker@{Networker}!currentStatus@{currentStatus}}
+\index{currentStatus@{currentStatus}!Networker@{Networker}}
+\doxysubsubsection{\texorpdfstring{currentStatus}{currentStatus}}
+{\footnotesize\ttfamily \label{class_networker_a9a6756b7043d61a90cc25a4d03dc56e6} 
+\mbox{\hyperlink{class_networker_a82b20125c606028ca2787751c28507a7}{Network\+Status}} Networker\+::current\+Status\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_networker_a374626f3ec796fd5a8186d5bbe60f10c}\index{Networker@{Networker}!instance@{instance}}
+\index{instance@{instance}!Networker@{Networker}}
+\doxysubsubsection{\texorpdfstring{instance}{instance}}
+{\footnotesize\ttfamily \label{class_networker_a374626f3ec796fd5a8186d5bbe60f10c} 
+\mbox{\hyperlink{class_networker}{Networker}} Networker\+::instance\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\Hypertarget{class_networker_ab1ba1ea398dc7996c8e5d929ec69701b}\index{Networker@{Networker}!MAX\_GUARANTEED\_TCP\_RECIEVE\_WAIT\_ATTEMPTS@{MAX\_GUARANTEED\_TCP\_RECIEVE\_WAIT\_ATTEMPTS}}
+\index{MAX\_GUARANTEED\_TCP\_RECIEVE\_WAIT\_ATTEMPTS@{MAX\_GUARANTEED\_TCP\_RECIEVE\_WAIT\_ATTEMPTS}!Networker@{Networker}}
+\doxysubsubsection{\texorpdfstring{MAX\_GUARANTEED\_TCP\_RECIEVE\_WAIT\_ATTEMPTS}{MAX\_GUARANTEED\_TCP\_RECIEVE\_WAIT\_ATTEMPTS}}
+{\footnotesize\ttfamily \label{class_networker_ab1ba1ea398dc7996c8e5d929ec69701b} 
+const uint8\+\_\+t Networker\+::\+MAX\+\_\+\+GUARANTEED\+\_\+\+TCP\+\_\+\+RECIEVE\+\_\+\+WAIT\+\_\+\+ATTEMPTS = 6\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\Hypertarget{class_networker_a6c23b10b343d636f9f8de1d91ddd9ada}\index{Networker@{Networker}!MAX\_GUARANTEED\_TCP\_RECIEVE\_WAIT\_INTERVAL@{MAX\_GUARANTEED\_TCP\_RECIEVE\_WAIT\_INTERVAL}}
+\index{MAX\_GUARANTEED\_TCP\_RECIEVE\_WAIT\_INTERVAL@{MAX\_GUARANTEED\_TCP\_RECIEVE\_WAIT\_INTERVAL}!Networker@{Networker}}
+\doxysubsubsection{\texorpdfstring{MAX\_GUARANTEED\_TCP\_RECIEVE\_WAIT\_INTERVAL}{MAX\_GUARANTEED\_TCP\_RECIEVE\_WAIT\_INTERVAL}}
+{\footnotesize\ttfamily \label{class_networker_a6c23b10b343d636f9f8de1d91ddd9ada} 
+const float Networker\+::\+MAX\+\_\+\+GUARANTEED\+\_\+\+TCP\+\_\+\+RECIEVE\+\_\+\+WAIT\+\_\+\+INTERVAL = 0.\+5f\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\Hypertarget{class_networker_a2ea22eaaf29cf748d3c8c8c79a0fd3a5}\index{Networker@{Networker}!myPlayerId@{myPlayerId}}
+\index{myPlayerId@{myPlayerId}!Networker@{Networker}}
+\doxysubsubsection{\texorpdfstring{myPlayerId}{myPlayerId}}
+{\footnotesize\ttfamily \label{class_networker_a2ea22eaaf29cf748d3c8c8c79a0fd3a5} 
+uint32\+\_\+t Networker\+::my\+Player\+Id\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_networker_a105281ca601beda7296de99dab133b0f}\index{Networker@{Networker}!PING\_INTERVAL@{PING\_INTERVAL}}
+\index{PING\_INTERVAL@{PING\_INTERVAL}!Networker@{Networker}}
+\doxysubsubsection{\texorpdfstring{PING\_INTERVAL}{PING\_INTERVAL}}
+{\footnotesize\ttfamily \label{class_networker_a105281ca601beda7296de99dab133b0f} 
+const float Networker\+::\+PING\+\_\+\+INTERVAL = 1.\+0f\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\Hypertarget{class_networker_a73e23f34f2274798eb75a8fc501c6531}\index{Networker@{Networker}!pingEnd@{pingEnd}}
+\index{pingEnd@{pingEnd}!Networker@{Networker}}
+\doxysubsubsection{\texorpdfstring{pingEnd}{pingEnd}}
+{\footnotesize\ttfamily \label{class_networker_a73e23f34f2274798eb75a8fc501c6531} 
+std\+::chrono\+::high\+\_\+resolution\+\_\+clock\+::time\+\_\+point Networker\+::ping\+End\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_networker_aa691c5b1634afc7f10a91e9ef52d4cdd}\index{Networker@{Networker}!pingInTheAir@{pingInTheAir}}
+\index{pingInTheAir@{pingInTheAir}!Networker@{Networker}}
+\doxysubsubsection{\texorpdfstring{pingInTheAir}{pingInTheAir}}
+{\footnotesize\ttfamily \label{class_networker_aa691c5b1634afc7f10a91e9ef52d4cdd} 
+bool Networker\+::ping\+In\+The\+Air\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_networker_aaedb605e03234664d980f6b0da3acf8c}\index{Networker@{Networker}!pingStart@{pingStart}}
+\index{pingStart@{pingStart}!Networker@{Networker}}
+\doxysubsubsection{\texorpdfstring{pingStart}{pingStart}}
+{\footnotesize\ttfamily \label{class_networker_aaedb605e03234664d980f6b0da3acf8c} 
+std\+::chrono\+::high\+\_\+resolution\+\_\+clock\+::time\+\_\+point Networker\+::ping\+Start\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_networker_ab5bf837db2c44e55d55812d898a6c11e}\index{Networker@{Networker}!playerHit@{playerHit}}
+\index{playerHit@{playerHit}!Networker@{Networker}}
+\doxysubsubsection{\texorpdfstring{playerHit}{playerHit}}
+{\footnotesize\ttfamily \label{class_networker_ab5bf837db2c44e55d55812d898a6c11e} 
+std\+::unique\+\_\+ptr$<$sf\+::\+Sound$>$ Networker\+::player\+Hit\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_networker_a0d6f50cc89d1588a4c240b3dad7a85c8}\index{Networker@{Networker}!playerHitBuffer@{playerHitBuffer}}
+\index{playerHitBuffer@{playerHitBuffer}!Networker@{Networker}}
+\doxysubsubsection{\texorpdfstring{playerHitBuffer}{playerHitBuffer}}
+{\footnotesize\ttfamily \label{class_networker_a0d6f50cc89d1588a4c240b3dad7a85c8} 
+sf\+::\+Sound\+Buffer Networker\+::player\+Hit\+Buffer\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_networker_afbebba8d538dd1a761f10d6be49f5172}\index{Networker@{Networker}!playerReferences@{playerReferences}}
+\index{playerReferences@{playerReferences}!Networker@{Networker}}
+\doxysubsubsection{\texorpdfstring{playerReferences}{playerReferences}}
+{\footnotesize\ttfamily \label{class_networker_afbebba8d538dd1a761f10d6be49f5172} 
+std\+::map$<$uint32\+\_\+t, \mbox{\hyperlink{class_player}{Player}}\texorpdfstring{$\ast$}{*}$>$ Networker\+::player\+References\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_networker_ada799f1f3899ae9a98c6fd07a6ac56a6}\index{Networker@{Networker}!reasonEvents@{reasonEvents}}
+\index{reasonEvents@{reasonEvents}!Networker@{Networker}}
+\doxysubsubsection{\texorpdfstring{reasonEvents}{reasonEvents}}
+{\footnotesize\ttfamily \label{class_networker_ada799f1f3899ae9a98c6fd07a6ac56a6} 
+std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{class_networker_aef8da723a9b165f9522d6e22105a53cc}{Networker\+::\+Packet\+Reason}}, std\+::function$<$ void(sf\+::\+Packet)$>$ $>$ Networker\+::reason\+Events\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \{\mbox{\hyperlink{class_networker_aef8da723a9b165f9522d6e22105a53cca15c94917c8795679ecb650ed760c27f0}{PacketReason::PONG}},\ \mbox{\hyperlink{class_networker_a9e399dcc88e585c1dd7b2657d877201b}{Networker::Ponged}}\ \},}
+\DoxyCodeLine{\ \ \ \ \{\mbox{\hyperlink{class_networker_aef8da723a9b165f9522d6e22105a53ccaebec77afb84a9623d70636c120fc493b}{PacketReason::NEW\_PLAYER\_JOINED}},\ \mbox{\hyperlink{class_networker_a2cdb1a98d9493445e086fba5281d1ae2}{Networker::AddNewPlayerToGame}}\ \},}
+\DoxyCodeLine{\ \ \ \ \{\mbox{\hyperlink{class_networker_aef8da723a9b165f9522d6e22105a53cca20887523dca92a9741ea1dcaa7e96ed9}{PacketReason::PLAYER\_DISCONNECTED}},\ \mbox{\hyperlink{class_networker_a2787a669bd30163ab8f3d3247bd22e2c}{Networker::RemovePlayerFromGame}}\ \},}
+\DoxyCodeLine{\ \ \ \ \{\mbox{\hyperlink{class_networker_aef8da723a9b165f9522d6e22105a53ccabfcf2c5fc47ab40be0f8a53bc3b086b1}{PacketReason::PLAYER\_TRANSFORM\_UPDATE}},\ \mbox{\hyperlink{class_networker_a58b50f17fe34b628ddcc2480915a1e6a}{Networker::UpdatePlayerPosition}}\ \},}
+\DoxyCodeLine{\ \ \ \ \{\mbox{\hyperlink{class_networker_aef8da723a9b165f9522d6e22105a53ccac3d9346eb523373b81782b9fd1eb4a0b}{PacketReason::SHOOT\_NOTIFICATION}},\ \mbox{\hyperlink{class_networker_a34df2b159135b12c9c6d0cf51dee1ad3}{Networker::RecieveShotInformation}}\ \},}
+\DoxyCodeLine{\ \ \ \ \{\mbox{\hyperlink{class_networker_aef8da723a9b165f9522d6e22105a53ccad122da1650c96167bd172487e86c4854}{PacketReason::RESPAWN}},\ \mbox{\hyperlink{class_networker_ac008355e5fb5034424e562b184a9ffbd}{Networker::RespawnPlayer}}\ \},}
+\DoxyCodeLine{\ \ \ \ \{\mbox{\hyperlink{class_networker_aef8da723a9b165f9522d6e22105a53cca959a795d5524bd9054026703a33afb87}{PacketReason::KICK}},\ \mbox{\hyperlink{class_networker_a00922d0a777e4861a4f68e6ed8a95972}{Networker::Kicked}}\ \},}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\Hypertarget{class_networker_a7f19358405c013b3a2bf3e0368bda715}\index{Networker@{Networker}!Server@{Server}}
+\index{Server@{Server}!Networker@{Networker}}
+\doxysubsubsection{\texorpdfstring{Server}{Server}}
+{\footnotesize\ttfamily \label{class_networker_a7f19358405c013b3a2bf3e0368bda715} 
+friend Networker\+::\+Server}
+
+\Hypertarget{class_networker_a5c6ed6ae1766a597d6226765bae1aae1}\index{Networker@{Networker}!serverIp@{serverIp}}
+\index{serverIp@{serverIp}!Networker@{Networker}}
+\doxysubsubsection{\texorpdfstring{serverIp}{serverIp}}
+{\footnotesize\ttfamily \label{class_networker_a5c6ed6ae1766a597d6226765bae1aae1} 
+std\+::optional$<$sf\+::\+Ip\+Address$>$ Networker\+::server\+Ip\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_networker_ab43296a104c3d7d3caff3c7d980196a7}\index{Networker@{Networker}!serverTimeOfLastSyncPerPlayer@{serverTimeOfLastSyncPerPlayer}}
+\index{serverTimeOfLastSyncPerPlayer@{serverTimeOfLastSyncPerPlayer}!Networker@{Networker}}
+\doxysubsubsection{\texorpdfstring{serverTimeOfLastSyncPerPlayer}{serverTimeOfLastSyncPerPlayer}}
+{\footnotesize\ttfamily \label{class_networker_ab43296a104c3d7d3caff3c7d980196a7} 
+std\+::map$<$uint32\+\_\+t, float$>$ Networker\+::server\+Time\+Of\+Last\+Sync\+Per\+Player\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_networker_ad14a055987f20e0438bb6fdf70861352}\index{Networker@{Networker}!SYNC\_SEND\_INTERVAL@{SYNC\_SEND\_INTERVAL}}
+\index{SYNC\_SEND\_INTERVAL@{SYNC\_SEND\_INTERVAL}!Networker@{Networker}}
+\doxysubsubsection{\texorpdfstring{SYNC\_SEND\_INTERVAL}{SYNC\_SEND\_INTERVAL}}
+{\footnotesize\ttfamily \label{class_networker_ad14a055987f20e0438bb6fdf70861352} 
+const float Networker\+::\+SYNC\+\_\+\+SEND\+\_\+\+INTERVAL = 0.\+2f\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\Hypertarget{class_networker_ac9e5ca5ad92862ed44024cfda8e1f200}\index{Networker@{Networker}!TCP\_NON\_BLOCKING\_SEND\_MAX\_ATTEMPTS@{TCP\_NON\_BLOCKING\_SEND\_MAX\_ATTEMPTS}}
+\index{TCP\_NON\_BLOCKING\_SEND\_MAX\_ATTEMPTS@{TCP\_NON\_BLOCKING\_SEND\_MAX\_ATTEMPTS}!Networker@{Networker}}
+\doxysubsubsection{\texorpdfstring{TCP\_NON\_BLOCKING\_SEND\_MAX\_ATTEMPTS}{TCP\_NON\_BLOCKING\_SEND\_MAX\_ATTEMPTS}}
+{\footnotesize\ttfamily \label{class_networker_ac9e5ca5ad92862ed44024cfda8e1f200} 
+const uint8\+\_\+t Networker\+::\+TCP\+\_\+\+NON\+\_\+\+BLOCKING\+\_\+\+SEND\+\_\+\+MAX\+\_\+\+ATTEMPTS = 100\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\Hypertarget{class_networker_a83d2a208d0078aab2c9aaa4cf2ce6a1b}\index{Networker@{Networker}!tcpSocket@{tcpSocket}}
+\index{tcpSocket@{tcpSocket}!Networker@{Networker}}
+\doxysubsubsection{\texorpdfstring{tcpSocket}{tcpSocket}}
+{\footnotesize\ttfamily \label{class_networker_a83d2a208d0078aab2c9aaa4cf2ce6a1b} 
+std\+::unique\+\_\+ptr$<$sf\+::\+Tcp\+Socket$>$ Networker\+::tcp\+Socket\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_networker_adbc1f71ad4bf91dc1f84e39bdaa212b3}\index{Networker@{Networker}!timeSinceLastPing@{timeSinceLastPing}}
+\index{timeSinceLastPing@{timeSinceLastPing}!Networker@{Networker}}
+\doxysubsubsection{\texorpdfstring{timeSinceLastPing}{timeSinceLastPing}}
+{\footnotesize\ttfamily \label{class_networker_adbc1f71ad4bf91dc1f84e39bdaa212b3} 
+float Networker\+::time\+Since\+Last\+Ping\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_networker_a4cca4bca5c0deecb80d11f114793b623}\index{Networker@{Networker}!timeSinceLastSync@{timeSinceLastSync}}
+\index{timeSinceLastSync@{timeSinceLastSync}!Networker@{Networker}}
+\doxysubsubsection{\texorpdfstring{timeSinceLastSync}{timeSinceLastSync}}
+{\footnotesize\ttfamily \label{class_networker_a4cca4bca5c0deecb80d11f114793b623} 
+float Networker\+::time\+Since\+Last\+Sync\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_networker_a8239e7c1a74da7ac837d9d2d1cee3302}\index{Networker@{Networker}!udpSocket@{udpSocket}}
+\index{udpSocket@{udpSocket}!Networker@{Networker}}
+\doxysubsubsection{\texorpdfstring{udpSocket}{udpSocket}}
+{\footnotesize\ttfamily \label{class_networker_a8239e7c1a74da7ac837d9d2d1cee3302} 
+std\+::unique\+\_\+ptr$<$sf\+::\+Udp\+Socket$>$ Networker\+::udp\+Socket\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+assessment-\/project-\/\+Corcso/\+CMP425\+Coursework/\mbox{\hyperlink{_networker_8h}{Networker.\+h}}\item 
+assessment-\/project-\/\+Corcso/\+CMP425\+Coursework/\mbox{\hyperlink{_networker_8cpp}{Networker.\+cpp}}\item 
+assessment-\/project-\/\+Corcso/\+CMP425\+Coursework/\mbox{\hyperlink{_network_packet_reason_events_8cpp}{Network\+Packet\+Reason\+Events.\+cpp}}\end{DoxyCompactItemize}

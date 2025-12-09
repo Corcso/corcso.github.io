@@ -1,0 +1,28 @@
+\doxysection{Main\+Menu\+Manager.\+h}
+\hypertarget{_main_menu_manager_8h_source}{}\label{_main_menu_manager_8h_source}\index{assessment-\/project-\/Corcso/CMP425Coursework/MainMenuManager.h@{assessment-\/project-\/Corcso/CMP425Coursework/MainMenuManager.h}}
+\mbox{\hyperlink{_main_menu_manager_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_game_object_8h}{GameObject.h}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_main_menu_manager}{MainMenuManager}}\ :}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_game_object}{GameObject}}}
+\DoxyCodeLine{00008\ \{}
+\DoxyCodeLine{00009\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_menu_manager_aadbb4351d08ccccb2b53b958ab0c1a1e}{Ready}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_menu_manager_ac7fb3c613e5bd7785d412e8989d586a0}{Update}}(\textcolor{keywordtype}{float}\ deltaTime)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_menu_manager_aae20da1137580995f4ef630c46df0076}{Render}}(sf::RenderTarget*\ target)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_menu_manager_a7aad0e666dc602032f636306bd44f43f}{SendPopupMessage}}(std::string\ message);}
+\DoxyCodeLine{00015\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00016\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{class_main_menu_manager_aabfa85205c6d8d39daf990a817ac790c}{serverAddressPortions}}[4];}
+\DoxyCodeLine{00017\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{class_main_menu_manager_a2acd0ee3bac0c4ec44d33ef04795f4a1}{port}};}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{class_main_menu_manager_a529c3960611707e43c7f2d0da8ad02a5}{playersDesiredName}}[16]\ =\ \textcolor{stringliteral}{"{}Player\ Name"{}};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ std::string\ \mbox{\hyperlink{class_main_menu_manager_aadd19e9ffcf5e0e25fd3de7d0efafde8}{currentPopupMessage}};}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_main_menu_manager_a4a4b36af73ef1aeab06fb3fdc2667a4d}{messageIsOpen}};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ sf::Texture\ \mbox{\hyperlink{class_main_menu_manager_aaf28bd15d8c9848640dfa4b67aa2c896}{logo}};}
+\DoxyCodeLine{00024\ \};}
+\DoxyCodeLine{00025\ }
+
+\end{DoxyCode}

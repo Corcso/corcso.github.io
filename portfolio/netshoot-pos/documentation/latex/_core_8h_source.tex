@@ -1,0 +1,92 @@
+\doxysection{Core.\+h}
+\hypertarget{_core_8h_source}{}\label{_core_8h_source}\index{assessment-\/project-\/Corcso/CMP425Coursework/Core.h@{assessment-\/project-\/Corcso/CMP425Coursework/Core.h}}
+\mbox{\hyperlink{_core_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_p_c_h_8h}{PCH.h}}"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_game_object_8h}{GameObject.h}}"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_core_8h_a833e35d22338d6cf6fceae3ab5d7323a}{TARGET\_FPS}}\ =\ 60;}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_core}{Core}}}
+\DoxyCodeLine{00015\ \{}
+\DoxyCodeLine{00016\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{class_core_aa79abb5b5e7f4e8ce8232a42213d16ab}{Core}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{class_core_a6a219d981cf94d771e18ef2b2746e0ac}{Core}}(\mbox{\hyperlink{class_core}{Core}}\&\ copy)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_core_a73de4e2e9d178353d4a3ba6e42182563}{Initialize}}(sf::RenderWindow\&\ window);}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ T*\ \mbox{\hyperlink{class_core_a366edea26dff08b69b3e5f11b6f8d9d0}{Instantiate}}(std::string\ name,\ \mbox{\hyperlink{class_game_object_ab37fe177d93acef64329e2b69583c498}{GameObject::RenderLayer}}\ renderLayer)\ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ T*\ newObject\ =\ \textcolor{keyword}{new}\ T();}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_object}{GameObject}}*\ pointerAsGameObject\ =\ \textcolor{keyword}{dynamic\_cast<}\mbox{\hyperlink{class_game_object}{GameObject}}*\textcolor{keyword}{>}(newObject);}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pointerAsGameObject\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ newObject;}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ TODO\ THROW\ HERE}}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ std::unique\_ptr<GameObject>\ ptr(pointerAsGameObject);}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ ptr-\/>name\ =\ name;}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ ptr-\/>renderLayer\ =\ renderLayer;}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ ptr-\/>Ready();}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_core_ac606bfae78711fe77919f09f3d24e7db}{instance}}.\mbox{\hyperlink{class_core_af41af8b73437360f817a84cce1035ae3}{objectsLive}}.push\_back(std::move(ptr));}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ newObject;}
+\DoxyCodeLine{00048\ \ \ \ \ \}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_core_acae91cf6f217c568746ce7ea7cd66db8}{LoadScene}}(std::string\ sceneToLoad);}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_core_a28b7be16fcd9baa3f46180e13233a3a4}{StepPhysics}}();}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_core_a6260a8ca24efab4e062c6ff799204d93}{Update}}(\textcolor{keywordtype}{float}\ deltaTime);}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_core_a34df01b462bfc8109e067c84b25e5519}{Render}}();}
+\DoxyCodeLine{00070\ \ \ \ \ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_core_abcaf38b9be33096edb2f7af735192713}{DestroyObject}}(std::string\ toDestroy);}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_core_a1c8a05d297c76dcab26a26831a1ac5ec}{DestroyAllObjects}}();}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_core_a3a029bdb68e3b236cd9d1059d823e7ae}{FreeObject}}(std::string\ toDestroy);}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_core_ad22e361624f4fa54805e537a6c1f36e2}{FreeAllObjects}}();}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_core_a70bf3e73a3eb5a20098b890d243d932f}{DestroyObjects}}();}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{class_game_object}{GameObject}}*\ \mbox{\hyperlink{class_core_af77fa91d7bc6dcb677648360ef1e701e}{GetObject}}(std::string\ nameToFind)\ \{}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ \textcolor{keywordtype}{object}\ :\ \mbox{\hyperlink{class_core_ac606bfae78711fe77919f09f3d24e7db}{instance}}.\mbox{\hyperlink{class_core_af41af8b73437360f817a84cce1035ae3}{objectsLive}})\ \{}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (object-\/>name\ ==\ nameToFind)\ \{}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keywordtype}{object}.get();}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00107\ \ \ \ \ \}}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \ \ \ \ }
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ T*\ \mbox{\hyperlink{class_core_a3ca1c4c0a04c52ea14d1a62165d63818}{GetObject}}(std::string\ nameToFind)\ \{}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ \textcolor{keywordtype}{object}\ :\ \mbox{\hyperlink{class_core_ac606bfae78711fe77919f09f3d24e7db}{instance}}.\mbox{\hyperlink{class_core_af41af8b73437360f817a84cce1035ae3}{objectsLive}})\ \{}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (object-\/>name\ ==\ nameToFind)\ \{}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{dynamic\_cast<}T*\textcolor{keyword}{>}(\textcolor{keywordtype}{object}.get())\ !=\ \textcolor{keyword}{nullptr})\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{dynamic\_cast<}T*\textcolor{keyword}{>}(\textcolor{keywordtype}{object}.get());}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00125\ \ \ \ \ \}}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keyword}{static}\ b2WorldId\ \mbox{\hyperlink{class_core_a440adfb77fbe4d679048c05584775858}{GetPhysicsWorldID}}();}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_core_a435d4ce5ae27d85ac427873396ff7e1c}{Shutdown}}();}
+\DoxyCodeLine{00137\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_core}{Core}}\ \mbox{\hyperlink{class_core_ac606bfae78711fe77919f09f3d24e7db}{instance}};}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \ \ \ \ std::string\ \mbox{\hyperlink{class_core_a7f44889cf2b3724e1f7007fb772284ab}{currentScene}};}
+\DoxyCodeLine{00141\ \ \ \ \ std::vector<std::unique\_ptr<GameObject>>\ \mbox{\hyperlink{class_core_af41af8b73437360f817a84cce1035ae3}{objectsLive}};}
+\DoxyCodeLine{00142\ \ \ \ \ std::set<std::string>\ \mbox{\hyperlink{class_core_a19c73c804d34d46d623053ed850ddfdd}{toDestroyAtEndOfFrame}};}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \ \ \ \ sf::RenderTexture\ \mbox{\hyperlink{class_core_a3f25fbf8649c24d848a6a67f8f5179da}{fogOfWarLayer}};}
+\DoxyCodeLine{00145\ \ \ \ \ sf::RenderTexture\ \mbox{\hyperlink{class_core_a43e2f378e1293823410354ed6d725bb6}{fogOfWarObjectsLayer}};}
+\DoxyCodeLine{00146\ \ \ \ \ sf::RenderTexture\ \mbox{\hyperlink{class_core_a0804e742c0374b65fde41ec1e0aea9ff}{fogOfWarCombinedLayer}};}
+\DoxyCodeLine{00147\ \ \ \ \ sf::BlendMode\ \mbox{\hyperlink{class_core_aed2f4c8b0ac963b588483ea5e32bd95d}{fogOfWarBlendMode}};}
+\DoxyCodeLine{00148\ \ \ \ \ sf::RenderWindow*\ \mbox{\hyperlink{class_core_a5a8d62d7af070bbef8fbb90fa0c6afd2}{gameWindow}};}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \ \ \ \ b2WorldId\ \mbox{\hyperlink{class_core_a3cd92577c1b506da9d9a59cff822589a}{physicsWorld}};}
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_core_a943694e417095d7aeaaf3ae58819b044}{PHYSICS\_SUB\_STEPS}};}
+\DoxyCodeLine{00152\ \};}
+\DoxyCodeLine{00153\ }
+
+\end{DoxyCode}

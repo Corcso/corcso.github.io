@@ -1,0 +1,302 @@
+\doxysection{World\+Tile Class Reference}
+\hypertarget{class_world_tile}{}\label{class_world_tile}\index{WorldTile@{WorldTile}}
+
+
+A single tile within a tilemap.  
+
+
+
+
+{\ttfamily \#include $<$World\+Tile.\+h$>$}
+
+Inheritance diagram for World\+Tile\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_world_tile}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_world_tile_1_1_tile_data}{Tile\+Data}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_world_tile_a7342986fc853eed4b5126b40cc14100f}{World\+Tile}} ()
+\item 
+virtual void \mbox{\hyperlink{class_world_tile_a12fce528ae96b345c3576a2707ae3500}{Ready}} () override
+\begin{DoxyCompactList}\small\item\em Ready function, called on object creation, once. You must call this yourself if you create the object. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_world_tile_a6eb82385b71146f8991272c634680f7a}{Update}} (float delta\+Time) override
+\begin{DoxyCompactList}\small\item\em Update function, called by core (if object is registered there), every frame. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_world_tile_a322036f3d0460d41607f1d949b558086}{Render}} (sf\+::\+Render\+Target \texorpdfstring{$\ast$}{*}target) override
+\begin{DoxyCompactList}\small\item\em Render function, called by core (if object is registered there), every frame. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_world_tile_addec51f7ce2fda6138800de08db331b4}{Set\+Tile\+ID}} (uint16\+\_\+t tile\+ID)
+\begin{DoxyCompactList}\small\item\em Sets the tile ID. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_world_tile_abff1087aba333c2605d76f0801adab08}{Set\+Tile\+Position}} (sf\+::\+Vector2f tile\+Position)
+\begin{DoxyCompactList}\small\item\em Sets the position of this tile. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_world_tile_ac20d5054545e5a9486037d70e7e3bf37}{Reload\+Tile\+In\+Physics\+World}} ()
+\begin{DoxyCompactList}\small\item\em Reloads the tile in the physics world based on its properties. Usually called after setting its ID. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_world_tile_a3f134fd4c7fb8eca86edd07e3b385194}{Is\+Wall}} ()
+\begin{DoxyCompactList}\small\item\em Returns true if the tile is a wall. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_physics_object}{Physics\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_physics_object_ade6588d8622cff10e979118e0f8a076e}{\texorpdfstring{$\sim$}{\string~}\+Physics\+Object}} ()
+\begin{DoxyCompactList}\small\item\em On destruct, remove the physics body from the world if it is still there. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_physics_object_a9d1e8ac3355e1fc45be28fed34fad4eb}{Register\+Me\+Physically}} (b2\+Body\+Def \&body\+Def, b2\+Shape\+Def \&shape\+Def, b2\+Polygon \&polygon)
+\begin{DoxyCompactList}\small\item\em Create a body in the world with the provided parameters. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_physics_object_a22096a6eb23195e0bf97a47a955cd61c}{Register\+Me\+Physically}} (b2\+Body\+Def \&body\+Def, b2\+Shape\+Def \&shape\+Def, b2\+Circle \&circle)
+\begin{DoxyCompactList}\small\item\em Create a body in the world with the provided parameters. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_game_object}{Game\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_game_object_a224d4f6d9dd75c8a6f9d022eaf586fd9}{\texorpdfstring{$\sim$}{\string~}\+Game\+Object}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const uint16\+\_\+t \mbox{\hyperlink{class_world_tile_a29492c0868db280f667657249853e9b9}{TILE\+\_\+\+WIDTH}} = 64
+\item 
+static const uint16\+\_\+t \mbox{\hyperlink{class_world_tile_a433b2824fd0627dd1a1f5418a46f0a9c}{TILE\+\_\+\+HEIGHT}} = 64
+\item 
+static const float \mbox{\hyperlink{class_world_tile_a660ded4204bf509ad2457e0b1a01ebb3}{TILE\+\_\+\+SCALE}} = 0.\+5f
+\item 
+static std\+::vector$<$ \mbox{\hyperlink{struct_world_tile_1_1_tile_data}{Tile\+Data}} $>$ \mbox{\hyperlink{class_world_tile_a6b5322ed37a043684f93aa2761a19cd9}{tile\+Paths}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_world_tile_a08e70fe342f09fe600e3e21d3a973b7d}{Set\+Wall}} (bool is\+Wall)
+\item 
+virtual void \mbox{\hyperlink{class_world_tile_add9f786e28507152f1ab996556deaa7f}{Set\+Layer}} (\mbox{\hyperlink{class_physics_object_a382d9a2336e2205f4e8e44d323fe847f}{Physics\+Layer}} layer)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Texture \mbox{\hyperlink{class_world_tile_a52f993ecf64c22d29d6bca8d0934570f}{texture}}
+\item 
+sf\+::\+Sprite \mbox{\hyperlink{class_world_tile_a2a2f4f5cab7ab2a272ab4b68c8437a98}{sprite}}
+\item 
+\mbox{\hyperlink{struct_world_tile_1_1_tile_data}{Tile\+Data}} \mbox{\hyperlink{class_world_tile_a9d0f3533763c3c0574fd5bad6257c03f}{my\+Data}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{class_physics_object}{Physics\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{class_physics_object_a382d9a2336e2205f4e8e44d323fe847f}{Physics\+Layer}} \+: uint64\+\_\+t \{ \newline
+\mbox{\hyperlink{class_physics_object_a382d9a2336e2205f4e8e44d323fe847faeac9f95f880e5fe80d83a5821ba5111e}{TILE}} = 0x0001
+, \mbox{\hyperlink{class_physics_object_a382d9a2336e2205f4e8e44d323fe847fa07c80e2a355d91402a00d82b1fa13855}{PLAYER}} = 0x0002
+, \mbox{\hyperlink{class_physics_object_a382d9a2336e2205f4e8e44d323fe847fa0d7b74a5bcb1cea80c9869b3b95b24fc}{TILE\+\_\+\+DETAIL}} = 0x0004
+, \mbox{\hyperlink{class_physics_object_a382d9a2336e2205f4e8e44d323fe847fa752dc123d813f629a475280b33456e00}{FAUX\+\_\+\+PLAYER}} = 0x0008
+, \newline
+\mbox{\hyperlink{class_physics_object_a382d9a2336e2205f4e8e44d323fe847fa180bb5e381e316e2246b88c92770ee75}{FIVE}} = 0x0010
+, \mbox{\hyperlink{class_physics_object_a382d9a2336e2205f4e8e44d323fe847fa48041ef8474caedcbcf2fe8996056b7f}{SIX}} = 0x0020
+, \mbox{\hyperlink{class_physics_object_a382d9a2336e2205f4e8e44d323fe847faebcf71d9bbc715c43f24a10cce77dab4}{SEVEN}} = 0x0040
+, \mbox{\hyperlink{class_physics_object_a382d9a2336e2205f4e8e44d323fe847fa960df6d77e65cd185ca4f3501db634eb}{EIGHT}} = 0x0080
+ \}
+\begin{DoxyCompactList}\small\item\em Layers for the physics engine. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{class_game_object}{Game\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{class_game_object_ab37fe177d93acef64329e2b69583c498}{Render\+Layer}} \{ \mbox{\hyperlink{class_game_object_ab37fe177d93acef64329e2b69583c498a87ed58ce5596142e11cb65deb049bb4b}{BACKGROUND}}
+, \mbox{\hyperlink{class_game_object_ab37fe177d93acef64329e2b69583c498ad80d07f9a5629e3684b7764baf58f357}{FOG\+\_\+\+OF\+\_\+\+WAR}}
+, \mbox{\hyperlink{class_game_object_ab37fe177d93acef64329e2b69583c498a1a8e6f9c757af8973978791b895a5d11}{WITHIN\+\_\+\+FOG\+\_\+\+OF\+\_\+\+WAR}}
+, \mbox{\hyperlink{class_game_object_ab37fe177d93acef64329e2b69583c498ae41f4c3e11dd067fd5691da0124b8fd2}{FOREGROUND}}
+ \}
+\begin{DoxyCompactList}\small\item\em Render layers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{class_game_object}{Game\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{class_game_object_af542b33c8de269343e22c5629e6b66c0}{name}}
+\begin{DoxyCompactList}\small\item\em Name of the object, must be unique at \doxylink{class_core}{Core} level. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_game_object_ab37fe177d93acef64329e2b69583c498}{Render\+Layer}} \mbox{\hyperlink{class_game_object_aa7cebfb2ce9925abcf604b868d2d7be0}{render\+Layer}}
+\begin{DoxyCompactList}\small\item\em Render layer of this object, used by \doxylink{class_core}{Core} to decide when to render this object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_physics_object}{Physics\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+b2\+Body\+Id \mbox{\hyperlink{class_physics_object_af89e9afbdc275526b18936ed1b7f150c}{physics\+Body\+Id}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A single tile within a tilemap. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_world_tile_a7342986fc853eed4b5126b40cc14100f}\index{WorldTile@{WorldTile}!WorldTile@{WorldTile}}
+\index{WorldTile@{WorldTile}!WorldTile@{WorldTile}}
+\doxysubsubsection{\texorpdfstring{WorldTile()}{WorldTile()}}
+{\footnotesize\ttfamily \label{class_world_tile_a7342986fc853eed4b5126b40cc14100f} 
+World\+Tile\+::\+World\+Tile (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_world_tile_a3f134fd4c7fb8eca86edd07e3b385194}\index{WorldTile@{WorldTile}!IsWall@{IsWall}}
+\index{IsWall@{IsWall}!WorldTile@{WorldTile}}
+\doxysubsubsection{\texorpdfstring{IsWall()}{IsWall()}}
+{\footnotesize\ttfamily \label{class_world_tile_a3f134fd4c7fb8eca86edd07e3b385194} 
+bool World\+Tile\+::\+Is\+Wall (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns true if the tile is a wall. 
+
+\begin{DoxyReturn}{Returns}
+Is this tile a wall
+\end{DoxyReturn}
+\Hypertarget{class_world_tile_a12fce528ae96b345c3576a2707ae3500}\index{WorldTile@{WorldTile}!Ready@{Ready}}
+\index{Ready@{Ready}!WorldTile@{WorldTile}}
+\doxysubsubsection{\texorpdfstring{Ready()}{Ready()}}
+{\footnotesize\ttfamily \label{class_world_tile_a12fce528ae96b345c3576a2707ae3500} 
+void World\+Tile\+::\+Ready (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Ready function, called on object creation, once. You must call this yourself if you create the object. 
+
+
+
+Implements \mbox{\hyperlink{class_physics_object_a6601dd71ae7306ec2e02585fa8a576e4}{Physics\+Object}}.
+
+\Hypertarget{class_world_tile_ac20d5054545e5a9486037d70e7e3bf37}\index{WorldTile@{WorldTile}!ReloadTileInPhysicsWorld@{ReloadTileInPhysicsWorld}}
+\index{ReloadTileInPhysicsWorld@{ReloadTileInPhysicsWorld}!WorldTile@{WorldTile}}
+\doxysubsubsection{\texorpdfstring{ReloadTileInPhysicsWorld()}{ReloadTileInPhysicsWorld()}}
+{\footnotesize\ttfamily \label{class_world_tile_ac20d5054545e5a9486037d70e7e3bf37} 
+void World\+Tile\+::\+Reload\+Tile\+In\+Physics\+World (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reloads the tile in the physics world based on its properties. Usually called after setting its ID. 
+
+\Hypertarget{class_world_tile_a322036f3d0460d41607f1d949b558086}\index{WorldTile@{WorldTile}!Render@{Render}}
+\index{Render@{Render}!WorldTile@{WorldTile}}
+\doxysubsubsection{\texorpdfstring{Render()}{Render()}}
+{\footnotesize\ttfamily \label{class_world_tile_a322036f3d0460d41607f1d949b558086} 
+void World\+Tile\+::\+Render (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Target \texorpdfstring{$\ast$}{*}}]{target}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Render function, called by core (if object is registered there), every frame. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & The target you should render to, provided by core\\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_physics_object_a583b371abd3a8184306d185878fae06a}{Physics\+Object}}.
+
+\Hypertarget{class_world_tile_add9f786e28507152f1ab996556deaa7f}\index{WorldTile@{WorldTile}!SetLayer@{SetLayer}}
+\index{SetLayer@{SetLayer}!WorldTile@{WorldTile}}
+\doxysubsubsection{\texorpdfstring{SetLayer()}{SetLayer()}}
+{\footnotesize\ttfamily \label{class_world_tile_add9f786e28507152f1ab996556deaa7f} 
+void World\+Tile\+::\+Set\+Layer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_physics_object_a382d9a2336e2205f4e8e44d323fe847f}{Physics\+Layer}}}]{layer}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+\Hypertarget{class_world_tile_addec51f7ce2fda6138800de08db331b4}\index{WorldTile@{WorldTile}!SetTileID@{SetTileID}}
+\index{SetTileID@{SetTileID}!WorldTile@{WorldTile}}
+\doxysubsubsection{\texorpdfstring{SetTileID()}{SetTileID()}}
+{\footnotesize\ttfamily \label{class_world_tile_addec51f7ce2fda6138800de08db331b4} 
+void World\+Tile\+::\+Set\+Tile\+ID (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{tile\+ID}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Sets the tile ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tile\+ID} & New tile id\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_world_tile_abff1087aba333c2605d76f0801adab08}\index{WorldTile@{WorldTile}!SetTilePosition@{SetTilePosition}}
+\index{SetTilePosition@{SetTilePosition}!WorldTile@{WorldTile}}
+\doxysubsubsection{\texorpdfstring{SetTilePosition()}{SetTilePosition()}}
+{\footnotesize\ttfamily \label{class_world_tile_abff1087aba333c2605d76f0801adab08} 
+void World\+Tile\+::\+Set\+Tile\+Position (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2f}]{tile\+Position}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Sets the position of this tile. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tile\+Position} & New position\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_world_tile_a08e70fe342f09fe600e3e21d3a973b7d}\index{WorldTile@{WorldTile}!SetWall@{SetWall}}
+\index{SetWall@{SetWall}!WorldTile@{WorldTile}}
+\doxysubsubsection{\texorpdfstring{SetWall()}{SetWall()}}
+{\footnotesize\ttfamily \label{class_world_tile_a08e70fe342f09fe600e3e21d3a973b7d} 
+void World\+Tile\+::\+Set\+Wall (\begin{DoxyParamCaption}\item[{bool}]{is\+Wall}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+\Hypertarget{class_world_tile_a6eb82385b71146f8991272c634680f7a}\index{WorldTile@{WorldTile}!Update@{Update}}
+\index{Update@{Update}!WorldTile@{WorldTile}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{class_world_tile_a6eb82385b71146f8991272c634680f7a} 
+void World\+Tile\+::\+Update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Update function, called by core (if object is registered there), every frame. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & Delta Time\\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_physics_object_a0bc5e189371b03d7ac67db851dc3d5b1}{Physics\+Object}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_world_tile_a9d0f3533763c3c0574fd5bad6257c03f}\index{WorldTile@{WorldTile}!myData@{myData}}
+\index{myData@{myData}!WorldTile@{WorldTile}}
+\doxysubsubsection{\texorpdfstring{myData}{myData}}
+{\footnotesize\ttfamily \label{class_world_tile_a9d0f3533763c3c0574fd5bad6257c03f} 
+\mbox{\hyperlink{struct_world_tile_1_1_tile_data}{Tile\+Data}} World\+Tile\+::my\+Data\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_world_tile_a2a2f4f5cab7ab2a272ab4b68c8437a98}\index{WorldTile@{WorldTile}!sprite@{sprite}}
+\index{sprite@{sprite}!WorldTile@{WorldTile}}
+\doxysubsubsection{\texorpdfstring{sprite}{sprite}}
+{\footnotesize\ttfamily \label{class_world_tile_a2a2f4f5cab7ab2a272ab4b68c8437a98} 
+sf\+::\+Sprite World\+Tile\+::sprite\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_world_tile_a52f993ecf64c22d29d6bca8d0934570f}\index{WorldTile@{WorldTile}!texture@{texture}}
+\index{texture@{texture}!WorldTile@{WorldTile}}
+\doxysubsubsection{\texorpdfstring{texture}{texture}}
+{\footnotesize\ttfamily \label{class_world_tile_a52f993ecf64c22d29d6bca8d0934570f} 
+sf\+::\+Texture World\+Tile\+::texture\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_world_tile_a433b2824fd0627dd1a1f5418a46f0a9c}\index{WorldTile@{WorldTile}!TILE\_HEIGHT@{TILE\_HEIGHT}}
+\index{TILE\_HEIGHT@{TILE\_HEIGHT}!WorldTile@{WorldTile}}
+\doxysubsubsection{\texorpdfstring{TILE\_HEIGHT}{TILE\_HEIGHT}}
+{\footnotesize\ttfamily \label{class_world_tile_a433b2824fd0627dd1a1f5418a46f0a9c} 
+const uint16\+\_\+t World\+Tile\+::\+TILE\+\_\+\+HEIGHT = 64\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_world_tile_a660ded4204bf509ad2457e0b1a01ebb3}\index{WorldTile@{WorldTile}!TILE\_SCALE@{TILE\_SCALE}}
+\index{TILE\_SCALE@{TILE\_SCALE}!WorldTile@{WorldTile}}
+\doxysubsubsection{\texorpdfstring{TILE\_SCALE}{TILE\_SCALE}}
+{\footnotesize\ttfamily \label{class_world_tile_a660ded4204bf509ad2457e0b1a01ebb3} 
+const float World\+Tile\+::\+TILE\+\_\+\+SCALE = 0.\+5f\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_world_tile_a29492c0868db280f667657249853e9b9}\index{WorldTile@{WorldTile}!TILE\_WIDTH@{TILE\_WIDTH}}
+\index{TILE\_WIDTH@{TILE\_WIDTH}!WorldTile@{WorldTile}}
+\doxysubsubsection{\texorpdfstring{TILE\_WIDTH}{TILE\_WIDTH}}
+{\footnotesize\ttfamily \label{class_world_tile_a29492c0868db280f667657249853e9b9} 
+const uint16\+\_\+t World\+Tile\+::\+TILE\+\_\+\+WIDTH = 64\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_world_tile_a6b5322ed37a043684f93aa2761a19cd9}\index{WorldTile@{WorldTile}!tilePaths@{tilePaths}}
+\index{tilePaths@{tilePaths}!WorldTile@{WorldTile}}
+\doxysubsubsection{\texorpdfstring{tilePaths}{tilePaths}}
+{\footnotesize\ttfamily \label{class_world_tile_a6b5322ed37a043684f93aa2761a19cd9} 
+std\+::vector$<$ \mbox{\hyperlink{struct_world_tile_1_1_tile_data}{World\+Tile\+::\+Tile\+Data}} $>$ World\+Tile\+::tile\+Paths\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+assessment-\/project-\/\+Corcso/\+CMP425\+Coursework/\mbox{\hyperlink{_world_tile_8h}{World\+Tile.\+h}}\item 
+assessment-\/project-\/\+Corcso/\+CMP425\+Coursework/\mbox{\hyperlink{_world_tile_8cpp}{World\+Tile.\+cpp}}\end{DoxyCompactItemize}

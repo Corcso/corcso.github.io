@@ -1,0 +1,21 @@
+digraph "Networker::AddNewPlayerToGame"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="Networker::AddNewPlayerToGame",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Adds a new player to the game when notified from server."];
+  Node1 -> Node2 [id="edge7_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="Core::Instantiate",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_core.html#a366edea26dff08b69b3e5f11b6f8d9d0",tooltip="Creates a new object at core level. Core owns this new object."];
+  Node1 -> Node3 [id="edge8_Node000001_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="Player::SetInGameName",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_player.html#aa708c21922975eec9c40b27525f3dfab",tooltip="Sets my in game name."];
+  Node1 -> Node4 [id="edge9_Node000001_Node000004",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="Player::UpdatePlayerID",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_player.html#ab3c2bc83e2801b95b804fdab603195b0",tooltip="Updates this players ID, called from networker to let this player object know which player they repre..."];
+  Node4 -> Node5 [id="edge10_Node000004_Node000005",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="Networker::GetMyMultiplayerID",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_networker.html#af3cb7ae11756fc116afcf3bbcb01adff",tooltip="Returns this players multiplayer ID."];
+  Node4 -> Node6 [id="edge11_Node000004_Node000006",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="PhysicsObject::RegisterMe\lPhysically",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_physics_object.html#a9d1e8ac3355e1fc45be28fed34fad4eb",tooltip="Create a body in the world with the provided parameters."];
+  Node6 -> Node7 [id="edge12_Node000006_Node000007",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="Core::GetPhysicsWorldID",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_core.html#a440adfb77fbe4d679048c05584775858",tooltip="Returns the physics world ID."];
+}

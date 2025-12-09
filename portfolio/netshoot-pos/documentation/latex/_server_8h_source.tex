@@ -1,0 +1,74 @@
+\doxysection{Server.\+h}
+\hypertarget{_server_8h_source}{}\label{_server_8h_source}\index{assessment-\/project-\/Corcso/CMP425Coursework/Server.h@{assessment-\/project-\/Corcso/CMP425Coursework/Server.h}}
+\mbox{\hyperlink{_server_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_p_c_h_8h}{PCH.h}}"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_networker_8h}{Networker.h}}"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_server}{Server}}}
+\DoxyCodeLine{00009\ \{}
+\DoxyCodeLine{00010\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_server_1_1_player_data}{PlayerData}}\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_server_1_1_player_data_adea08fa22d2c621b18777c04eebfbdfc}{PlayerData}}()\ :\ \mbox{\hyperlink{struct_server_1_1_player_data_ab48bedb5bf39a3c339c2724b464be7c3}{ip}}(0),\ \mbox{\hyperlink{struct_server_1_1_player_data_aa999546f650532fa9280c0cf48ff8cdc}{port}}(0),\ \mbox{\hyperlink{struct_server_1_1_player_data_ad154cb5eb45f00b977ae60650caaff82}{name}}(\textcolor{stringliteral}{"{}"{}}),\ \mbox{\hyperlink{struct_server_1_1_player_data_a893046a4c21586aa4c4e03c25a59aa73}{tcpSocket}}(nullptr)\ \{\};}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{struct_server_1_1_player_data_ad154cb5eb45f00b977ae60650caaff82}{name}};}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ sf::IpAddress\ \mbox{\hyperlink{struct_server_1_1_player_data_ab48bedb5bf39a3c339c2724b464be7c3}{ip}};}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ uint16\_t\ \mbox{\hyperlink{struct_server_1_1_player_data_aa999546f650532fa9280c0cf48ff8cdc}{port}};}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ std::unique\_ptr<sf::TcpSocket>\ \mbox{\hyperlink{struct_server_1_1_player_data_a893046a4c21586aa4c4e03c25a59aa73}{tcpSocket}};}
+\DoxyCodeLine{00020\ \ \ \ \ \};}
+\DoxyCodeLine{00021\ \ \ \ \ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_server_a2facf2b56af4e95c599eabf9f0651fb5}{Initialize}}();}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_server_a190373c3d138f13d10c03e4f750b6556}{BeginListening}}();}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_server_aba0203e6b19f365b042102b9aa9cb7c3}{CheckForNewConnections}}();}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_server_aa524d8d1d58a12bf34f726b151082571}{UpdateServerClock}}(\textcolor{keywordtype}{float}\ deltaTime);}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_server_abf43b6bdc3c08b375fd74819aa711681}{DispatchIncomingPackets}}();}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_server_a764fab067577c6e7d5fd2f947779534d}{DisconnectPlayer}}(uint32\_t\ playerID);}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_server_ae1b87a0821e6c07538341397583ad64e}{Pinged}}(sf::Packet\ packet,\ uint32\_t\ playerID);}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_server_a87089846bf02eaac0b6e64184f464604}{ProcessPlayerPositionUpdate}}(sf::Packet\ packet,\ uint32\_t\ playerID);}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_server_a43027d00d2ed8c3e8de27658dbe46038}{ProcessPlayerShotNotification}}(sf::Packet\ packet,\ uint32\_t\ playerID);}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_server_a177802f15c1fce447646a16c766dd17a}{ProcessPlayerRespawnRequest}}(sf::Packet\ packet,\ uint32\_t\ playerID);}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_server_a0192fae37d1779c8e37626d7216ba282}{RenderGUI}}();}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_server_a6b07cc1a291a93c9dd9bf53754a748ef}{RenderDebugShapes}}(sf::RenderWindow*\ window);}
+\DoxyCodeLine{00088\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_server_a1791300294d20baf73e8c661d94524e4}{serverClock}};}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \ \ std::string\ \mbox{\hyperlink{class_server_a75f40829cbfa3133ad39c07dabc21e41}{serverLog}};}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_server}{Server}}\ \mbox{\hyperlink{class_server_acc5b486d3bb2c8f4e1ae15a76ec48000}{instance}};}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{comment}{//\ Map\ of\ packet\ reasons\ to\ functions}}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keyword}{static}\ std::unordered\_map\ <\ \mbox{\hyperlink{class_networker_aef8da723a9b165f9522d6e22105a53cc}{Networker::PacketReason}},\ std::function<void(sf::Packet,\ uint32\_t)>>\ \mbox{\hyperlink{class_server_a4f4e14abe0996b0a96534eb449e9384c}{reasonEvents}};}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_server_a6057ea8b53c11ffcba5c7826c1cb08d8}{currentlyListening}};}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ sf::SocketSelector\ \mbox{\hyperlink{class_server_a97291d45d6988e3650e44813c2828afa}{tcpSocketSelector}};}
+\DoxyCodeLine{00101\ \ \ \ \ sf::UdpSocket\ \mbox{\hyperlink{class_server_adeccb8bd1a105717576d1eb79d2bf6fd}{udpSocket}};}
+\DoxyCodeLine{00102\ \ \ \ \ sf::TcpListener\ \mbox{\hyperlink{class_server_adc9fbf884d29cf6f4a15bfa7d03ff453}{listenerSocket}};}
+\DoxyCodeLine{00103\ \ \ \ \ std::map<uint32\_t,\ PlayerData>\ \mbox{\hyperlink{class_server_a64aeaf227bfb16bdb0fc82766f97fd6e}{players}};}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_server_a8978a8d6b142a10c5c5e05c6a0c5060d}{isUIOpen}};}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \ \ \ \ std::vector<Networker::PacketLogEntry>\ \mbox{\hyperlink{class_server_a0cb6e028a4bf5d67d78b2b8a8f90f16c}{loggedPackets}};}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_server_adf2af193a760695ee8dd8e29ebda6a1f}{loggingActive}};}
+\DoxyCodeLine{00109\ \ \ \ \ }
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_server_a845918d3a51e3469bc139fc21adccf91}{antiCheatEnabled}};}
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_server_ae14e6199a36d58320dffb9aea8bcc607}{maxSpeedAllowed}}\ =\ 400.0f;}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_server_1_1_timestamped_position_update}{TimestampedPositionUpdate}}\ \{}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_server_1_1_timestamped_position_update_a4f53c4271912f372d1c2165279df9119}{time}};\ sf::Vector2f\ \mbox{\hyperlink{struct_server_1_1_timestamped_position_update_a4b359ebaa8c7c5edf2686de70a0f0628}{position}};}
+\DoxyCodeLine{00114\ \ \ \ \ \};}
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ uint8\_t\ \mbox{\hyperlink{class_server_a0e7b0b0adaaec566a69e90d68f9b4036}{MAX\_UPDATE\_REWIND}};}
+\DoxyCodeLine{00116\ \ \ \ \ std::map<uint32\_t,\ std::deque<TimestampedPositionUpdate>>\ \mbox{\hyperlink{class_server_af4ccc1c925c4bb24fcdbc050f393fef7}{playersLastSentPositionUpdates}};}
+\DoxyCodeLine{00117\ \ \ \ \ sf::CircleShape\ \mbox{\hyperlink{class_server_af892649301e4df6c13a1521ef07c0b0f}{shooterValidationView}},\ \mbox{\hyperlink{class_server_a50ff78b0ab12d11c6e64ccdd04937765}{victemValidationView}},\ \mbox{\hyperlink{class_server_a46844382ec5efd5ac397565569dc43f4}{actualHitView}};}
+\DoxyCodeLine{00118\ \ \ \ \ std::vector<sf::CircleShape>\ \mbox{\hyperlink{class_server_abb3da479a40285770e27a421c7d196f3}{interpPointViews}};}
+\DoxyCodeLine{00119\ \ \ \ \ sf::VertexArray\ \mbox{\hyperlink{class_server_a5bb7e2c01e0d3eaab6f1a5c2d1631c9a}{shotValidationLine}};}
+\DoxyCodeLine{00120\ \};}
+\DoxyCodeLine{00121\ }
+
+\end{DoxyCode}

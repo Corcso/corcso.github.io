@@ -1,0 +1,113 @@
+\doxysection{Cheat\+Menu Class Reference}
+\hypertarget{class_cheat_menu}{}\label{class_cheat_menu}\index{CheatMenu@{CheatMenu}}
+
+
+This class is to simulate a potential "{}\+Cheat Menu"{} and test server validation.  
+
+
+
+
+{\ttfamily \#include $<$Cheat\+Menu.\+h$>$}
+
+
+
+Inheritance diagram for Cheat\+Menu\+:
+% FIG 0
+
+
+Collaboration diagram for Cheat\+Menu\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_cheat_menu_ada2c868b5808f83971c6c9be4b0db56c}{Ready}} () override
+\begin{DoxyCompactList}\small\item\em Ready function, called on object creation, once. You must call this yourself if you create the object. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_cheat_menu_a89cea5e4e39bbadb28a4b258d516a50e}{Update}} (float delta\+Time) override
+\begin{DoxyCompactList}\small\item\em Update function, called by core (if object is registered there), every frame. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_cheat_menu_a56510f746a01ba12c9773d36e464fd92}{Render}} (sf\+::\+Render\+Target \texorpdfstring{$\ast$}{*}target) override
+\begin{DoxyCompactList}\small\item\em Render function, called by core (if object is registered there), every frame. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_game_object}{Game\+Object}}}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{class_game_object}{Game\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_game_object_ab37fe177d93acef64329e2b69583c498}\label{class_game_object_ab37fe177d93acef64329e2b69583c498} 
+enum class \mbox{\hyperlink{class_game_object_ab37fe177d93acef64329e2b69583c498}{Render\+Layer}} \{ {\bfseries BACKGROUND}
+, {\bfseries FOG\+\_\+\+OF\+\_\+\+WAR}
+, {\bfseries WITHIN\+\_\+\+FOG\+\_\+\+OF\+\_\+\+WAR}
+, {\bfseries FOREGROUND}
+ \}
+\begin{DoxyCompactList}\small\item\em Render layers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{class_game_object}{Game\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string {\bfseries name}
+\begin{DoxyCompactList}\small\item\em Name of the object, must be unique at \doxylink{class_core}{Core} level. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_game_object_ab37fe177d93acef64329e2b69583c498}{Render\+Layer}} {\bfseries render\+Layer}
+\begin{DoxyCompactList}\small\item\em Render layer of this object, used by \doxylink{class_core}{Core} to decide when to render this object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class is to simulate a potential "{}\+Cheat Menu"{} and test server validation. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_cheat_menu_ada2c868b5808f83971c6c9be4b0db56c}\index{CheatMenu@{CheatMenu}!Ready@{Ready}}
+\index{Ready@{Ready}!CheatMenu@{CheatMenu}}
+\doxysubsubsection{\texorpdfstring{Ready()}{Ready()}}
+{\footnotesize\ttfamily \label{class_cheat_menu_ada2c868b5808f83971c6c9be4b0db56c} 
+void Cheat\+Menu\+::\+Ready (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Ready function, called on object creation, once. You must call this yourself if you create the object. 
+
+
+
+Implements \mbox{\hyperlink{class_game_object_a0f57fb08f36479414ef51ed176950532}{Game\+Object}}.
+
+\Hypertarget{class_cheat_menu_a56510f746a01ba12c9773d36e464fd92}\index{CheatMenu@{CheatMenu}!Render@{Render}}
+\index{Render@{Render}!CheatMenu@{CheatMenu}}
+\doxysubsubsection{\texorpdfstring{Render()}{Render()}}
+{\footnotesize\ttfamily \label{class_cheat_menu_a56510f746a01ba12c9773d36e464fd92} 
+void Cheat\+Menu\+::\+Render (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Target \texorpdfstring{$\ast$}{*}}]{target}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Render function, called by core (if object is registered there), every frame. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & The target you should render to, provided by core\\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_game_object_afb9de187a6b4f00723176d429ca4a27c}{Game\+Object}}.
+
+Here is the call graph for this function\+:
+% FIG 2
+\Hypertarget{class_cheat_menu_a89cea5e4e39bbadb28a4b258d516a50e}\index{CheatMenu@{CheatMenu}!Update@{Update}}
+\index{Update@{Update}!CheatMenu@{CheatMenu}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{class_cheat_menu_a89cea5e4e39bbadb28a4b258d516a50e} 
+void Cheat\+Menu\+::\+Update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Update function, called by core (if object is registered there), every frame. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & Delta Time\\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_game_object_a44739a8b5e507580ee3100df039ab8e6}{Game\+Object}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+assessment-\/project-\/\+Corcso/\+CMP425\+Coursework/Cheat\+Menu.\+h\item 
+assessment-\/project-\/\+Corcso/\+CMP425\+Coursework/Cheat\+Menu.\+cpp\end{DoxyCompactItemize}

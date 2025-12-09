@@ -1,0 +1,161 @@
+\doxysection{Respawnpoint\+Manager Class Reference}
+\hypertarget{class_respawnpoint_manager}{}\label{class_respawnpoint_manager}\index{RespawnpointManager@{RespawnpointManager}}
+
+
+Respawnpoint decider used by the server.  
+
+
+
+
+{\ttfamily \#include $<$Respawnpoint\+Manager.\+h$>$}
+
+Inheritance diagram for Respawnpoint\+Manager\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_respawnpoint_manager}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_respawnpoint_manager_a0e75bad5b608d67920cb23bde059a8db}{Ready}} () override
+\begin{DoxyCompactList}\small\item\em Ready function, called on object creation, once. You must call this yourself if you create the object. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_respawnpoint_manager_aa18b7251428adb989e0748aa7af99293}{Update}} (float delta\+Time) override
+\begin{DoxyCompactList}\small\item\em Update function, called by core (if object is registered there), every frame. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_respawnpoint_manager_a6cb7e68c7bd5ed78fc222359555c8f86}{Render}} (sf\+::\+Render\+Target \texorpdfstring{$\ast$}{*}target) override
+\begin{DoxyCompactList}\small\item\em Render function, called by core (if object is registered there), every frame. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_respawnpoint_manager_acdd27342031452d8f8bb5c04425c0ac0}{Load\+From\+File}} (std\+::string path)
+\begin{DoxyCompactList}\small\item\em Load the spawn points from a .spawn file. \end{DoxyCompactList}\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_respawnpoint_manager_ae5d71cfed2d78254b5c2e1b2c6fdffab}{Get\+Respawn\+Point}} ()
+\begin{DoxyCompactList}\small\item\em Get a random spawn point. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_game_object}{Game\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_game_object_a224d4f6d9dd75c8a6f9d022eaf586fd9}{\texorpdfstring{$\sim$}{\string~}\+Game\+Object}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ sf\+::\+Vector2f $>$ \mbox{\hyperlink{class_respawnpoint_manager_ae7026b1e8a55d5d5ceab923b160fabf3}{available\+Spawn\+Points}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{class_game_object}{Game\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{class_game_object_ab37fe177d93acef64329e2b69583c498}{Render\+Layer}} \{ \mbox{\hyperlink{class_game_object_ab37fe177d93acef64329e2b69583c498a87ed58ce5596142e11cb65deb049bb4b}{BACKGROUND}}
+, \mbox{\hyperlink{class_game_object_ab37fe177d93acef64329e2b69583c498ad80d07f9a5629e3684b7764baf58f357}{FOG\+\_\+\+OF\+\_\+\+WAR}}
+, \mbox{\hyperlink{class_game_object_ab37fe177d93acef64329e2b69583c498a1a8e6f9c757af8973978791b895a5d11}{WITHIN\+\_\+\+FOG\+\_\+\+OF\+\_\+\+WAR}}
+, \mbox{\hyperlink{class_game_object_ab37fe177d93acef64329e2b69583c498ae41f4c3e11dd067fd5691da0124b8fd2}{FOREGROUND}}
+ \}
+\begin{DoxyCompactList}\small\item\em Render layers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{class_game_object}{Game\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{class_game_object_af542b33c8de269343e22c5629e6b66c0}{name}}
+\begin{DoxyCompactList}\small\item\em Name of the object, must be unique at \doxylink{class_core}{Core} level. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_game_object_ab37fe177d93acef64329e2b69583c498}{Render\+Layer}} \mbox{\hyperlink{class_game_object_aa7cebfb2ce9925abcf604b868d2d7be0}{render\+Layer}}
+\begin{DoxyCompactList}\small\item\em Render layer of this object, used by \doxylink{class_core}{Core} to decide when to render this object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Respawnpoint decider used by the server. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_respawnpoint_manager_ae5d71cfed2d78254b5c2e1b2c6fdffab}\index{RespawnpointManager@{RespawnpointManager}!GetRespawnPoint@{GetRespawnPoint}}
+\index{GetRespawnPoint@{GetRespawnPoint}!RespawnpointManager@{RespawnpointManager}}
+\doxysubsubsection{\texorpdfstring{GetRespawnPoint()}{GetRespawnPoint()}}
+{\footnotesize\ttfamily \label{class_respawnpoint_manager_ae5d71cfed2d78254b5c2e1b2c6fdffab} 
+sf\+::\+Vector2f Respawnpoint\+Manager\+::\+Get\+Respawn\+Point (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get a random spawn point. 
+
+\begin{DoxyReturn}{Returns}
+Spawn point to use
+\end{DoxyReturn}
+\Hypertarget{class_respawnpoint_manager_acdd27342031452d8f8bb5c04425c0ac0}\index{RespawnpointManager@{RespawnpointManager}!LoadFromFile@{LoadFromFile}}
+\index{LoadFromFile@{LoadFromFile}!RespawnpointManager@{RespawnpointManager}}
+\doxysubsubsection{\texorpdfstring{LoadFromFile()}{LoadFromFile()}}
+{\footnotesize\ttfamily \label{class_respawnpoint_manager_acdd27342031452d8f8bb5c04425c0ac0} 
+bool Respawnpoint\+Manager\+::\+Load\+From\+File (\begin{DoxyParamCaption}\item[{std\+::string}]{path}{}\end{DoxyParamCaption})}
+
+
+
+Load the spawn points from a .spawn file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & .spawn file relative to working directory\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If the file was loaded successfully
+\end{DoxyReturn}
+\Hypertarget{class_respawnpoint_manager_a0e75bad5b608d67920cb23bde059a8db}\index{RespawnpointManager@{RespawnpointManager}!Ready@{Ready}}
+\index{Ready@{Ready}!RespawnpointManager@{RespawnpointManager}}
+\doxysubsubsection{\texorpdfstring{Ready()}{Ready()}}
+{\footnotesize\ttfamily \label{class_respawnpoint_manager_a0e75bad5b608d67920cb23bde059a8db} 
+virtual void Respawnpoint\+Manager\+::\+Ready (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Ready function, called on object creation, once. You must call this yourself if you create the object. 
+
+
+
+Implements \mbox{\hyperlink{class_game_object_a0f57fb08f36479414ef51ed176950532}{Game\+Object}}.
+
+\Hypertarget{class_respawnpoint_manager_a6cb7e68c7bd5ed78fc222359555c8f86}\index{RespawnpointManager@{RespawnpointManager}!Render@{Render}}
+\index{Render@{Render}!RespawnpointManager@{RespawnpointManager}}
+\doxysubsubsection{\texorpdfstring{Render()}{Render()}}
+{\footnotesize\ttfamily \label{class_respawnpoint_manager_a6cb7e68c7bd5ed78fc222359555c8f86} 
+virtual void Respawnpoint\+Manager\+::\+Render (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Target \texorpdfstring{$\ast$}{*}}]{target}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Render function, called by core (if object is registered there), every frame. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & The target you should render to, provided by core\\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_game_object_afb9de187a6b4f00723176d429ca4a27c}{Game\+Object}}.
+
+\Hypertarget{class_respawnpoint_manager_aa18b7251428adb989e0748aa7af99293}\index{RespawnpointManager@{RespawnpointManager}!Update@{Update}}
+\index{Update@{Update}!RespawnpointManager@{RespawnpointManager}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{class_respawnpoint_manager_aa18b7251428adb989e0748aa7af99293} 
+virtual void Respawnpoint\+Manager\+::\+Update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Update function, called by core (if object is registered there), every frame. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & Delta Time\\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_game_object_a44739a8b5e507580ee3100df039ab8e6}{Game\+Object}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_respawnpoint_manager_ae7026b1e8a55d5d5ceab923b160fabf3}\index{RespawnpointManager@{RespawnpointManager}!availableSpawnPoints@{availableSpawnPoints}}
+\index{availableSpawnPoints@{availableSpawnPoints}!RespawnpointManager@{RespawnpointManager}}
+\doxysubsubsection{\texorpdfstring{availableSpawnPoints}{availableSpawnPoints}}
+{\footnotesize\ttfamily \label{class_respawnpoint_manager_ae7026b1e8a55d5d5ceab923b160fabf3} 
+std\+::vector$<$sf\+::\+Vector2f$>$ Respawnpoint\+Manager\+::available\+Spawn\+Points\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+assessment-\/project-\/\+Corcso/\+CMP425\+Coursework/\mbox{\hyperlink{_respawnpoint_manager_8h}{Respawnpoint\+Manager.\+h}}\item 
+assessment-\/project-\/\+Corcso/\+CMP425\+Coursework/\mbox{\hyperlink{_respawnpoint_manager_8cpp}{Respawnpoint\+Manager.\+cpp}}\end{DoxyCompactItemize}

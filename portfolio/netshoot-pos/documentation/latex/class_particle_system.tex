@@ -1,0 +1,150 @@
+\doxysection{Particle\+System Class Reference}
+\hypertarget{class_particle_system}{}\label{class_particle_system}\index{ParticleSystem@{ParticleSystem}}
+
+
+Simple particle system.  
+
+
+
+
+{\ttfamily \#include $<$Particle\+System.\+h$>$}
+
+Inheritance diagram for Particle\+System\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_particle_system}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_particle_system_1_1_particle}{Particle}}
+\begin{DoxyCompactList}\small\item\em A particle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_particle_system_a61f903bdc7d5c8c938d8b58d1bbdc0b1}{Ready}} () override
+\begin{DoxyCompactList}\small\item\em Ready function, called on object creation, once. You must call this yourself if you create the object. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_particle_system_a97d3ef8e3a769198afa121c90165a69d}{Update}} (float delta\+Time) override
+\begin{DoxyCompactList}\small\item\em Update function, called by core (if object is registered there), every frame. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_particle_system_a238c350155361943accb5a1a10a7a9af}{Render}} (sf\+::\+Render\+Target \texorpdfstring{$\ast$}{*}target) override
+\begin{DoxyCompactList}\small\item\em Render function, called by core (if object is registered there), every frame. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_particle_system_a3f97239c3b3f8847db9bc83a33027dfe}{Add\+Bullet\+Land\+Particle}} (sf\+::\+Color color, sf\+::\+Vector2f at)
+\begin{DoxyCompactList}\small\item\em Add a particle burst for hitting something. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_game_object}{Game\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_game_object_a224d4f6d9dd75c8a6f9d022eaf586fd9}{\texorpdfstring{$\sim$}{\string~}\+Game\+Object}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_particle_system_1_1_particle}{Particle}} $>$ \mbox{\hyperlink{class_particle_system_afedb39255610d354421e7820daaefa79}{active\+Particles}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{class_game_object}{Game\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{class_game_object_ab37fe177d93acef64329e2b69583c498}{Render\+Layer}} \{ \mbox{\hyperlink{class_game_object_ab37fe177d93acef64329e2b69583c498a87ed58ce5596142e11cb65deb049bb4b}{BACKGROUND}}
+, \mbox{\hyperlink{class_game_object_ab37fe177d93acef64329e2b69583c498ad80d07f9a5629e3684b7764baf58f357}{FOG\+\_\+\+OF\+\_\+\+WAR}}
+, \mbox{\hyperlink{class_game_object_ab37fe177d93acef64329e2b69583c498a1a8e6f9c757af8973978791b895a5d11}{WITHIN\+\_\+\+FOG\+\_\+\+OF\+\_\+\+WAR}}
+, \mbox{\hyperlink{class_game_object_ab37fe177d93acef64329e2b69583c498ae41f4c3e11dd067fd5691da0124b8fd2}{FOREGROUND}}
+ \}
+\begin{DoxyCompactList}\small\item\em Render layers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{class_game_object}{Game\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{class_game_object_af542b33c8de269343e22c5629e6b66c0}{name}}
+\begin{DoxyCompactList}\small\item\em Name of the object, must be unique at \doxylink{class_core}{Core} level. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_game_object_ab37fe177d93acef64329e2b69583c498}{Render\+Layer}} \mbox{\hyperlink{class_game_object_aa7cebfb2ce9925abcf604b868d2d7be0}{render\+Layer}}
+\begin{DoxyCompactList}\small\item\em Render layer of this object, used by \doxylink{class_core}{Core} to decide when to render this object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Simple particle system. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_particle_system_a3f97239c3b3f8847db9bc83a33027dfe}\index{ParticleSystem@{ParticleSystem}!AddBulletLandParticle@{AddBulletLandParticle}}
+\index{AddBulletLandParticle@{AddBulletLandParticle}!ParticleSystem@{ParticleSystem}}
+\doxysubsubsection{\texorpdfstring{AddBulletLandParticle()}{AddBulletLandParticle()}}
+{\footnotesize\ttfamily \label{class_particle_system_a3f97239c3b3f8847db9bc83a33027dfe} 
+void Particle\+System\+::\+Add\+Bullet\+Land\+Particle (\begin{DoxyParamCaption}\item[{sf\+::\+Color}]{color}{, }\item[{sf\+::\+Vector2f}]{at}{}\end{DoxyParamCaption})}
+
+
+
+Add a particle burst for hitting something. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em color} & Color of this particle\\
+\hline
+{\em at} & Where it lands\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_particle_system_a61f903bdc7d5c8c938d8b58d1bbdc0b1}\index{ParticleSystem@{ParticleSystem}!Ready@{Ready}}
+\index{Ready@{Ready}!ParticleSystem@{ParticleSystem}}
+\doxysubsubsection{\texorpdfstring{Ready()}{Ready()}}
+{\footnotesize\ttfamily \label{class_particle_system_a61f903bdc7d5c8c938d8b58d1bbdc0b1} 
+void Particle\+System\+::\+Ready (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Ready function, called on object creation, once. You must call this yourself if you create the object. 
+
+
+
+Implements \mbox{\hyperlink{class_game_object_a0f57fb08f36479414ef51ed176950532}{Game\+Object}}.
+
+\Hypertarget{class_particle_system_a238c350155361943accb5a1a10a7a9af}\index{ParticleSystem@{ParticleSystem}!Render@{Render}}
+\index{Render@{Render}!ParticleSystem@{ParticleSystem}}
+\doxysubsubsection{\texorpdfstring{Render()}{Render()}}
+{\footnotesize\ttfamily \label{class_particle_system_a238c350155361943accb5a1a10a7a9af} 
+void Particle\+System\+::\+Render (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Target \texorpdfstring{$\ast$}{*}}]{target}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Render function, called by core (if object is registered there), every frame. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & The target you should render to, provided by core\\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_game_object_afb9de187a6b4f00723176d429ca4a27c}{Game\+Object}}.
+
+\Hypertarget{class_particle_system_a97d3ef8e3a769198afa121c90165a69d}\index{ParticleSystem@{ParticleSystem}!Update@{Update}}
+\index{Update@{Update}!ParticleSystem@{ParticleSystem}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{class_particle_system_a97d3ef8e3a769198afa121c90165a69d} 
+void Particle\+System\+::\+Update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Update function, called by core (if object is registered there), every frame. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & Delta Time\\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_game_object_a44739a8b5e507580ee3100df039ab8e6}{Game\+Object}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_particle_system_afedb39255610d354421e7820daaefa79}\index{ParticleSystem@{ParticleSystem}!activeParticles@{activeParticles}}
+\index{activeParticles@{activeParticles}!ParticleSystem@{ParticleSystem}}
+\doxysubsubsection{\texorpdfstring{activeParticles}{activeParticles}}
+{\footnotesize\ttfamily \label{class_particle_system_afedb39255610d354421e7820daaefa79} 
+std\+::vector$<$\mbox{\hyperlink{struct_particle_system_1_1_particle}{Particle}}$>$ Particle\+System\+::active\+Particles\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+assessment-\/project-\/\+Corcso/\+CMP425\+Coursework/\mbox{\hyperlink{_particle_system_8h}{Particle\+System.\+h}}\item 
+assessment-\/project-\/\+Corcso/\+CMP425\+Coursework/\mbox{\hyperlink{_particle_system_8cpp}{Particle\+System.\+cpp}}\end{DoxyCompactItemize}

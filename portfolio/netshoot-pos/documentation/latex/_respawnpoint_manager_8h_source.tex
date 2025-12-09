@@ -1,0 +1,24 @@
+\doxysection{Respawnpoint\+Manager.\+h}
+\hypertarget{_respawnpoint_manager_8h_source}{}\label{_respawnpoint_manager_8h_source}\index{assessment-\/project-\/Corcso/CMP425Coursework/RespawnpointManager.h@{assessment-\/project-\/Corcso/CMP425Coursework/RespawnpointManager.h}}
+\mbox{\hyperlink{_respawnpoint_manager_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_game_object_8h}{GameObject.h}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_respawnpoint_manager}{RespawnpointManager}}\ :}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_game_object}{GameObject}}}
+\DoxyCodeLine{00008\ \{}
+\DoxyCodeLine{00009\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_respawnpoint_manager_a0e75bad5b608d67920cb23bde059a8db}{Ready}}()\textcolor{keyword}{\ override\ }\{\}}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_respawnpoint_manager_aa18b7251428adb989e0748aa7af99293}{Update}}(\textcolor{keywordtype}{float}\ deltaTime)\textcolor{keyword}{\ override\ }\{\}}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_respawnpoint_manager_a6cb7e68c7bd5ed78fc222359555c8f86}{Render}}(sf::RenderTarget*\ target)\textcolor{keyword}{\ override\ }\{\}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_respawnpoint_manager_acdd27342031452d8f8bb5c04425c0ac0}{LoadFromFile}}(std::string\ path);}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00025\ \ \ \ \ sf::Vector2f\ \mbox{\hyperlink{class_respawnpoint_manager_ae5d71cfed2d78254b5c2e1b2c6fdffab}{GetRespawnPoint}}();}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00028\ \ \ \ \ std::vector<sf::Vector2f>\ \mbox{\hyperlink{class_respawnpoint_manager_ae7026b1e8a55d5d5ceab923b160fabf3}{availableSpawnPoints}};}
+\DoxyCodeLine{00029\ \};}
+\DoxyCodeLine{00030\ }
+
+\end{DoxyCode}

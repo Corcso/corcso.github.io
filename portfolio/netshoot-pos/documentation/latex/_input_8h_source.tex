@@ -1,0 +1,56 @@
+\doxysection{Input.\+h}
+\hypertarget{_input_8h_source}{}\label{_input_8h_source}\index{assessment-\/project-\/Corcso/CMP425Coursework/Input.h@{assessment-\/project-\/Corcso/CMP425Coursework/Input.h}}
+\mbox{\hyperlink{_input_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_p_c_h_8h}{PCH.h}}"{}}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_input}{Input}}}
+\DoxyCodeLine{00008\ \{}
+\DoxyCodeLine{00009\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00010\ \ \ \ \ \mbox{\hyperlink{class_input_abae3f379d3f157cf42dc857309832dba}{Input}}()\ \{\};}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{class_input_a63fd6bbe7e8de0a562a00f57a413a1e4}{InputState}}\ :\ uint8\_t\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_input_a63fd6bbe7e8de0a562a00f57a413a1e4accc0377a8afbf50e7094f5c23a8af223}{INVALID}}\ =\ 0b00000000,}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_input_a63fd6bbe7e8de0a562a00f57a413a1e4afbaedde498cdead4f2780217646e9ba1}{UP}}\ =\ 0b00000001,}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_input_a63fd6bbe7e8de0a562a00f57a413a1e4ac4e0e4e3118472beeb2ae75827450f1f}{DOWN}}\ =\ 0b00000010,}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_input_a63fd6bbe7e8de0a562a00f57a413a1e4a5381dc876ab002103a027265bc14ae52}{PRESSED}}\ =\ 0b00000100\ |\ \mbox{\hyperlink{class_input_a63fd6bbe7e8de0a562a00f57a413a1e4ac4e0e4e3118472beeb2ae75827450f1f}{DOWN}},}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_input_a63fd6bbe7e8de0a562a00f57a413a1e4a109d54efbb64d71f9a6ab18d0fb8add8}{RELEASED}}\ =\ 0b00001000\ |\ \mbox{\hyperlink{class_input_a63fd6bbe7e8de0a562a00f57a413a1e4afbaedde498cdead4f2780217646e9ba1}{UP}},}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_input_a63fd6bbe7e8de0a562a00f57a413a1e4aa72703851c818dfb4a45010abb7b75af}{PRESSED\_AND\_RELEASED\_SAME\_FRAME}}\ =\ 0b00010000\ |\ \mbox{\hyperlink{class_input_a63fd6bbe7e8de0a562a00f57a413a1e4a5381dc876ab002103a027265bc14ae52}{PRESSED}}\ |\ \mbox{\hyperlink{class_input_a63fd6bbe7e8de0a562a00f57a413a1e4a109d54efbb64d71f9a6ab18d0fb8add8}{RELEASED}},}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_input_a63fd6bbe7e8de0a562a00f57a413a1e4a734f7e17f2bd781e2382b7c618e376cd}{RELEASED\_AND\_PRESSED\_SAME\_FRAME}}\ =\ 0b00100000\ |\ \mbox{\hyperlink{class_input_a63fd6bbe7e8de0a562a00f57a413a1e4a5381dc876ab002103a027265bc14ae52}{PRESSED}}\ |\ \mbox{\hyperlink{class_input_a63fd6bbe7e8de0a562a00f57a413a1e4a109d54efbb64d71f9a6ab18d0fb8add8}{RELEASED}}}
+\DoxyCodeLine{00027\ \ \ \ \ \};}
+\DoxyCodeLine{00028\ \ \ \ \ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{comment}{//\ The\ below\ functions\ are\ pretty\ self\ explanitory}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_input_aa51bc12295acfa4cd930a5163bd1089f}{IsKeyDown}}(sf::Keyboard::Key\ key);}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_input_a43afadfa414cf07b82cce677ed364aba}{IsKeyUp}}(sf::Keyboard::Key\ key);}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_input_a977c092fa55130dab8e754f1565655aa}{IsKeyPressed}}(sf::Keyboard::Key\ key);}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_input_a1f5e52bdd656bc9d32c044b50a56e6cb}{IsKeyReleased}}(sf::Keyboard::Key\ key);}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_input_a0eb72edd558ab0553525838914db4b76}{SetKeyPressed}}(sf::Keyboard::Key\ key);}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_input_afefa8130d079d792519a6a744c337b58}{SetKeyReleased}}(sf::Keyboard::Key\ key);}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_input_a3ac489cde1fbdc81badcafb8e98e8d0e}{IsMouseButtonDown}}(sf::Mouse::Button\ mouseButton);}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_input_a816e07308b028ef0707bbb23abb64129}{IsMouseButtonUp}}(sf::Mouse::Button\ mouseButton);}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_input_a996ea1c1cc176f5f482e4d514265a9cb}{IsMouseButtonPressed}}(sf::Mouse::Button\ mouseButton);}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_input_af586a9d896024bee484225aacd954d6c}{IsMouseButtonReleased}}(sf::Mouse::Button\ mouseButton);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_input_a2e689b957bc1338ffcaeef3d190d4a95}{SetMouseButtonPressed}}(sf::Mouse::Button\ mouseButton);}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_input_a40e66e28ba69800c3b605d4952127f8d}{SetMouseButtonReleased}}(sf::Mouse::Button\ mouseButton);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{static}\ sf::Vector2f\ \mbox{\hyperlink{class_input_ada856d2686852b36e7fe0a54ef2c8247}{GetMousePosition}}();}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_input_a827c8be827a1ac5f0e5b45ece6c1281b}{SetMousePosition}}(sf::Vector2f\ newMousePosition);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_input_a057dbcc1fed0ac8695114a98e07328de}{UpdateStates}}();}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_input_a63b4b23199b443dd9909594732057101}{HandleEvent}}(\textcolor{keyword}{const}\ std::optional<sf::Event>\&\ event);}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_input}{Input}}\ \mbox{\hyperlink{class_input_a93e126536bf47d7d7e77be420d02beaf}{instance}};}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \mbox{\hyperlink{class_input_a63fd6bbe7e8de0a562a00f57a413a1e4}{InputState}}\ \mbox{\hyperlink{class_input_abbb64a0846d48048d717b6b9f6817a62}{keyMap}}[sf::Keyboard::KeyCount];}
+\DoxyCodeLine{00064\ \ \ \ \ \mbox{\hyperlink{class_input_a63fd6bbe7e8de0a562a00f57a413a1e4}{InputState}}\ \mbox{\hyperlink{class_input_ab6370d5b3267421af365e700bc2be91a}{mouseButtonMap}}[sf::Mouse::ButtonCount];}
+\DoxyCodeLine{00065\ \ \ \ \ sf::Vector2f\ \mbox{\hyperlink{class_input_af0f8c41691330e5b42273940a314f949}{mousePosition}};}
+\DoxyCodeLine{00066\ \};}
+\DoxyCodeLine{00067\ }
+
+\end{DoxyCode}

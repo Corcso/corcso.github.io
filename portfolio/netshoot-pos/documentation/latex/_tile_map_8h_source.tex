@@ -1,0 +1,44 @@
+\doxysection{Tile\+Map.\+h}
+\hypertarget{_tile_map_8h_source}{}\label{_tile_map_8h_source}\index{assessment-\/project-\/Corcso/CMP425Coursework/TileMap.h@{assessment-\/project-\/Corcso/CMP425Coursework/TileMap.h}}
+\mbox{\hyperlink{_tile_map_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_game_object_8h}{GameObject.h}}"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_world_tile_8h}{WorldTile.h}}"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_tile_map}{TileMap}}\ :}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_game_object}{GameObject}}}
+\DoxyCodeLine{00010\ \{}
+\DoxyCodeLine{00011\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_tile_map_a1f0551503cd73a8f8c8df158e18e9836}{Ready}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_tile_map_aab15943d75682c0df7623d2668ef5e50}{Update}}(\textcolor{keywordtype}{float}\ deltaTime)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_tile_map_a2755b20f4aeb6e796d3c726c51d8c069}{Render}}(sf::RenderTarget*\ target)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_tile_map_a49f19bd98b147d063b7657a0feb1b29d}{ResizeTileMap}}(sf::Vector2i\ newSize);}
+\DoxyCodeLine{00021\ \ \ \ \ sf::Vector2i\ \mbox{\hyperlink{class_tile_map_a10130e057a99531a9e7d91680f2b32ba}{GetTileMapSize}}();}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_tile_map_aaaca5ddadafbd9762901ee9e2a0c0962}{UpdateTiles}}();}
+\DoxyCodeLine{00027\ \ \ \ \ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_tile_map_aea69265596a204a95e694db6bd2f8439}{SaveToFile}}(std::string\ relativePath);}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_tile_map_a5b5561c81b3122d584533da6f67abe44}{LoadFromFile}}(std::string\ relativePath);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{comment}{//struct\ TileData\ \{}}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{comment}{//\ \ uint16\_t\ tileID;}}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{comment}{//\ \ bool\ tileIsWall;}}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{comment}{//\};}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_tile_map_aa6495d3b40ebd08b3a7a36f17284884d}{openEditorGUI}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00047\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00048\ \ \ \ \ std::vector<std::vector<std::unique\_ptr<WorldTile>>>\ \mbox{\hyperlink{class_tile_map_aba863f775ee7c68be23fe568f46abb68}{tileMap}};}
+\DoxyCodeLine{00049\ \ \ \ \ std::vector<std::vector<WorldTile::TileData>>\ \mbox{\hyperlink{class_tile_map_a8c75637129c51f59b6b1596afb757822}{tileData}};}
+\DoxyCodeLine{00050\ \ \ \ \ std::vector<sf::Texture>\ \mbox{\hyperlink{class_tile_map_ac98d24ca5f8101f8670b35b80e2b751a}{allTexturesForEditor}};}
+\DoxyCodeLine{00051\ \ \ \ \ std::vector<std::vector<bool>>\ \mbox{\hyperlink{class_tile_map_a35497b456261213f9482b7ab1f489a07}{editor\_chosenTile}};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{class_tile_map_a26adb9daf726b7ab5853e3bf140a9ad8}{editor\_nameToCopy}}[128];}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{class_tile_map_ae4189820c014e4403d69056d8c84988e}{editor\_fileName}}[128]\ =\ \textcolor{stringliteral}{"{}./assets/maps/"{}};}
+\DoxyCodeLine{00055\ \ \ \ \ std::vector<uint8\_t>\ \mbox{\hyperlink{class_tile_map_a41e0603763bab6e10c5b53e924add744}{editor\_tilePaths\_layers\_detail\_bool}};}
+\DoxyCodeLine{00056\ \};}
+\DoxyCodeLine{00057\ }
+
+\end{DoxyCode}

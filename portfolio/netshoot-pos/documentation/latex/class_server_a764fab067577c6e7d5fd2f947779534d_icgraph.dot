@@ -1,0 +1,18 @@
+digraph "Server::DisconnectPlayer"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [id="Node000001",label="Server::DisconnectPlayer",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Disconnect a player and remove them from the game."];
+  Node1 -> Node1 [id="edge6_Node000001_Node000001",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node2 [id="edge7_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="Server::DispatchIncoming\lPackets",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_server.html#abf43b6bdc3c08b375fd74819aa711681",tooltip="Once a frame, dispatch all packets incoming to their functions."];
+  Node1 -> Node3 [id="edge8_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="Server::ProcessPlayerPosition\lUpdate",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_server.html#a87089846bf02eaac0b6e64184f464604",tooltip="Process a player position update. If anticheat is active, also check it was valid."];
+  Node1 -> Node4 [id="edge9_Node000001_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="Server::ProcessPlayerRespawn\lRequest",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_server.html#a177802f15c1fce447646a16c766dd17a",tooltip="Process a player respawn request, checking that player is dead."];
+  Node1 -> Node5 [id="edge10_Node000001_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="Server::ProcessPlayerShot\lNotification",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_server.html#a43027d00d2ed8c3e8de27658dbe46038",tooltip="Process a player shot notification, If another player was killed, and anticheat is active,..."];
+}

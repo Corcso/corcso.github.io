@@ -1,0 +1,408 @@
+\doxysection{Server Class Reference}
+\hypertarget{class_server}{}\label{class_server}\index{Server@{Server}}
+
+
+\doxylink{class_server}{Server} class, used by the server to manage all server specific actions.  
+
+
+
+
+{\ttfamily \#include $<$Server.\+h$>$}
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_server_1_1_player_data}{Player\+Data}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_player}{Player} data. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_server_1_1_timestamped_position_update}{Timestamped\+Position\+Update}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{class_server_a2facf2b56af4e95c599eabf9f0651fb5}{Initialize}} ()
+\begin{DoxyCompactList}\small\item\em Setup the singleton. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_server_a190373c3d138f13d10c03e4f750b6556}{Begin\+Listening}} ()
+\begin{DoxyCompactList}\small\item\em Begin listening for new connections. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_server_aba0203e6b19f365b042102b9aa9cb7c3}{Check\+For\+New\+Connections}} ()
+\begin{DoxyCompactList}\small\item\em Every frame, check our listner socket for new connections, and perform the handshake adding the player, if any. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_server_aa524d8d1d58a12bf34f726b151082571}{Update\+Server\+Clock}} (float delta\+Time)
+\begin{DoxyCompactList}\small\item\em Increase the server clock. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_server_abf43b6bdc3c08b375fd74819aa711681}{Dispatch\+Incoming\+Packets}} ()
+\begin{DoxyCompactList}\small\item\em Once a frame, dispatch all packets incoming to their functions. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_server_a764fab067577c6e7d5fd2f947779534d}{Disconnect\+Player}} (uint32\+\_\+t player\+ID)
+\begin{DoxyCompactList}\small\item\em Disconnect a player and remove them from the game. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_server_ae1b87a0821e6c07538341397583ad64e}{Pinged}} (sf\+::\+Packet packet, uint32\+\_\+t player\+ID)
+\begin{DoxyCompactList}\small\item\em If the server was pinged, return with a pong. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_server_a87089846bf02eaac0b6e64184f464604}{Process\+Player\+Position\+Update}} (sf\+::\+Packet packet, uint32\+\_\+t player\+ID)
+\begin{DoxyCompactList}\small\item\em Process a player position update. If anticheat is active, also check it was valid. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_server_a43027d00d2ed8c3e8de27658dbe46038}{Process\+Player\+Shot\+Notification}} (sf\+::\+Packet packet, uint32\+\_\+t player\+ID)
+\begin{DoxyCompactList}\small\item\em Process a player shot notification, If another player was killed, and anticheat is active, validate is using a rewind system. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_server_a177802f15c1fce447646a16c766dd17a}{Process\+Player\+Respawn\+Request}} (sf\+::\+Packet packet, uint32\+\_\+t player\+ID)
+\begin{DoxyCompactList}\small\item\em Process a player respawn request, checking that player is dead. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_server_a0192fae37d1779c8e37626d7216ba282}{Render\+GUI}} ()
+\begin{DoxyCompactList}\small\item\em Render the server GUI. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_server_a6b07cc1a291a93c9dd9bf53754a748ef}{Render\+Debug\+Shapes}} (sf\+::\+Render\+Window \texorpdfstring{$\ast$}{*}window)
+\begin{DoxyCompactList}\small\item\em Render debug shapes, used for anticheat shot validation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_server_a1791300294d20baf73e8c661d94524e4}{server\+Clock}}
+\item 
+std\+::string \mbox{\hyperlink{class_server_a75f40829cbfa3133ad39c07dabc21e41}{server\+Log}}
+\item 
+bool \mbox{\hyperlink{class_server_a6057ea8b53c11ffcba5c7826c1cb08d8}{currently\+Listening}}
+\item 
+sf\+::\+Socket\+Selector \mbox{\hyperlink{class_server_a97291d45d6988e3650e44813c2828afa}{tcp\+Socket\+Selector}}
+\item 
+sf\+::\+Udp\+Socket \mbox{\hyperlink{class_server_adeccb8bd1a105717576d1eb79d2bf6fd}{udp\+Socket}}
+\item 
+sf\+::\+Tcp\+Listener \mbox{\hyperlink{class_server_adc9fbf884d29cf6f4a15bfa7d03ff453}{listener\+Socket}}
+\item 
+std\+::map$<$ uint32\+\_\+t, \mbox{\hyperlink{struct_server_1_1_player_data}{Player\+Data}} $>$ \mbox{\hyperlink{class_server_a64aeaf227bfb16bdb0fc82766f97fd6e}{players}}
+\item 
+bool \mbox{\hyperlink{class_server_a8978a8d6b142a10c5c5e05c6a0c5060d}{is\+UIOpen}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_networker_1_1_packet_log_entry}{Networker\+::\+Packet\+Log\+Entry}} $>$ \mbox{\hyperlink{class_server_a0cb6e028a4bf5d67d78b2b8a8f90f16c}{logged\+Packets}}
+\item 
+bool \mbox{\hyperlink{class_server_adf2af193a760695ee8dd8e29ebda6a1f}{logging\+Active}}
+\item 
+bool \mbox{\hyperlink{class_server_a845918d3a51e3469bc139fc21adccf91}{anti\+Cheat\+Enabled}}
+\item 
+float \mbox{\hyperlink{class_server_ae14e6199a36d58320dffb9aea8bcc607}{max\+Speed\+Allowed}} = 400.\+0f
+\item 
+std\+::map$<$ uint32\+\_\+t, std\+::deque$<$ \mbox{\hyperlink{struct_server_1_1_timestamped_position_update}{Timestamped\+Position\+Update}} $>$ $>$ \mbox{\hyperlink{class_server_af4ccc1c925c4bb24fcdbc050f393fef7}{players\+Last\+Sent\+Position\+Updates}}
+\item 
+sf\+::\+Circle\+Shape \mbox{\hyperlink{class_server_af892649301e4df6c13a1521ef07c0b0f}{shooter\+Validation\+View}}
+\item 
+sf\+::\+Circle\+Shape \mbox{\hyperlink{class_server_a50ff78b0ab12d11c6e64ccdd04937765}{victem\+Validation\+View}}
+\item 
+sf\+::\+Circle\+Shape \mbox{\hyperlink{class_server_a46844382ec5efd5ac397565569dc43f4}{actual\+Hit\+View}}
+\item 
+std\+::vector$<$ sf\+::\+Circle\+Shape $>$ \mbox{\hyperlink{class_server_abb3da479a40285770e27a421c7d196f3}{interp\+Point\+Views}}
+\item 
+sf\+::\+Vertex\+Array \mbox{\hyperlink{class_server_a5bb7e2c01e0d3eaab6f1a5c2d1631c9a}{shot\+Validation\+Line}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_server}{Server}} \mbox{\hyperlink{class_server_acc5b486d3bb2c8f4e1ae15a76ec48000}{instance}}
+\item 
+static std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{class_networker_aef8da723a9b165f9522d6e22105a53cc}{Networker\+::\+Packet\+Reason}}, std\+::function$<$ void(sf\+::\+Packet, uint32\+\_\+t)$>$ $>$ \mbox{\hyperlink{class_server_a4f4e14abe0996b0a96534eb449e9384c}{reason\+Events}}
+\item 
+static const uint8\+\_\+t \mbox{\hyperlink{class_server_a0e7b0b0adaaec566a69e90d68f9b4036}{MAX\+\_\+\+UPDATE\+\_\+\+REWIND}} = 8
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{class_server}{Server} class, used by the server to manage all server specific actions. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_server_a190373c3d138f13d10c03e4f750b6556}\index{Server@{Server}!BeginListening@{BeginListening}}
+\index{BeginListening@{BeginListening}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{BeginListening()}{BeginListening()}}
+{\footnotesize\ttfamily \label{class_server_a190373c3d138f13d10c03e4f750b6556} 
+bool Server\+::\+Begin\+Listening (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Begin listening for new connections. 
+
+\Hypertarget{class_server_aba0203e6b19f365b042102b9aa9cb7c3}\index{Server@{Server}!CheckForNewConnections@{CheckForNewConnections}}
+\index{CheckForNewConnections@{CheckForNewConnections}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{CheckForNewConnections()}{CheckForNewConnections()}}
+{\footnotesize\ttfamily \label{class_server_aba0203e6b19f365b042102b9aa9cb7c3} 
+void Server\+::\+Check\+For\+New\+Connections (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Every frame, check our listner socket for new connections, and perform the handshake adding the player, if any. 
+
+\Hypertarget{class_server_a764fab067577c6e7d5fd2f947779534d}\index{Server@{Server}!DisconnectPlayer@{DisconnectPlayer}}
+\index{DisconnectPlayer@{DisconnectPlayer}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{DisconnectPlayer()}{DisconnectPlayer()}}
+{\footnotesize\ttfamily \label{class_server_a764fab067577c6e7d5fd2f947779534d} 
+void Server\+::\+Disconnect\+Player (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{player\+ID}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Disconnect a player and remove them from the game. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player\+ID} & \doxylink{class_player}{Player} to remove\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_server_abf43b6bdc3c08b375fd74819aa711681}\index{Server@{Server}!DispatchIncomingPackets@{DispatchIncomingPackets}}
+\index{DispatchIncomingPackets@{DispatchIncomingPackets}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{DispatchIncomingPackets()}{DispatchIncomingPackets()}}
+{\footnotesize\ttfamily \label{class_server_abf43b6bdc3c08b375fd74819aa711681} 
+void Server\+::\+Dispatch\+Incoming\+Packets (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Once a frame, dispatch all packets incoming to their functions. 
+
+\Hypertarget{class_server_a2facf2b56af4e95c599eabf9f0651fb5}\index{Server@{Server}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily \label{class_server_a2facf2b56af4e95c599eabf9f0651fb5} 
+bool Server\+::\+Initialize (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Setup the singleton. 
+
+\Hypertarget{class_server_ae1b87a0821e6c07538341397583ad64e}\index{Server@{Server}!Pinged@{Pinged}}
+\index{Pinged@{Pinged}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{Pinged()}{Pinged()}}
+{\footnotesize\ttfamily \label{class_server_ae1b87a0821e6c07538341397583ad64e} 
+void Server\+::\+Pinged (\begin{DoxyParamCaption}\item[{sf\+::\+Packet}]{packet}{, }\item[{uint32\+\_\+t}]{player\+ID}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+If the server was pinged, return with a pong. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em packet} & \\
+\hline
+{\em player\+ID} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_server_a87089846bf02eaac0b6e64184f464604}\index{Server@{Server}!ProcessPlayerPositionUpdate@{ProcessPlayerPositionUpdate}}
+\index{ProcessPlayerPositionUpdate@{ProcessPlayerPositionUpdate}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{ProcessPlayerPositionUpdate()}{ProcessPlayerPositionUpdate()}}
+{\footnotesize\ttfamily \label{class_server_a87089846bf02eaac0b6e64184f464604} 
+void Server\+::\+Process\+Player\+Position\+Update (\begin{DoxyParamCaption}\item[{sf\+::\+Packet}]{packet}{, }\item[{uint32\+\_\+t}]{player\+ID}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Process a player position update. If anticheat is active, also check it was valid. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em packet} & \\
+\hline
+{\em player\+ID} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_server_a177802f15c1fce447646a16c766dd17a}\index{Server@{Server}!ProcessPlayerRespawnRequest@{ProcessPlayerRespawnRequest}}
+\index{ProcessPlayerRespawnRequest@{ProcessPlayerRespawnRequest}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{ProcessPlayerRespawnRequest()}{ProcessPlayerRespawnRequest()}}
+{\footnotesize\ttfamily \label{class_server_a177802f15c1fce447646a16c766dd17a} 
+void Server\+::\+Process\+Player\+Respawn\+Request (\begin{DoxyParamCaption}\item[{sf\+::\+Packet}]{packet}{, }\item[{uint32\+\_\+t}]{player\+ID}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Process a player respawn request, checking that player is dead. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em packet} & \\
+\hline
+{\em player\+ID} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_server_a43027d00d2ed8c3e8de27658dbe46038}\index{Server@{Server}!ProcessPlayerShotNotification@{ProcessPlayerShotNotification}}
+\index{ProcessPlayerShotNotification@{ProcessPlayerShotNotification}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{ProcessPlayerShotNotification()}{ProcessPlayerShotNotification()}}
+{\footnotesize\ttfamily \label{class_server_a43027d00d2ed8c3e8de27658dbe46038} 
+void Server\+::\+Process\+Player\+Shot\+Notification (\begin{DoxyParamCaption}\item[{sf\+::\+Packet}]{packet}{, }\item[{uint32\+\_\+t}]{player\+ID}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Process a player shot notification, If another player was killed, and anticheat is active, validate is using a rewind system. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em packet} & \\
+\hline
+{\em player\+ID} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_server_a6b07cc1a291a93c9dd9bf53754a748ef}\index{Server@{Server}!RenderDebugShapes@{RenderDebugShapes}}
+\index{RenderDebugShapes@{RenderDebugShapes}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{RenderDebugShapes()}{RenderDebugShapes()}}
+{\footnotesize\ttfamily \label{class_server_a6b07cc1a291a93c9dd9bf53754a748ef} 
+void Server\+::\+Render\+Debug\+Shapes (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \texorpdfstring{$\ast$}{*}}]{window}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Render debug shapes, used for anticheat shot validation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_server_a0192fae37d1779c8e37626d7216ba282}\index{Server@{Server}!RenderGUI@{RenderGUI}}
+\index{RenderGUI@{RenderGUI}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{RenderGUI()}{RenderGUI()}}
+{\footnotesize\ttfamily \label{class_server_a0192fae37d1779c8e37626d7216ba282} 
+void Server\+::\+Render\+GUI (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Render the server GUI. 
+
+\Hypertarget{class_server_aa524d8d1d58a12bf34f726b151082571}\index{Server@{Server}!UpdateServerClock@{UpdateServerClock}}
+\index{UpdateServerClock@{UpdateServerClock}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{UpdateServerClock()}{UpdateServerClock()}}
+{\footnotesize\ttfamily \label{class_server_aa524d8d1d58a12bf34f726b151082571} 
+void Server\+::\+Update\+Server\+Clock (\begin{DoxyParamCaption}\item[{float}]{delta\+Time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Increase the server clock. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & Delta Time\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_server_a46844382ec5efd5ac397565569dc43f4}\index{Server@{Server}!actualHitView@{actualHitView}}
+\index{actualHitView@{actualHitView}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{actualHitView}{actualHitView}}
+{\footnotesize\ttfamily \label{class_server_a46844382ec5efd5ac397565569dc43f4} 
+sf\+::\+Circle\+Shape Server\+::actual\+Hit\+View\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_server_a845918d3a51e3469bc139fc21adccf91}\index{Server@{Server}!antiCheatEnabled@{antiCheatEnabled}}
+\index{antiCheatEnabled@{antiCheatEnabled}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{antiCheatEnabled}{antiCheatEnabled}}
+{\footnotesize\ttfamily \label{class_server_a845918d3a51e3469bc139fc21adccf91} 
+bool Server\+::anti\+Cheat\+Enabled\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_server_a6057ea8b53c11ffcba5c7826c1cb08d8}\index{Server@{Server}!currentlyListening@{currentlyListening}}
+\index{currentlyListening@{currentlyListening}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{currentlyListening}{currentlyListening}}
+{\footnotesize\ttfamily \label{class_server_a6057ea8b53c11ffcba5c7826c1cb08d8} 
+bool Server\+::currently\+Listening\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_server_acc5b486d3bb2c8f4e1ae15a76ec48000}\index{Server@{Server}!instance@{instance}}
+\index{instance@{instance}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{instance}{instance}}
+{\footnotesize\ttfamily \label{class_server_acc5b486d3bb2c8f4e1ae15a76ec48000} 
+\mbox{\hyperlink{class_server}{Server}} Server\+::instance\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\Hypertarget{class_server_abb3da479a40285770e27a421c7d196f3}\index{Server@{Server}!interpPointViews@{interpPointViews}}
+\index{interpPointViews@{interpPointViews}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{interpPointViews}{interpPointViews}}
+{\footnotesize\ttfamily \label{class_server_abb3da479a40285770e27a421c7d196f3} 
+std\+::vector$<$sf\+::\+Circle\+Shape$>$ Server\+::interp\+Point\+Views\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_server_a8978a8d6b142a10c5c5e05c6a0c5060d}\index{Server@{Server}!isUIOpen@{isUIOpen}}
+\index{isUIOpen@{isUIOpen}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{isUIOpen}{isUIOpen}}
+{\footnotesize\ttfamily \label{class_server_a8978a8d6b142a10c5c5e05c6a0c5060d} 
+bool Server\+::is\+UIOpen\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_server_adc9fbf884d29cf6f4a15bfa7d03ff453}\index{Server@{Server}!listenerSocket@{listenerSocket}}
+\index{listenerSocket@{listenerSocket}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{listenerSocket}{listenerSocket}}
+{\footnotesize\ttfamily \label{class_server_adc9fbf884d29cf6f4a15bfa7d03ff453} 
+sf\+::\+Tcp\+Listener Server\+::listener\+Socket\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_server_a0cb6e028a4bf5d67d78b2b8a8f90f16c}\index{Server@{Server}!loggedPackets@{loggedPackets}}
+\index{loggedPackets@{loggedPackets}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{loggedPackets}{loggedPackets}}
+{\footnotesize\ttfamily \label{class_server_a0cb6e028a4bf5d67d78b2b8a8f90f16c} 
+std\+::vector$<$\mbox{\hyperlink{struct_networker_1_1_packet_log_entry}{Networker\+::\+Packet\+Log\+Entry}}$>$ Server\+::logged\+Packets\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_server_adf2af193a760695ee8dd8e29ebda6a1f}\index{Server@{Server}!loggingActive@{loggingActive}}
+\index{loggingActive@{loggingActive}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{loggingActive}{loggingActive}}
+{\footnotesize\ttfamily \label{class_server_adf2af193a760695ee8dd8e29ebda6a1f} 
+bool Server\+::logging\+Active\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_server_a0e7b0b0adaaec566a69e90d68f9b4036}\index{Server@{Server}!MAX\_UPDATE\_REWIND@{MAX\_UPDATE\_REWIND}}
+\index{MAX\_UPDATE\_REWIND@{MAX\_UPDATE\_REWIND}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{MAX\_UPDATE\_REWIND}{MAX\_UPDATE\_REWIND}}
+{\footnotesize\ttfamily \label{class_server_a0e7b0b0adaaec566a69e90d68f9b4036} 
+const uint8\+\_\+t Server\+::\+MAX\+\_\+\+UPDATE\+\_\+\+REWIND = 8\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\Hypertarget{class_server_ae14e6199a36d58320dffb9aea8bcc607}\index{Server@{Server}!maxSpeedAllowed@{maxSpeedAllowed}}
+\index{maxSpeedAllowed@{maxSpeedAllowed}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{maxSpeedAllowed}{maxSpeedAllowed}}
+{\footnotesize\ttfamily \label{class_server_ae14e6199a36d58320dffb9aea8bcc607} 
+float Server\+::max\+Speed\+Allowed = 400.\+0f\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_server_a64aeaf227bfb16bdb0fc82766f97fd6e}\index{Server@{Server}!players@{players}}
+\index{players@{players}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{players}{players}}
+{\footnotesize\ttfamily \label{class_server_a64aeaf227bfb16bdb0fc82766f97fd6e} 
+std\+::map$<$uint32\+\_\+t, \mbox{\hyperlink{struct_server_1_1_player_data}{Player\+Data}}$>$ Server\+::players\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_server_af4ccc1c925c4bb24fcdbc050f393fef7}\index{Server@{Server}!playersLastSentPositionUpdates@{playersLastSentPositionUpdates}}
+\index{playersLastSentPositionUpdates@{playersLastSentPositionUpdates}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{playersLastSentPositionUpdates}{playersLastSentPositionUpdates}}
+{\footnotesize\ttfamily \label{class_server_af4ccc1c925c4bb24fcdbc050f393fef7} 
+std\+::map$<$uint32\+\_\+t, std\+::deque$<$\mbox{\hyperlink{struct_server_1_1_timestamped_position_update}{Timestamped\+Position\+Update}}$>$ $>$ Server\+::players\+Last\+Sent\+Position\+Updates\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_server_a4f4e14abe0996b0a96534eb449e9384c}\index{Server@{Server}!reasonEvents@{reasonEvents}}
+\index{reasonEvents@{reasonEvents}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{reasonEvents}{reasonEvents}}
+{\footnotesize\ttfamily \label{class_server_a4f4e14abe0996b0a96534eb449e9384c} 
+std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{class_networker_aef8da723a9b165f9522d6e22105a53cc}{Networker\+::\+Packet\+Reason}}, std\+::function$<$ void(sf\+::\+Packet, uint32\+\_\+t)$>$ $>$ Server\+::reason\+Events\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \{\mbox{\hyperlink{class_networker_aef8da723a9b165f9522d6e22105a53ccae07ff41a486c27c095a15898dcca34d1}{Networker::PacketReason::PING}},\ \mbox{\hyperlink{class_server_ae1b87a0821e6c07538341397583ad64e}{Server::Pinged}}\ \},}
+\DoxyCodeLine{\ \ \ \ \{\mbox{\hyperlink{class_networker_aef8da723a9b165f9522d6e22105a53ccabfcf2c5fc47ab40be0f8a53bc3b086b1}{Networker::PacketReason::PLAYER\_TRANSFORM\_UPDATE}},\ \mbox{\hyperlink{class_server_a87089846bf02eaac0b6e64184f464604}{Server::ProcessPlayerPositionUpdate}}\ \},}
+\DoxyCodeLine{\ \ \ \ \{\mbox{\hyperlink{class_networker_aef8da723a9b165f9522d6e22105a53ccac3d9346eb523373b81782b9fd1eb4a0b}{Networker::PacketReason::SHOOT\_NOTIFICATION}},\ \mbox{\hyperlink{class_server_a43027d00d2ed8c3e8de27658dbe46038}{Server::ProcessPlayerShotNotification}}\ \},}
+\DoxyCodeLine{\ \ \ \ \{\mbox{\hyperlink{class_networker_aef8da723a9b165f9522d6e22105a53ccad122da1650c96167bd172487e86c4854}{Networker::PacketReason::RESPAWN}},\ \mbox{\hyperlink{class_server_a177802f15c1fce447646a16c766dd17a}{Server::ProcessPlayerRespawnRequest}}\ \},}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\Hypertarget{class_server_a1791300294d20baf73e8c661d94524e4}\index{Server@{Server}!serverClock@{serverClock}}
+\index{serverClock@{serverClock}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{serverClock}{serverClock}}
+{\footnotesize\ttfamily \label{class_server_a1791300294d20baf73e8c661d94524e4} 
+float Server\+::server\+Clock\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_server_a75f40829cbfa3133ad39c07dabc21e41}\index{Server@{Server}!serverLog@{serverLog}}
+\index{serverLog@{serverLog}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{serverLog}{serverLog}}
+{\footnotesize\ttfamily \label{class_server_a75f40829cbfa3133ad39c07dabc21e41} 
+std\+::string Server\+::server\+Log\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_server_af892649301e4df6c13a1521ef07c0b0f}\index{Server@{Server}!shooterValidationView@{shooterValidationView}}
+\index{shooterValidationView@{shooterValidationView}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{shooterValidationView}{shooterValidationView}}
+{\footnotesize\ttfamily \label{class_server_af892649301e4df6c13a1521ef07c0b0f} 
+sf\+::\+Circle\+Shape Server\+::shooter\+Validation\+View\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_server_a5bb7e2c01e0d3eaab6f1a5c2d1631c9a}\index{Server@{Server}!shotValidationLine@{shotValidationLine}}
+\index{shotValidationLine@{shotValidationLine}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{shotValidationLine}{shotValidationLine}}
+{\footnotesize\ttfamily \label{class_server_a5bb7e2c01e0d3eaab6f1a5c2d1631c9a} 
+sf\+::\+Vertex\+Array Server\+::shot\+Validation\+Line\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_server_a97291d45d6988e3650e44813c2828afa}\index{Server@{Server}!tcpSocketSelector@{tcpSocketSelector}}
+\index{tcpSocketSelector@{tcpSocketSelector}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{tcpSocketSelector}{tcpSocketSelector}}
+{\footnotesize\ttfamily \label{class_server_a97291d45d6988e3650e44813c2828afa} 
+sf\+::\+Socket\+Selector Server\+::tcp\+Socket\+Selector\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_server_adeccb8bd1a105717576d1eb79d2bf6fd}\index{Server@{Server}!udpSocket@{udpSocket}}
+\index{udpSocket@{udpSocket}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{udpSocket}{udpSocket}}
+{\footnotesize\ttfamily \label{class_server_adeccb8bd1a105717576d1eb79d2bf6fd} 
+sf\+::\+Udp\+Socket Server\+::udp\+Socket\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_server_a50ff78b0ab12d11c6e64ccdd04937765}\index{Server@{Server}!victemValidationView@{victemValidationView}}
+\index{victemValidationView@{victemValidationView}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{victemValidationView}{victemValidationView}}
+{\footnotesize\ttfamily \label{class_server_a50ff78b0ab12d11c6e64ccdd04937765} 
+sf\+::\+Circle\+Shape Server\+::victem\+Validation\+View\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+assessment-\/project-\/\+Corcso/\+CMP425\+Coursework/\mbox{\hyperlink{_server_8h}{Server.\+h}}\item 
+assessment-\/project-\/\+Corcso/\+CMP425\+Coursework/\mbox{\hyperlink{_network_packet_reason_events_8cpp}{Network\+Packet\+Reason\+Events.\+cpp}}\item 
+assessment-\/project-\/\+Corcso/\+CMP425\+Coursework/\mbox{\hyperlink{_server_8cpp}{Server.\+cpp}}\end{DoxyCompactItemize}

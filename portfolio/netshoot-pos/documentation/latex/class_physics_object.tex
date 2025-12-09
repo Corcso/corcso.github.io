@@ -1,0 +1,257 @@
+\doxysection{Physics\+Object Class Reference}
+\hypertarget{class_physics_object}{}\label{class_physics_object}\index{PhysicsObject@{PhysicsObject}}
+
+
+A physics object, doesn\textquotesingle{}t do much appart from a few helper functions and storing the body ID Grabbing positions should happen at the start of the child class update.  
+
+
+
+
+{\ttfamily \#include $<$Physics\+Object.\+h$>$}
+
+Inheritance diagram for Physics\+Object\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_physics_object}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{class_physics_object_a382d9a2336e2205f4e8e44d323fe847f}{Physics\+Layer}} \+: uint64\+\_\+t \{ \newline
+\mbox{\hyperlink{class_physics_object_a382d9a2336e2205f4e8e44d323fe847faeac9f95f880e5fe80d83a5821ba5111e}{TILE}} = 0x0001
+, \mbox{\hyperlink{class_physics_object_a382d9a2336e2205f4e8e44d323fe847fa07c80e2a355d91402a00d82b1fa13855}{PLAYER}} = 0x0002
+, \mbox{\hyperlink{class_physics_object_a382d9a2336e2205f4e8e44d323fe847fa0d7b74a5bcb1cea80c9869b3b95b24fc}{TILE\+\_\+\+DETAIL}} = 0x0004
+, \mbox{\hyperlink{class_physics_object_a382d9a2336e2205f4e8e44d323fe847fa752dc123d813f629a475280b33456e00}{FAUX\+\_\+\+PLAYER}} = 0x0008
+, \newline
+\mbox{\hyperlink{class_physics_object_a382d9a2336e2205f4e8e44d323fe847fa180bb5e381e316e2246b88c92770ee75}{FIVE}} = 0x0010
+, \mbox{\hyperlink{class_physics_object_a382d9a2336e2205f4e8e44d323fe847fa48041ef8474caedcbcf2fe8996056b7f}{SIX}} = 0x0020
+, \mbox{\hyperlink{class_physics_object_a382d9a2336e2205f4e8e44d323fe847faebcf71d9bbc715c43f24a10cce77dab4}{SEVEN}} = 0x0040
+, \mbox{\hyperlink{class_physics_object_a382d9a2336e2205f4e8e44d323fe847fa960df6d77e65cd185ca4f3501db634eb}{EIGHT}} = 0x0080
+ \}
+\begin{DoxyCompactList}\small\item\em Layers for the physics engine. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{class_game_object}{Game\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{class_game_object_ab37fe177d93acef64329e2b69583c498}{Render\+Layer}} \{ \mbox{\hyperlink{class_game_object_ab37fe177d93acef64329e2b69583c498a87ed58ce5596142e11cb65deb049bb4b}{BACKGROUND}}
+, \mbox{\hyperlink{class_game_object_ab37fe177d93acef64329e2b69583c498ad80d07f9a5629e3684b7764baf58f357}{FOG\+\_\+\+OF\+\_\+\+WAR}}
+, \mbox{\hyperlink{class_game_object_ab37fe177d93acef64329e2b69583c498a1a8e6f9c757af8973978791b895a5d11}{WITHIN\+\_\+\+FOG\+\_\+\+OF\+\_\+\+WAR}}
+, \mbox{\hyperlink{class_game_object_ab37fe177d93acef64329e2b69583c498ae41f4c3e11dd067fd5691da0124b8fd2}{FOREGROUND}}
+ \}
+\begin{DoxyCompactList}\small\item\em Render layers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_physics_object_a6601dd71ae7306ec2e02585fa8a576e4}{Ready}} ()=0
+\begin{DoxyCompactList}\small\item\em Ready function, called on object creation, once. You must call this yourself if you create the object. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_physics_object_a0bc5e189371b03d7ac67db851dc3d5b1}{Update}} (float delta\+Time)=0
+\begin{DoxyCompactList}\small\item\em Update function, called by core (if object is registered there), every frame. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_physics_object_a583b371abd3a8184306d185878fae06a}{Render}} (sf\+::\+Render\+Target \texorpdfstring{$\ast$}{*}target)=0
+\begin{DoxyCompactList}\small\item\em Render function, called by core (if object is registered there), every frame. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_physics_object_ade6588d8622cff10e979118e0f8a076e}{\texorpdfstring{$\sim$}{\string~}\+Physics\+Object}} ()
+\begin{DoxyCompactList}\small\item\em On destruct, remove the physics body from the world if it is still there. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_physics_object_a9d1e8ac3355e1fc45be28fed34fad4eb}{Register\+Me\+Physically}} (b2\+Body\+Def \&body\+Def, b2\+Shape\+Def \&shape\+Def, b2\+Polygon \&polygon)
+\begin{DoxyCompactList}\small\item\em Create a body in the world with the provided parameters. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_physics_object_a22096a6eb23195e0bf97a47a955cd61c}{Register\+Me\+Physically}} (b2\+Body\+Def \&body\+Def, b2\+Shape\+Def \&shape\+Def, b2\+Circle \&circle)
+\begin{DoxyCompactList}\small\item\em Create a body in the world with the provided parameters. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_game_object}{Game\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_game_object_a224d4f6d9dd75c8a6f9d022eaf586fd9}{\texorpdfstring{$\sim$}{\string~}\+Game\+Object}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+b2\+Body\+Id \mbox{\hyperlink{class_physics_object_af89e9afbdc275526b18936ed1b7f150c}{physics\+Body\+Id}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{class_game_object}{Game\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{class_game_object_af542b33c8de269343e22c5629e6b66c0}{name}}
+\begin{DoxyCompactList}\small\item\em Name of the object, must be unique at \doxylink{class_core}{Core} level. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_game_object_ab37fe177d93acef64329e2b69583c498}{Render\+Layer}} \mbox{\hyperlink{class_game_object_aa7cebfb2ce9925abcf604b868d2d7be0}{render\+Layer}}
+\begin{DoxyCompactList}\small\item\em Render layer of this object, used by \doxylink{class_core}{Core} to decide when to render this object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A physics object, doesn\textquotesingle{}t do much appart from a few helper functions and storing the body ID Grabbing positions should happen at the start of the child class update. 
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{class_physics_object_a382d9a2336e2205f4e8e44d323fe847f}\index{PhysicsObject@{PhysicsObject}!PhysicsLayer@{PhysicsLayer}}
+\index{PhysicsLayer@{PhysicsLayer}!PhysicsObject@{PhysicsObject}}
+\doxysubsubsection{\texorpdfstring{PhysicsLayer}{PhysicsLayer}}
+{\footnotesize\ttfamily \label{class_physics_object_a382d9a2336e2205f4e8e44d323fe847f} 
+enum class \mbox{\hyperlink{class_physics_object_a382d9a2336e2205f4e8e44d323fe847f}{Physics\+Object\+::\+Physics\+Layer}} \+: uint64\+\_\+t\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Layers for the physics engine. 
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TILE@{TILE}!PhysicsObject@{PhysicsObject}}\index{PhysicsObject@{PhysicsObject}!TILE@{TILE}}}\Hypertarget{class_physics_object_a382d9a2336e2205f4e8e44d323fe847faeac9f95f880e5fe80d83a5821ba5111e}\label{class_physics_object_a382d9a2336e2205f4e8e44d323fe847f} 
+TILE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PLAYER@{PLAYER}!PhysicsObject@{PhysicsObject}}\index{PhysicsObject@{PhysicsObject}!PLAYER@{PLAYER}}}\Hypertarget{class_physics_object_a382d9a2336e2205f4e8e44d323fe847fa07c80e2a355d91402a00d82b1fa13855}\label{class_physics_object_a382d9a2336e2205f4e8e44d323fe847f} 
+PLAYER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TILE\_DETAIL@{TILE\_DETAIL}!PhysicsObject@{PhysicsObject}}\index{PhysicsObject@{PhysicsObject}!TILE\_DETAIL@{TILE\_DETAIL}}}\Hypertarget{class_physics_object_a382d9a2336e2205f4e8e44d323fe847fa0d7b74a5bcb1cea80c9869b3b95b24fc}\label{class_physics_object_a382d9a2336e2205f4e8e44d323fe847f} 
+TILE\+\_\+\+DETAIL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FAUX\_PLAYER@{FAUX\_PLAYER}!PhysicsObject@{PhysicsObject}}\index{PhysicsObject@{PhysicsObject}!FAUX\_PLAYER@{FAUX\_PLAYER}}}\Hypertarget{class_physics_object_a382d9a2336e2205f4e8e44d323fe847fa752dc123d813f629a475280b33456e00}\label{class_physics_object_a382d9a2336e2205f4e8e44d323fe847f} 
+FAUX\+\_\+\+PLAYER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FIVE@{FIVE}!PhysicsObject@{PhysicsObject}}\index{PhysicsObject@{PhysicsObject}!FIVE@{FIVE}}}\Hypertarget{class_physics_object_a382d9a2336e2205f4e8e44d323fe847fa180bb5e381e316e2246b88c92770ee75}\label{class_physics_object_a382d9a2336e2205f4e8e44d323fe847f} 
+FIVE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SIX@{SIX}!PhysicsObject@{PhysicsObject}}\index{PhysicsObject@{PhysicsObject}!SIX@{SIX}}}\Hypertarget{class_physics_object_a382d9a2336e2205f4e8e44d323fe847fa48041ef8474caedcbcf2fe8996056b7f}\label{class_physics_object_a382d9a2336e2205f4e8e44d323fe847f} 
+SIX&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SEVEN@{SEVEN}!PhysicsObject@{PhysicsObject}}\index{PhysicsObject@{PhysicsObject}!SEVEN@{SEVEN}}}\Hypertarget{class_physics_object_a382d9a2336e2205f4e8e44d323fe847faebcf71d9bbc715c43f24a10cce77dab4}\label{class_physics_object_a382d9a2336e2205f4e8e44d323fe847f} 
+SEVEN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EIGHT@{EIGHT}!PhysicsObject@{PhysicsObject}}\index{PhysicsObject@{PhysicsObject}!EIGHT@{EIGHT}}}\Hypertarget{class_physics_object_a382d9a2336e2205f4e8e44d323fe847fa960df6d77e65cd185ca4f3501db634eb}\label{class_physics_object_a382d9a2336e2205f4e8e44d323fe847f} 
+EIGHT&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_physics_object_ade6588d8622cff10e979118e0f8a076e}\index{PhysicsObject@{PhysicsObject}!````~PhysicsObject@{\texorpdfstring{$\sim$}{\string~}PhysicsObject}}
+\index{````~PhysicsObject@{\texorpdfstring{$\sim$}{\string~}PhysicsObject}!PhysicsObject@{PhysicsObject}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}PhysicsObject()}{\string~PhysicsObject()}}
+{\footnotesize\ttfamily \label{class_physics_object_ade6588d8622cff10e979118e0f8a076e} 
+virtual Physics\+Object\+::\texorpdfstring{$\sim$}{\string~}\+Physics\+Object (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+On destruct, remove the physics body from the world if it is still there. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_physics_object_a6601dd71ae7306ec2e02585fa8a576e4}\index{PhysicsObject@{PhysicsObject}!Ready@{Ready}}
+\index{Ready@{Ready}!PhysicsObject@{PhysicsObject}}
+\doxysubsubsection{\texorpdfstring{Ready()}{Ready()}}
+{\footnotesize\ttfamily \label{class_physics_object_a6601dd71ae7306ec2e02585fa8a576e4} 
+virtual void Physics\+Object\+::\+Ready (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Ready function, called on object creation, once. You must call this yourself if you create the object. 
+
+
+
+Implements \mbox{\hyperlink{class_game_object_a0f57fb08f36479414ef51ed176950532}{Game\+Object}}.
+
+
+
+Implemented in \mbox{\hyperlink{class_player_a5a421cc9bdd3176beee4cc0d30571b0f}{Player}}, and \mbox{\hyperlink{class_world_tile_a12fce528ae96b345c3576a2707ae3500}{World\+Tile}}.
+
+\Hypertarget{class_physics_object_a22096a6eb23195e0bf97a47a955cd61c}\index{PhysicsObject@{PhysicsObject}!RegisterMePhysically@{RegisterMePhysically}}
+\index{RegisterMePhysically@{RegisterMePhysically}!PhysicsObject@{PhysicsObject}}
+\doxysubsubsection{\texorpdfstring{RegisterMePhysically()}{RegisterMePhysically()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_physics_object_a22096a6eb23195e0bf97a47a955cd61c} 
+void Physics\+Object\+::\+Register\+Me\+Physically (\begin{DoxyParamCaption}\item[{b2\+Body\+Def \&}]{body\+Def}{, }\item[{b2\+Shape\+Def \&}]{shape\+Def}{, }\item[{b2\+Circle \&}]{circle}{}\end{DoxyParamCaption})}
+
+
+
+Create a body in the world with the provided parameters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em body\+Def} & Body Definition\\
+\hline
+{\em shape\+Def} & Shape Definition\\
+\hline
+{\em circle} & Circle Shape\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_physics_object_a9d1e8ac3355e1fc45be28fed34fad4eb}\index{PhysicsObject@{PhysicsObject}!RegisterMePhysically@{RegisterMePhysically}}
+\index{RegisterMePhysically@{RegisterMePhysically}!PhysicsObject@{PhysicsObject}}
+\doxysubsubsection{\texorpdfstring{RegisterMePhysically()}{RegisterMePhysically()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_physics_object_a9d1e8ac3355e1fc45be28fed34fad4eb} 
+void Physics\+Object\+::\+Register\+Me\+Physically (\begin{DoxyParamCaption}\item[{b2\+Body\+Def \&}]{body\+Def}{, }\item[{b2\+Shape\+Def \&}]{shape\+Def}{, }\item[{b2\+Polygon \&}]{polygon}{}\end{DoxyParamCaption})}
+
+
+
+Create a body in the world with the provided parameters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em body\+Def} & Body Definition\\
+\hline
+{\em shape\+Def} & Shape Definition\\
+\hline
+{\em polygon} & Polygon Shape\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_physics_object_a583b371abd3a8184306d185878fae06a}\index{PhysicsObject@{PhysicsObject}!Render@{Render}}
+\index{Render@{Render}!PhysicsObject@{PhysicsObject}}
+\doxysubsubsection{\texorpdfstring{Render()}{Render()}}
+{\footnotesize\ttfamily \label{class_physics_object_a583b371abd3a8184306d185878fae06a} 
+virtual void Physics\+Object\+::\+Render (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Target \texorpdfstring{$\ast$}{*}}]{target}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Render function, called by core (if object is registered there), every frame. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & The target you should render to, provided by core\\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_game_object_afb9de187a6b4f00723176d429ca4a27c}{Game\+Object}}.
+
+
+
+Implemented in \mbox{\hyperlink{class_player_ab3886e576c95a93e49fa78f29e440730}{Player}}, and \mbox{\hyperlink{class_world_tile_a322036f3d0460d41607f1d949b558086}{World\+Tile}}.
+
+\Hypertarget{class_physics_object_a0bc5e189371b03d7ac67db851dc3d5b1}\index{PhysicsObject@{PhysicsObject}!Update@{Update}}
+\index{Update@{Update}!PhysicsObject@{PhysicsObject}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{class_physics_object_a0bc5e189371b03d7ac67db851dc3d5b1} 
+virtual void Physics\+Object\+::\+Update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Update function, called by core (if object is registered there), every frame. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & Delta Time\\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_game_object_a44739a8b5e507580ee3100df039ab8e6}{Game\+Object}}.
+
+
+
+Implemented in \mbox{\hyperlink{class_player_a20bfb1cb738f6b00f589207ce460491e}{Player}}, and \mbox{\hyperlink{class_world_tile_a6eb82385b71146f8991272c634680f7a}{World\+Tile}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_physics_object_af89e9afbdc275526b18936ed1b7f150c}\index{PhysicsObject@{PhysicsObject}!physicsBodyId@{physicsBodyId}}
+\index{physicsBodyId@{physicsBodyId}!PhysicsObject@{PhysicsObject}}
+\doxysubsubsection{\texorpdfstring{physicsBodyId}{physicsBodyId}}
+{\footnotesize\ttfamily \label{class_physics_object_af89e9afbdc275526b18936ed1b7f150c} 
+b2\+Body\+Id Physics\+Object\+::physics\+Body\+Id\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+assessment-\/project-\/\+Corcso/\+CMP425\+Coursework/\mbox{\hyperlink{_physics_object_8h}{Physics\+Object.\+h}}\item 
+assessment-\/project-\/\+Corcso/\+CMP425\+Coursework/\mbox{\hyperlink{_physics_object_8cpp}{Physics\+Object.\+cpp}}\end{DoxyCompactItemize}

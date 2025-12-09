@@ -1,0 +1,7 @@
+var searchData=
+[
+  ['editor_5fchosentile_0',['editor_chosenTile',['../class_tile_map.html#a35497b456261213f9482b7ab1f489a07',1,'TileMap']]],
+  ['editor_5ffilename_1',['editor_fileName',['../class_tile_map.html#ae4189820c014e4403d69056d8c84988e',1,'TileMap']]],
+  ['editor_5fnametocopy_2',['editor_nameToCopy',['../class_tile_map.html#a26adb9daf726b7ab5853e3bf140a9ad8',1,'TileMap']]],
+  ['editor_5ftilepaths_5flayers_5fdetail_5fbool_3',['editor_tilePaths_layers_detail_bool',['../class_tile_map.html#a41e0603763bab6e10c5b53e924add744',1,'TileMap']]]
+];

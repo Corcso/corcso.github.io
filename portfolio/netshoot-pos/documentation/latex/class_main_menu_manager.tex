@@ -1,0 +1,174 @@
+\doxysection{Main\+Menu\+Manager Class Reference}
+\hypertarget{class_main_menu_manager}{}\label{class_main_menu_manager}\index{MainMenuManager@{MainMenuManager}}
+
+
+Main menu scene object.  
+
+
+
+
+{\ttfamily \#include $<$Main\+Menu\+Manager.\+h$>$}
+
+Inheritance diagram for Main\+Menu\+Manager\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_main_menu_manager}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_main_menu_manager_aadbb4351d08ccccb2b53b958ab0c1a1e}{Ready}} () override
+\begin{DoxyCompactList}\small\item\em Ready function, called on object creation, once. You must call this yourself if you create the object. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_main_menu_manager_ac7fb3c613e5bd7785d412e8989d586a0}{Update}} (float delta\+Time) override
+\begin{DoxyCompactList}\small\item\em Update function, called by core (if object is registered there), every frame. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_main_menu_manager_aae20da1137580995f4ef630c46df0076}{Render}} (sf\+::\+Render\+Target \texorpdfstring{$\ast$}{*}target) override
+\begin{DoxyCompactList}\small\item\em Render function, called by core (if object is registered there), every frame. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_menu_manager_a7aad0e666dc602032f636306bd44f43f}{Send\+Popup\+Message}} (std\+::string message)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_game_object}{Game\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_game_object_a224d4f6d9dd75c8a6f9d022eaf586fd9}{\texorpdfstring{$\sim$}{\string~}\+Game\+Object}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{class_main_menu_manager_aabfa85205c6d8d39daf990a817ac790c}{server\+Address\+Portions}} \mbox{[}4\mbox{]}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{class_main_menu_manager_a2acd0ee3bac0c4ec44d33ef04795f4a1}{port}}
+\item 
+char \mbox{\hyperlink{class_main_menu_manager_a529c3960611707e43c7f2d0da8ad02a5}{players\+Desired\+Name}} \mbox{[}16\mbox{]} = "{}Player Name"{}
+\item 
+std\+::string \mbox{\hyperlink{class_main_menu_manager_aadd19e9ffcf5e0e25fd3de7d0efafde8}{current\+Popup\+Message}}
+\item 
+bool \mbox{\hyperlink{class_main_menu_manager_a4a4b36af73ef1aeab06fb3fdc2667a4d}{message\+Is\+Open}}
+\item 
+sf\+::\+Texture \mbox{\hyperlink{class_main_menu_manager_aaf28bd15d8c9848640dfa4b67aa2c896}{logo}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{class_game_object}{Game\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{class_game_object_ab37fe177d93acef64329e2b69583c498}{Render\+Layer}} \{ \mbox{\hyperlink{class_game_object_ab37fe177d93acef64329e2b69583c498a87ed58ce5596142e11cb65deb049bb4b}{BACKGROUND}}
+, \mbox{\hyperlink{class_game_object_ab37fe177d93acef64329e2b69583c498ad80d07f9a5629e3684b7764baf58f357}{FOG\+\_\+\+OF\+\_\+\+WAR}}
+, \mbox{\hyperlink{class_game_object_ab37fe177d93acef64329e2b69583c498a1a8e6f9c757af8973978791b895a5d11}{WITHIN\+\_\+\+FOG\+\_\+\+OF\+\_\+\+WAR}}
+, \mbox{\hyperlink{class_game_object_ab37fe177d93acef64329e2b69583c498ae41f4c3e11dd067fd5691da0124b8fd2}{FOREGROUND}}
+ \}
+\begin{DoxyCompactList}\small\item\em Render layers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{class_game_object}{Game\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{class_game_object_af542b33c8de269343e22c5629e6b66c0}{name}}
+\begin{DoxyCompactList}\small\item\em Name of the object, must be unique at \doxylink{class_core}{Core} level. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_game_object_ab37fe177d93acef64329e2b69583c498}{Render\+Layer}} \mbox{\hyperlink{class_game_object_aa7cebfb2ce9925abcf604b868d2d7be0}{render\+Layer}}
+\begin{DoxyCompactList}\small\item\em Render layer of this object, used by \doxylink{class_core}{Core} to decide when to render this object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Main menu scene object. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_main_menu_manager_aadbb4351d08ccccb2b53b958ab0c1a1e}\index{MainMenuManager@{MainMenuManager}!Ready@{Ready}}
+\index{Ready@{Ready}!MainMenuManager@{MainMenuManager}}
+\doxysubsubsection{\texorpdfstring{Ready()}{Ready()}}
+{\footnotesize\ttfamily \label{class_main_menu_manager_aadbb4351d08ccccb2b53b958ab0c1a1e} 
+void Main\+Menu\+Manager\+::\+Ready (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Ready function, called on object creation, once. You must call this yourself if you create the object. 
+
+
+
+Implements \mbox{\hyperlink{class_game_object_a0f57fb08f36479414ef51ed176950532}{Game\+Object}}.
+
+\Hypertarget{class_main_menu_manager_aae20da1137580995f4ef630c46df0076}\index{MainMenuManager@{MainMenuManager}!Render@{Render}}
+\index{Render@{Render}!MainMenuManager@{MainMenuManager}}
+\doxysubsubsection{\texorpdfstring{Render()}{Render()}}
+{\footnotesize\ttfamily \label{class_main_menu_manager_aae20da1137580995f4ef630c46df0076} 
+void Main\+Menu\+Manager\+::\+Render (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Target \texorpdfstring{$\ast$}{*}}]{target}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Render function, called by core (if object is registered there), every frame. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & The target you should render to, provided by core\\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_game_object_afb9de187a6b4f00723176d429ca4a27c}{Game\+Object}}.
+
+\Hypertarget{class_main_menu_manager_a7aad0e666dc602032f636306bd44f43f}\index{MainMenuManager@{MainMenuManager}!SendPopupMessage@{SendPopupMessage}}
+\index{SendPopupMessage@{SendPopupMessage}!MainMenuManager@{MainMenuManager}}
+\doxysubsubsection{\texorpdfstring{SendPopupMessage()}{SendPopupMessage()}}
+{\footnotesize\ttfamily \label{class_main_menu_manager_a7aad0e666dc602032f636306bd44f43f} 
+void Main\+Menu\+Manager\+::\+Send\+Popup\+Message (\begin{DoxyParamCaption}\item[{std\+::string}]{message}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_main_menu_manager_ac7fb3c613e5bd7785d412e8989d586a0}\index{MainMenuManager@{MainMenuManager}!Update@{Update}}
+\index{Update@{Update}!MainMenuManager@{MainMenuManager}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{class_main_menu_manager_ac7fb3c613e5bd7785d412e8989d586a0} 
+void Main\+Menu\+Manager\+::\+Update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Update function, called by core (if object is registered there), every frame. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & Delta Time\\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_game_object_a44739a8b5e507580ee3100df039ab8e6}{Game\+Object}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_main_menu_manager_aadd19e9ffcf5e0e25fd3de7d0efafde8}\index{MainMenuManager@{MainMenuManager}!currentPopupMessage@{currentPopupMessage}}
+\index{currentPopupMessage@{currentPopupMessage}!MainMenuManager@{MainMenuManager}}
+\doxysubsubsection{\texorpdfstring{currentPopupMessage}{currentPopupMessage}}
+{\footnotesize\ttfamily \label{class_main_menu_manager_aadd19e9ffcf5e0e25fd3de7d0efafde8} 
+std\+::string Main\+Menu\+Manager\+::current\+Popup\+Message\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_main_menu_manager_aaf28bd15d8c9848640dfa4b67aa2c896}\index{MainMenuManager@{MainMenuManager}!logo@{logo}}
+\index{logo@{logo}!MainMenuManager@{MainMenuManager}}
+\doxysubsubsection{\texorpdfstring{logo}{logo}}
+{\footnotesize\ttfamily \label{class_main_menu_manager_aaf28bd15d8c9848640dfa4b67aa2c896} 
+sf\+::\+Texture Main\+Menu\+Manager\+::logo\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_main_menu_manager_a4a4b36af73ef1aeab06fb3fdc2667a4d}\index{MainMenuManager@{MainMenuManager}!messageIsOpen@{messageIsOpen}}
+\index{messageIsOpen@{messageIsOpen}!MainMenuManager@{MainMenuManager}}
+\doxysubsubsection{\texorpdfstring{messageIsOpen}{messageIsOpen}}
+{\footnotesize\ttfamily \label{class_main_menu_manager_a4a4b36af73ef1aeab06fb3fdc2667a4d} 
+bool Main\+Menu\+Manager\+::message\+Is\+Open\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_main_menu_manager_a529c3960611707e43c7f2d0da8ad02a5}\index{MainMenuManager@{MainMenuManager}!playersDesiredName@{playersDesiredName}}
+\index{playersDesiredName@{playersDesiredName}!MainMenuManager@{MainMenuManager}}
+\doxysubsubsection{\texorpdfstring{playersDesiredName}{playersDesiredName}}
+{\footnotesize\ttfamily \label{class_main_menu_manager_a529c3960611707e43c7f2d0da8ad02a5} 
+char Main\+Menu\+Manager\+::players\+Desired\+Name\mbox{[}16\mbox{]} = "{}Player Name"{}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_main_menu_manager_a2acd0ee3bac0c4ec44d33ef04795f4a1}\index{MainMenuManager@{MainMenuManager}!port@{port}}
+\index{port@{port}!MainMenuManager@{MainMenuManager}}
+\doxysubsubsection{\texorpdfstring{port}{port}}
+{\footnotesize\ttfamily \label{class_main_menu_manager_a2acd0ee3bac0c4ec44d33ef04795f4a1} 
+uint16\+\_\+t Main\+Menu\+Manager\+::port\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_main_menu_manager_aabfa85205c6d8d39daf990a817ac790c}\index{MainMenuManager@{MainMenuManager}!serverAddressPortions@{serverAddressPortions}}
+\index{serverAddressPortions@{serverAddressPortions}!MainMenuManager@{MainMenuManager}}
+\doxysubsubsection{\texorpdfstring{serverAddressPortions}{serverAddressPortions}}
+{\footnotesize\ttfamily \label{class_main_menu_manager_aabfa85205c6d8d39daf990a817ac790c} 
+uint8\+\_\+t Main\+Menu\+Manager\+::server\+Address\+Portions\mbox{[}4\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+assessment-\/project-\/\+Corcso/\+CMP425\+Coursework/\mbox{\hyperlink{_main_menu_manager_8h}{Main\+Menu\+Manager.\+h}}\item 
+assessment-\/project-\/\+Corcso/\+CMP425\+Coursework/\mbox{\hyperlink{_main_menu_manager_8cpp}{Main\+Menu\+Manager.\+cpp}}\end{DoxyCompactItemize}

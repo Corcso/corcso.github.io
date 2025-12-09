@@ -1,0 +1,285 @@
+\doxysection{Input Class Reference}
+\hypertarget{class_input}{}\label{class_input}\index{Input@{Input}}
+
+
+Simple input class to allow for easy input checking accross app.  
+
+
+
+
+{\ttfamily \#include $<$Input.\+h$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{class_input_a63fd6bbe7e8de0a562a00f57a413a1e4}{Input\+State}} \+: uint8\+\_\+t \{ \newline
+\mbox{\hyperlink{class_input_a63fd6bbe7e8de0a562a00f57a413a1e4accc0377a8afbf50e7094f5c23a8af223}{INVALID}} = 0b00000000
+, \mbox{\hyperlink{class_input_a63fd6bbe7e8de0a562a00f57a413a1e4afbaedde498cdead4f2780217646e9ba1}{UP}} = 0b00000001
+, \mbox{\hyperlink{class_input_a63fd6bbe7e8de0a562a00f57a413a1e4ac4e0e4e3118472beeb2ae75827450f1f}{DOWN}} = 0b00000010
+, \mbox{\hyperlink{class_input_a63fd6bbe7e8de0a562a00f57a413a1e4a5381dc876ab002103a027265bc14ae52}{PRESSED}} = 0b00000100 \texorpdfstring{$\vert$}{|} DOWN
+, \newline
+\mbox{\hyperlink{class_input_a63fd6bbe7e8de0a562a00f57a413a1e4a109d54efbb64d71f9a6ab18d0fb8add8}{RELEASED}} = 0b00001000 \texorpdfstring{$\vert$}{|} UP
+, \mbox{\hyperlink{class_input_a63fd6bbe7e8de0a562a00f57a413a1e4aa72703851c818dfb4a45010abb7b75af}{PRESSED\+\_\+\+AND\+\_\+\+RELEASED\+\_\+\+SAME\+\_\+\+FRAME}} = 0b00010000 \texorpdfstring{$\vert$}{|} PRESSED \texorpdfstring{$\vert$}{|} RELEASED
+, \mbox{\hyperlink{class_input_a63fd6bbe7e8de0a562a00f57a413a1e4a734f7e17f2bd781e2382b7c618e376cd}{RELEASED\+\_\+\+AND\+\_\+\+PRESSED\+\_\+\+SAME\+\_\+\+FRAME}} = 0b00100000 \texorpdfstring{$\vert$}{|} PRESSED \texorpdfstring{$\vert$}{|} RELEASED
+ \}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_input}{Input} states, each builds on the last. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_input_abae3f379d3f157cf42dc857309832dba}{Input}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{class_input_aa51bc12295acfa4cd930a5163bd1089f}{Is\+Key\+Down}} (sf\+::\+Keyboard\+::\+Key key)
+\item 
+static bool \mbox{\hyperlink{class_input_a43afadfa414cf07b82cce677ed364aba}{Is\+Key\+Up}} (sf\+::\+Keyboard\+::\+Key key)
+\item 
+static bool \mbox{\hyperlink{class_input_a977c092fa55130dab8e754f1565655aa}{Is\+Key\+Pressed}} (sf\+::\+Keyboard\+::\+Key key)
+\item 
+static bool \mbox{\hyperlink{class_input_a1f5e52bdd656bc9d32c044b50a56e6cb}{Is\+Key\+Released}} (sf\+::\+Keyboard\+::\+Key key)
+\item 
+static void \mbox{\hyperlink{class_input_a0eb72edd558ab0553525838914db4b76}{Set\+Key\+Pressed}} (sf\+::\+Keyboard\+::\+Key key)
+\item 
+static void \mbox{\hyperlink{class_input_afefa8130d079d792519a6a744c337b58}{Set\+Key\+Released}} (sf\+::\+Keyboard\+::\+Key key)
+\item 
+static bool \mbox{\hyperlink{class_input_a3ac489cde1fbdc81badcafb8e98e8d0e}{Is\+Mouse\+Button\+Down}} (sf\+::\+Mouse\+::\+Button mouse\+Button)
+\item 
+static bool \mbox{\hyperlink{class_input_a816e07308b028ef0707bbb23abb64129}{Is\+Mouse\+Button\+Up}} (sf\+::\+Mouse\+::\+Button mouse\+Button)
+\item 
+static bool \mbox{\hyperlink{class_input_a996ea1c1cc176f5f482e4d514265a9cb}{Is\+Mouse\+Button\+Pressed}} (sf\+::\+Mouse\+::\+Button mouse\+Button)
+\item 
+static bool \mbox{\hyperlink{class_input_af586a9d896024bee484225aacd954d6c}{Is\+Mouse\+Button\+Released}} (sf\+::\+Mouse\+::\+Button mouse\+Button)
+\item 
+static void \mbox{\hyperlink{class_input_a2e689b957bc1338ffcaeef3d190d4a95}{Set\+Mouse\+Button\+Pressed}} (sf\+::\+Mouse\+::\+Button mouse\+Button)
+\item 
+static void \mbox{\hyperlink{class_input_a40e66e28ba69800c3b605d4952127f8d}{Set\+Mouse\+Button\+Released}} (sf\+::\+Mouse\+::\+Button mouse\+Button)
+\item 
+static sf\+::\+Vector2f \mbox{\hyperlink{class_input_ada856d2686852b36e7fe0a54ef2c8247}{Get\+Mouse\+Position}} ()
+\item 
+static void \mbox{\hyperlink{class_input_a827c8be827a1ac5f0e5b45ece6c1281b}{Set\+Mouse\+Position}} (sf\+::\+Vector2f new\+Mouse\+Position)
+\item 
+static void \mbox{\hyperlink{class_input_a057dbcc1fed0ac8695114a98e07328de}{Update\+States}} ()
+\begin{DoxyCompactList}\small\item\em Update input states, call this at the start of the frame, before handle event. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_input_a63b4b23199b443dd9909594732057101}{Handle\+Event}} (const std\+::optional$<$ sf\+::\+Event $>$ \&event)
+\begin{DoxyCompactList}\small\item\em Handle an SFML input event. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_input_a63fd6bbe7e8de0a562a00f57a413a1e4}{Input\+State}} \mbox{\hyperlink{class_input_abbb64a0846d48048d717b6b9f6817a62}{key\+Map}} \mbox{[}sf\+::\+Keyboard\+::\+Key\+Count\mbox{]}
+\item 
+\mbox{\hyperlink{class_input_a63fd6bbe7e8de0a562a00f57a413a1e4}{Input\+State}} \mbox{\hyperlink{class_input_ab6370d5b3267421af365e700bc2be91a}{mouse\+Button\+Map}} \mbox{[}sf\+::\+Mouse\+::\+Button\+Count\mbox{]}
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_input_af0f8c41691330e5b42273940a314f949}{mouse\+Position}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_input}{Input}} \mbox{\hyperlink{class_input_a93e126536bf47d7d7e77be420d02beaf}{instance}} = \mbox{\hyperlink{class_input}{Input}}()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Simple input class to allow for easy input checking accross app. 
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{class_input_a63fd6bbe7e8de0a562a00f57a413a1e4}\index{Input@{Input}!InputState@{InputState}}
+\index{InputState@{InputState}!Input@{Input}}
+\doxysubsubsection{\texorpdfstring{InputState}{InputState}}
+{\footnotesize\ttfamily \label{class_input_a63fd6bbe7e8de0a562a00f57a413a1e4} 
+enum class \mbox{\hyperlink{class_input_a63fd6bbe7e8de0a562a00f57a413a1e4}{Input\+::\+Input\+State}} \+: uint8\+\_\+t\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+\doxylink{class_input}{Input} states, each builds on the last. 
+
+PRESSED is also DOWN
+
+RELEASED is also UP
+
+PRESSED\+\_\+\+AND\+\_\+\+RELEASED\+\_\+\+SAME\+\_\+\+FRAME is also PRESSED and RELEASED
+
+RELEASED\+\_\+\+AND\+\_\+\+PRESSED\+\_\+\+SAME\+\_\+\+FRAME is also PRESSED and RELEASED\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INVALID@{INVALID}!Input@{Input}}\index{Input@{Input}!INVALID@{INVALID}}}\Hypertarget{class_input_a63fd6bbe7e8de0a562a00f57a413a1e4accc0377a8afbf50e7094f5c23a8af223}\label{class_input_a63fd6bbe7e8de0a562a00f57a413a1e4} 
+INVALID&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UP@{UP}!Input@{Input}}\index{Input@{Input}!UP@{UP}}}\Hypertarget{class_input_a63fd6bbe7e8de0a562a00f57a413a1e4afbaedde498cdead4f2780217646e9ba1}\label{class_input_a63fd6bbe7e8de0a562a00f57a413a1e4} 
+UP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DOWN@{DOWN}!Input@{Input}}\index{Input@{Input}!DOWN@{DOWN}}}\Hypertarget{class_input_a63fd6bbe7e8de0a562a00f57a413a1e4ac4e0e4e3118472beeb2ae75827450f1f}\label{class_input_a63fd6bbe7e8de0a562a00f57a413a1e4} 
+DOWN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PRESSED@{PRESSED}!Input@{Input}}\index{Input@{Input}!PRESSED@{PRESSED}}}\Hypertarget{class_input_a63fd6bbe7e8de0a562a00f57a413a1e4a5381dc876ab002103a027265bc14ae52}\label{class_input_a63fd6bbe7e8de0a562a00f57a413a1e4} 
+PRESSED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RELEASED@{RELEASED}!Input@{Input}}\index{Input@{Input}!RELEASED@{RELEASED}}}\Hypertarget{class_input_a63fd6bbe7e8de0a562a00f57a413a1e4a109d54efbb64d71f9a6ab18d0fb8add8}\label{class_input_a63fd6bbe7e8de0a562a00f57a413a1e4} 
+RELEASED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PRESSED\_AND\_RELEASED\_SAME\_FRAME@{PRESSED\_AND\_RELEASED\_SAME\_FRAME}!Input@{Input}}\index{Input@{Input}!PRESSED\_AND\_RELEASED\_SAME\_FRAME@{PRESSED\_AND\_RELEASED\_SAME\_FRAME}}}\Hypertarget{class_input_a63fd6bbe7e8de0a562a00f57a413a1e4aa72703851c818dfb4a45010abb7b75af}\label{class_input_a63fd6bbe7e8de0a562a00f57a413a1e4} 
+PRESSED\+\_\+\+AND\+\_\+\+RELEASED\+\_\+\+SAME\+\_\+\+FRAME&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RELEASED\_AND\_PRESSED\_SAME\_FRAME@{RELEASED\_AND\_PRESSED\_SAME\_FRAME}!Input@{Input}}\index{Input@{Input}!RELEASED\_AND\_PRESSED\_SAME\_FRAME@{RELEASED\_AND\_PRESSED\_SAME\_FRAME}}}\Hypertarget{class_input_a63fd6bbe7e8de0a562a00f57a413a1e4a734f7e17f2bd781e2382b7c618e376cd}\label{class_input_a63fd6bbe7e8de0a562a00f57a413a1e4} 
+RELEASED\+\_\+\+AND\+\_\+\+PRESSED\+\_\+\+SAME\+\_\+\+FRAME&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_input_abae3f379d3f157cf42dc857309832dba}\index{Input@{Input}!Input@{Input}}
+\index{Input@{Input}!Input@{Input}}
+\doxysubsubsection{\texorpdfstring{Input()}{Input()}}
+{\footnotesize\ttfamily \label{class_input_abae3f379d3f157cf42dc857309832dba} 
+Input\+::\+Input (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_input_ada856d2686852b36e7fe0a54ef2c8247}\index{Input@{Input}!GetMousePosition@{GetMousePosition}}
+\index{GetMousePosition@{GetMousePosition}!Input@{Input}}
+\doxysubsubsection{\texorpdfstring{GetMousePosition()}{GetMousePosition()}}
+{\footnotesize\ttfamily \label{class_input_ada856d2686852b36e7fe0a54ef2c8247} 
+sf\+::\+Vector2f Input\+::\+Get\+Mouse\+Position (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_input_a63b4b23199b443dd9909594732057101}\index{Input@{Input}!HandleEvent@{HandleEvent}}
+\index{HandleEvent@{HandleEvent}!Input@{Input}}
+\doxysubsubsection{\texorpdfstring{HandleEvent()}{HandleEvent()}}
+{\footnotesize\ttfamily \label{class_input_a63b4b23199b443dd9909594732057101} 
+void Input\+::\+Handle\+Event (\begin{DoxyParamCaption}\item[{const std\+::optional$<$ sf\+::\+Event $>$ \&}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Handle an SFML input event. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & The event to handle\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_input_aa51bc12295acfa4cd930a5163bd1089f}\index{Input@{Input}!IsKeyDown@{IsKeyDown}}
+\index{IsKeyDown@{IsKeyDown}!Input@{Input}}
+\doxysubsubsection{\texorpdfstring{IsKeyDown()}{IsKeyDown()}}
+{\footnotesize\ttfamily \label{class_input_aa51bc12295acfa4cd930a5163bd1089f} 
+bool Input\+::\+Is\+Key\+Down (\begin{DoxyParamCaption}\item[{sf\+::\+Keyboard\+::\+Key}]{key}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_input_a977c092fa55130dab8e754f1565655aa}\index{Input@{Input}!IsKeyPressed@{IsKeyPressed}}
+\index{IsKeyPressed@{IsKeyPressed}!Input@{Input}}
+\doxysubsubsection{\texorpdfstring{IsKeyPressed()}{IsKeyPressed()}}
+{\footnotesize\ttfamily \label{class_input_a977c092fa55130dab8e754f1565655aa} 
+bool Input\+::\+Is\+Key\+Pressed (\begin{DoxyParamCaption}\item[{sf\+::\+Keyboard\+::\+Key}]{key}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_input_a1f5e52bdd656bc9d32c044b50a56e6cb}\index{Input@{Input}!IsKeyReleased@{IsKeyReleased}}
+\index{IsKeyReleased@{IsKeyReleased}!Input@{Input}}
+\doxysubsubsection{\texorpdfstring{IsKeyReleased()}{IsKeyReleased()}}
+{\footnotesize\ttfamily \label{class_input_a1f5e52bdd656bc9d32c044b50a56e6cb} 
+bool Input\+::\+Is\+Key\+Released (\begin{DoxyParamCaption}\item[{sf\+::\+Keyboard\+::\+Key}]{key}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_input_a43afadfa414cf07b82cce677ed364aba}\index{Input@{Input}!IsKeyUp@{IsKeyUp}}
+\index{IsKeyUp@{IsKeyUp}!Input@{Input}}
+\doxysubsubsection{\texorpdfstring{IsKeyUp()}{IsKeyUp()}}
+{\footnotesize\ttfamily \label{class_input_a43afadfa414cf07b82cce677ed364aba} 
+bool Input\+::\+Is\+Key\+Up (\begin{DoxyParamCaption}\item[{sf\+::\+Keyboard\+::\+Key}]{key}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_input_a3ac489cde1fbdc81badcafb8e98e8d0e}\index{Input@{Input}!IsMouseButtonDown@{IsMouseButtonDown}}
+\index{IsMouseButtonDown@{IsMouseButtonDown}!Input@{Input}}
+\doxysubsubsection{\texorpdfstring{IsMouseButtonDown()}{IsMouseButtonDown()}}
+{\footnotesize\ttfamily \label{class_input_a3ac489cde1fbdc81badcafb8e98e8d0e} 
+bool Input\+::\+Is\+Mouse\+Button\+Down (\begin{DoxyParamCaption}\item[{sf\+::\+Mouse\+::\+Button}]{mouse\+Button}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_input_a996ea1c1cc176f5f482e4d514265a9cb}\index{Input@{Input}!IsMouseButtonPressed@{IsMouseButtonPressed}}
+\index{IsMouseButtonPressed@{IsMouseButtonPressed}!Input@{Input}}
+\doxysubsubsection{\texorpdfstring{IsMouseButtonPressed()}{IsMouseButtonPressed()}}
+{\footnotesize\ttfamily \label{class_input_a996ea1c1cc176f5f482e4d514265a9cb} 
+bool Input\+::\+Is\+Mouse\+Button\+Pressed (\begin{DoxyParamCaption}\item[{sf\+::\+Mouse\+::\+Button}]{mouse\+Button}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_input_af586a9d896024bee484225aacd954d6c}\index{Input@{Input}!IsMouseButtonReleased@{IsMouseButtonReleased}}
+\index{IsMouseButtonReleased@{IsMouseButtonReleased}!Input@{Input}}
+\doxysubsubsection{\texorpdfstring{IsMouseButtonReleased()}{IsMouseButtonReleased()}}
+{\footnotesize\ttfamily \label{class_input_af586a9d896024bee484225aacd954d6c} 
+bool Input\+::\+Is\+Mouse\+Button\+Released (\begin{DoxyParamCaption}\item[{sf\+::\+Mouse\+::\+Button}]{mouse\+Button}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_input_a816e07308b028ef0707bbb23abb64129}\index{Input@{Input}!IsMouseButtonUp@{IsMouseButtonUp}}
+\index{IsMouseButtonUp@{IsMouseButtonUp}!Input@{Input}}
+\doxysubsubsection{\texorpdfstring{IsMouseButtonUp()}{IsMouseButtonUp()}}
+{\footnotesize\ttfamily \label{class_input_a816e07308b028ef0707bbb23abb64129} 
+bool Input\+::\+Is\+Mouse\+Button\+Up (\begin{DoxyParamCaption}\item[{sf\+::\+Mouse\+::\+Button}]{mouse\+Button}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_input_a0eb72edd558ab0553525838914db4b76}\index{Input@{Input}!SetKeyPressed@{SetKeyPressed}}
+\index{SetKeyPressed@{SetKeyPressed}!Input@{Input}}
+\doxysubsubsection{\texorpdfstring{SetKeyPressed()}{SetKeyPressed()}}
+{\footnotesize\ttfamily \label{class_input_a0eb72edd558ab0553525838914db4b76} 
+void Input\+::\+Set\+Key\+Pressed (\begin{DoxyParamCaption}\item[{sf\+::\+Keyboard\+::\+Key}]{key}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_input_afefa8130d079d792519a6a744c337b58}\index{Input@{Input}!SetKeyReleased@{SetKeyReleased}}
+\index{SetKeyReleased@{SetKeyReleased}!Input@{Input}}
+\doxysubsubsection{\texorpdfstring{SetKeyReleased()}{SetKeyReleased()}}
+{\footnotesize\ttfamily \label{class_input_afefa8130d079d792519a6a744c337b58} 
+void Input\+::\+Set\+Key\+Released (\begin{DoxyParamCaption}\item[{sf\+::\+Keyboard\+::\+Key}]{key}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_input_a2e689b957bc1338ffcaeef3d190d4a95}\index{Input@{Input}!SetMouseButtonPressed@{SetMouseButtonPressed}}
+\index{SetMouseButtonPressed@{SetMouseButtonPressed}!Input@{Input}}
+\doxysubsubsection{\texorpdfstring{SetMouseButtonPressed()}{SetMouseButtonPressed()}}
+{\footnotesize\ttfamily \label{class_input_a2e689b957bc1338ffcaeef3d190d4a95} 
+void Input\+::\+Set\+Mouse\+Button\+Pressed (\begin{DoxyParamCaption}\item[{sf\+::\+Mouse\+::\+Button}]{mouse\+Button}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_input_a40e66e28ba69800c3b605d4952127f8d}\index{Input@{Input}!SetMouseButtonReleased@{SetMouseButtonReleased}}
+\index{SetMouseButtonReleased@{SetMouseButtonReleased}!Input@{Input}}
+\doxysubsubsection{\texorpdfstring{SetMouseButtonReleased()}{SetMouseButtonReleased()}}
+{\footnotesize\ttfamily \label{class_input_a40e66e28ba69800c3b605d4952127f8d} 
+void Input\+::\+Set\+Mouse\+Button\+Released (\begin{DoxyParamCaption}\item[{sf\+::\+Mouse\+::\+Button}]{mouse\+Button}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_input_a827c8be827a1ac5f0e5b45ece6c1281b}\index{Input@{Input}!SetMousePosition@{SetMousePosition}}
+\index{SetMousePosition@{SetMousePosition}!Input@{Input}}
+\doxysubsubsection{\texorpdfstring{SetMousePosition()}{SetMousePosition()}}
+{\footnotesize\ttfamily \label{class_input_a827c8be827a1ac5f0e5b45ece6c1281b} 
+void Input\+::\+Set\+Mouse\+Position (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2f}]{new\+Mouse\+Position}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_input_a057dbcc1fed0ac8695114a98e07328de}\index{Input@{Input}!UpdateStates@{UpdateStates}}
+\index{UpdateStates@{UpdateStates}!Input@{Input}}
+\doxysubsubsection{\texorpdfstring{UpdateStates()}{UpdateStates()}}
+{\footnotesize\ttfamily \label{class_input_a057dbcc1fed0ac8695114a98e07328de} 
+void Input\+::\+Update\+States (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Update input states, call this at the start of the frame, before handle event. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_input_a93e126536bf47d7d7e77be420d02beaf}\index{Input@{Input}!instance@{instance}}
+\index{instance@{instance}!Input@{Input}}
+\doxysubsubsection{\texorpdfstring{instance}{instance}}
+{\footnotesize\ttfamily \label{class_input_a93e126536bf47d7d7e77be420d02beaf} 
+\mbox{\hyperlink{class_input}{Input}} Input\+::instance = \mbox{\hyperlink{class_input}{Input}}()\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\Hypertarget{class_input_abbb64a0846d48048d717b6b9f6817a62}\index{Input@{Input}!keyMap@{keyMap}}
+\index{keyMap@{keyMap}!Input@{Input}}
+\doxysubsubsection{\texorpdfstring{keyMap}{keyMap}}
+{\footnotesize\ttfamily \label{class_input_abbb64a0846d48048d717b6b9f6817a62} 
+\mbox{\hyperlink{class_input_a63fd6bbe7e8de0a562a00f57a413a1e4}{Input\+State}} Input\+::key\+Map\mbox{[}sf\+::\+Keyboard\+::\+Key\+Count\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_input_ab6370d5b3267421af365e700bc2be91a}\index{Input@{Input}!mouseButtonMap@{mouseButtonMap}}
+\index{mouseButtonMap@{mouseButtonMap}!Input@{Input}}
+\doxysubsubsection{\texorpdfstring{mouseButtonMap}{mouseButtonMap}}
+{\footnotesize\ttfamily \label{class_input_ab6370d5b3267421af365e700bc2be91a} 
+\mbox{\hyperlink{class_input_a63fd6bbe7e8de0a562a00f57a413a1e4}{Input\+State}} Input\+::mouse\+Button\+Map\mbox{[}sf\+::\+Mouse\+::\+Button\+Count\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_input_af0f8c41691330e5b42273940a314f949}\index{Input@{Input}!mousePosition@{mousePosition}}
+\index{mousePosition@{mousePosition}!Input@{Input}}
+\doxysubsubsection{\texorpdfstring{mousePosition}{mousePosition}}
+{\footnotesize\ttfamily \label{class_input_af0f8c41691330e5b42273940a314f949} 
+sf\+::\+Vector2f Input\+::mouse\+Position\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+assessment-\/project-\/\+Corcso/\+CMP425\+Coursework/\mbox{\hyperlink{_input_8h}{Input.\+h}}\item 
+assessment-\/project-\/\+Corcso/\+CMP425\+Coursework/\mbox{\hyperlink{_input_8cpp}{Input.\+cpp}}\end{DoxyCompactItemize}

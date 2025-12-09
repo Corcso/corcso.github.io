@@ -1,0 +1,72 @@
+\doxysection{Player.\+h}
+\hypertarget{_player_8h_source}{}\label{_player_8h_source}\index{assessment-\/project-\/Corcso/CMP425Coursework/Player.h@{assessment-\/project-\/Corcso/CMP425Coursework/Player.h}}
+\mbox{\hyperlink{_player_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_physics_object_8h}{PhysicsObject.h}}"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_interpolator_8h}{Interpolator.h}}"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_player}{Player}}\ :}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_physics_object}{PhysicsObject}}}
+\DoxyCodeLine{00010\ \{}
+\DoxyCodeLine{00011\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{class_player_a70bccb2d11b97956011a2552ff8cc44d}{Costume}}\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player_a70bccb2d11b97956011a2552ff8cc44da08d0012388564e95c3b4a7407cf04965}{BLACK}},\ \mbox{\hyperlink{class_player_a70bccb2d11b97956011a2552ff8cc44da1b3e1ee9bff86431dea6b181365ba65f}{BLUE}},\ \mbox{\hyperlink{class_player_a70bccb2d11b97956011a2552ff8cc44da493cacf6f6a2ae4798b319b8b9ba9488}{BROWN}},\ \mbox{\hyperlink{class_player_a70bccb2d11b97956011a2552ff8cc44da9de0e5dd94e861317e74964bed179fa0}{GREEN}}}
+\DoxyCodeLine{00015\ \ \ \ \ \};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_a5a421cc9bdd3176beee4cc0d30571b0f}{Ready}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_a20bfb1cb738f6b00f589207ce460491e}{Update}}(\textcolor{keywordtype}{float}\ deltaTime)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_ab3886e576c95a93e49fa78f29e440730}{Render}}(sf::RenderTarget*\ target)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_a27f58f8c25517f4222a611af56898170}{UpdateFog}}();}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_a2142f88c3c2695d4ad38cc016a9af80d}{SetMyCostume}}(\mbox{\hyperlink{class_player_a70bccb2d11b97956011a2552ff8cc44d}{Costume}}\ costume);}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_ab3c2bc83e2801b95b804fdab603195b0}{UpdatePlayerID}}(uint32\_t\ newID);}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_player_acebc8ed26772d447817ceecefbbaa323}{AmIThisPlayer}}();}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_player_a4b591f03046ec36250ae9e51891dc1e3}{IsAlive}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_player_af6ac9227d5db4826d9a0fa697681e469}{alive}};\ \}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_a14805570bdc53ad812a2ef1dda884abc}{ShootBullet}}();}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_a866bba2efb20929e680c5544c663bdc1}{UpdateTransform}}(sf::Vector2f\ newPosition,\ \textcolor{keywordtype}{float}\ rotation);}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00068\ \ \ \ \ sf::Vector2f\ \mbox{\hyperlink{class_player_abdfbf2ec0ee2d2655345cbbe741d2048}{GetPosition}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ b2Vec2\ position\ =\ b2Body\_GetPosition(\mbox{\hyperlink{class_physics_object_af89e9afbdc275526b18936ed1b7f150c}{physicsBodyId}});}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ sf::Vector2f(position.x,\ position.y);}
+\DoxyCodeLine{00071\ \ \ \ \ \};}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_player_a652ff16be020cf8b143661bd3ddce5f6}{GetRotation}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ b2Rot\ rotation\ =\ b2Body\_GetRotation(\mbox{\hyperlink{class_physics_object_af89e9afbdc275526b18936ed1b7f150c}{physicsBodyId}});}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ b2Rot\_GetAngle(rotation);}
+\DoxyCodeLine{00079\ \ \ \ \ \};}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_a7bd82bc89a4069740072b8f92d5030ef}{Die}}(uint32\_t\ killer);}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_a5dfb41c096b4511cce820fd72c6cb729}{Respawn}}(sf::Vector2f\ position);}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_aa708c21922975eec9c40b27525f3dfab}{SetInGameName}}(std::string\ newName);}
+\DoxyCodeLine{00101\ \ \ \ \ std::string\ \mbox{\hyperlink{class_player_a06d6ccf3fc3c35905b0e3e7a41bcf28b}{GetInGameName}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_player_acab59897a0a6f1a7655147b4f91d030b}{inGameName}};\ \}}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_a8154c16a59b62952963e2d1e994c3b63}{Cheat\_Teleport}}(sf::Vector2f\ newPosition);}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00110\ \ \ \ \ sf::CircleShape\ \mbox{\hyperlink{class_player_a316840bc4a90ac1fce5cf72f0a2a5d39}{body}};}
+\DoxyCodeLine{00111\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{class_player_a3ea90de421402813cc0ef0f1083dd37e}{playerId}};}
+\DoxyCodeLine{00112\ \ \ \ \ sf::Texture\ \mbox{\hyperlink{class_player_a3d966a6f9aadc2ed927c0e91eec31f91}{myCostumeTexture}};}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \ \ \ \ std::string\ \mbox{\hyperlink{class_player_acab59897a0a6f1a7655147b4f91d030b}{inGameName}};}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_player_af6ac9227d5db4826d9a0fa697681e469}{alive}};}
+\DoxyCodeLine{00117\ \ \ \ \ std::string\ \mbox{\hyperlink{class_player_a595ac6f184f04dc45c3097e60b1f2737}{lastKilledByName}};}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \ \ \ \ \mbox{\hyperlink{class_interpolator}{Interpolator<sf::Vector2f>}}\ \mbox{\hyperlink{class_player_a4bd98d7827c1e642bfef54a8fd33813f}{positionInterpolator}};}
+\DoxyCodeLine{00120\ \ \ \ \ \mbox{\hyperlink{class_interpolator}{Interpolator<b2Rot>}}\ \mbox{\hyperlink{class_player_af2b7e6b4b614dfa29b4e324ad8764c3d}{rotationInterpolator}};}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \ \ \ \ std::unique\_ptr<sf::Sound>\ \mbox{\hyperlink{class_player_aa5134098a49d07568a8b6865dccde082}{shoot}},\ \mbox{\hyperlink{class_player_ae404b40d40acca4b196a376ddcb50380}{killed}};}
+\DoxyCodeLine{00123\ \ \ \ \ sf::SoundBuffer\ \mbox{\hyperlink{class_player_afca77c12914c544bccf1d3d11c28d609}{shootBuffer}},\ \mbox{\hyperlink{class_player_a9a8b82022bb02ff84275d2f13eab4633}{killedBuffer}};}
+\DoxyCodeLine{00124\ \};}
+\DoxyCodeLine{00125\ }
+
+\end{DoxyCode}
