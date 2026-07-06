@@ -52,17 +52,17 @@ main section div.flex67{
 }
 [id*='Hero'] h1{
     font-family: RubikWide;
-    font-size: 10vw;
+    font-size: 4vw;
     color: #E7CB14;
 }
 [id*='Hero'] h2{
     font-family: RubikWide;
-    font-size: 3vw;
+    font-size: 1.5vw;
     color: #E7CB14;
 }
 [id*='Hero'] .tagsList li{
     font-family: Rubik;
-    font-size: 1.5vw;
+    font-size: 1vw;
     background-color: #E7CB14;
 }
 
@@ -97,6 +97,17 @@ main section div.flex67{
         padding: 0px;
     }
 
+
+    [id*='Hero'] h1{
+        font-family: RubikWide;
+        font-size: 8vw;
+        color: #E7CB14;
+    }
+    [id*='Hero'] h2{
+        font-family: RubikWide;
+        font-size: 3vw;
+        color: #E7CB14;
+    }
     [id*='Hero'] .tagsList li{
         font-family: Rubik;
         font-size: 2vw;

@@ -26,7 +26,7 @@
                 <h1>Cormac</h1>
                 <h1>Somerville</h1>
             </div>
-            <div id="experience" class="segment alternate">
+            <div id="experience" class="segment">
                 <h1 class="center">Experience</h1>
                 <div class="flexbox">
                     <div class="center expCard flex67">
@@ -89,27 +89,31 @@
             <div id="awards" class="segment">
                 <h1 class="center">Awards</h1>
                 <div class="flexbox">
-                    <div class="flex20 center portCard">
-                            <img src="./media/David Potter Memorial Prize - Cormac Somerville.jpg">
-                            <h2>David Potter Memorial Prize</h2>
-                            <p>Awarded to the student in 1st Year of the BSc (Hons) Computer Games Technology programme who achieves a high level of performance generally and is deemed to be the best student overall.</p>
-                    </div>
-                    <div class="flex20 center portCard">
-                            <img src="./media/Alexander D G Kydd Prize - Cormac Somerville.jpg">
-                            <h2>Alexander D G Kydd Prize</h2>
-                            <p>Awarded to the best student in second year (School of Design & Informatics) who achieves the highest level of performance and is deemed to be the best student overall.</p>
-                    </div>
-                    <div class="flex20 center portCard">
+                    <div class="center portCard">
                             <img src="./media/PGAFGT.jpg">
                             <h2>Playground Games Award for Game Technology</h2>
                             <p>Awarded for an honours project in engine programming and technical innovation spanning maths, simulation, computer graphics, tools, haptics and real-time systems for games and beyond.</p>
                     </div>
-                    <div class="flex20 center portCard">
+                </div>
+                <div class="flexbox">
+                    <div class="flex50 center portCard">
+                            <img src="./media/Alexander D G Kydd Prize - Cormac Somerville.jpg">
+                            <h2>Alexander D G Kydd Prize</h2>
+                            <p>Awarded to the best student in second year (School of Design & Informatics) who achieves the highest level of performance and is deemed to be the best student overall.</p>
+                    </div>
+                    <div class="flex50 center portCard">
                             <img src="./media/A D D McKay Senior Prize - Cormac Somerville.jpg">
                             <h2>A D D McKay Senior Prize</h2>
                             <p>Awarded to the student in second year of the BSc (Hons) Computer Games Technology programme who achieves a high level of performance in a mathematical component of the programme.</p>
                     </div>
-                    <div class="flex20 center portCard">
+                </div>
+                <div class="flexbox">
+                    <div class="flex50 center portCard">
+                            <img src="./media/David Potter Memorial Prize - Cormac Somerville.jpg">
+                            <h2>David Potter Memorial Prize</h2>
+                            <p>Awarded to the student in 1st Year of the BSc (Hons) Computer Games Technology programme who achieves a high level of performance generally and is deemed to be the best student overall.</p>
+                    </div>
+                    <div class="flex50 center portCard">
                             <img src="./media/Hannah Maclure Prize - Cormac Somerville.jpg">
                             <h2>Hannah Maclure Prize</h2>
                             <p>Awarded to a 1st Year student who achieves a high level of performance in a mathematical component of their course.</p>
@@ -201,9 +205,9 @@
                     
                     </div>
                 </div>
-                <!-- CMP301, CMP105 and OhWell -->
+                <!-- CMP301, CMP105 -->
                 <div class="flexbox">
-                    <div class="flex33 center portCard">
+                    <div class="flex50 center portCard">
                         
                         <a href="https://github.com/Corcso/Third-Year-Graphics-Project" style="all: revert;"><img src="./media/portfolio/ThirdYearGraphics/main.gif"></a>
                         <h2>3rd Year Graphics Project</h2>
@@ -214,7 +218,7 @@
                         <button onclick="location.href='https://github.com/Corcso/Third-Year-Graphics-Project'" type="button">View Source</button>
                     
                     </div>
-                    <div class="flex33 center portCard">
+                    <div class="flex50 center portCard">
                         
                         <a href="https://murio1126.itch.io/masquerade-match" style="all: revert;"><img src="./media/portfolio/MasqueradeMatch/Cover.gif"></a>
                         <h2>Masquerade Match</h2>
@@ -226,30 +230,29 @@
                         <button onclick="location.href='https://github.com/Corcso/GlobalGameJam2026'" type="button">View Source</button>
                     
                     </div>
-                    <div class="flex33 center portCard">
-                        <!--<a href="./portfolio/debugger/" style="all: unset;">
-                        <img style="height: 50px; image-rendering: pixelated; padding: 50px 0px;" src="./media/portfolio/Debugger/TitleWithBack.png">
-                        <h1>Debugger</h1>
-                        <h3>Global Game Jam 2023</h3>
-                        <ul class="tagsList"><li>C#</li><li>Unity</li><li>2D</li><li>Top Down</li><li>Git</li></ul>
-                        <p>Debugger is a top down 2D endless shooter which has you shooting a variety of bugs which are coming your way.  We used unity to develop this project and Git for the source control. I worked on the enemy spawning, title screen and parts of the player control. I learned more about unity development from this project as well as source control management and git branching and merging. <a style="border-bottom: #D0CCD0 2px solid;" href="./portfolio/debugger/">Read More</a></p>    
-                        </a>-->
-                        
+                    
+                </div>
+                <button onclick="document.getElementById('portfolio-see-more').style.display = 'block'; " type="button" style="display: block;margin-left: auto;margin-right: auto;">View Extra Projects</button>
+                <div id="portfolio-see-more" style="display: none;">
+                    <div class="flexbox">
+                        <div class="flex50 center portCard">
+                            <!--<a href="./portfolio/debugger/" style="all: unset;">
+                            <img style="height: 50px; image-rendering: pixelated; padding: 50px 0px;" src="./media/portfolio/Debugger/TitleWithBack.png">
+                            <h1>Debugger</h1>
+                            <h3>Global Game Jam 2023</h3>
+                            <ul class="tagsList"><li>C#</li><li>Unity</li><li>2D</li><li>Top Down</li><li>Git</li></ul>
+                            <p>Debugger is a top down 2D endless shooter which has you shooting a variety of bugs which are coming your way.  We used unity to develop this project and Git for the source control. I worked on the enemy spawning, title screen and parts of the player control. I learned more about unity development from this project as well as source control management and git branching and merging. <a style="border-bottom: #D0CCD0 2px solid;" href="./portfolio/debugger/">Read More</a></p>    
+                            </a>-->
                             <a href="https://corcso.itch.io/oh-well" style="all: revert;"><img style="image-rendering: pixelated;" src="./media/portfolio/OhWell/main.gif"></a>
                             <h2>Oh Well</h2>
                             <h3>AGDS Freshers Jam 2024</h3>
                             <ul class="tagsList"><li>Team</li><li>C#</li><li>Godot</li><li>2D</li><li>Git</li></ul>
-                            <p>Oh Well is a 2D jump climbing game developed with godot. <strong>I was responsible for project setup, platform systems, tiling, enemy systems, game/scene systems. </strong>The game was made in Godot using C# with a team of 6 others. We focused on polish making sure we scoped small. The source is available on <a style="border-bottom: #D0CCD0 2px solid;" href="https://github.com/Corcso/FreshersJam-24">github</a> and the game can be downloaded from <a style="border-bottom: #D0CCD0 2px solid;" href="https://corcso.itch.io/oh-well">itch</a>. </p>    
+                            <p>Oh Well is a 2D jump climbing game developed with godot. <strong>I was responsible for project setup, platform systems, tiling, enemy systems, game/scene systems. </strong>The gamewas made in Godot using C# with a team of 6 others. We focused on polish making sure we scoped small. The source is available on <a style="border-bottom: #D0CCD0 2px solid;"href="https://github.com/Corcso/FreshersJam-24">github</a> and the game can be downloaded from <a style="border-bottom: #D0CCD0 2px solid;" href="https://corcso.itch.io/oh-well">itch</a>. </p>    
                             <button onclick="location.href='https://github.com/Corcso/FreshersJam-24'" type="button">View Source</button>
                             <button onclick="location.href='https://corcso.itch.io/oh-well'" type="button">View Itch.io</button>
-                        
-                    </div>
-                </div>
-                <button onclick="document.getElementById('portfolio-see-more').style.display = 'block'; " type="button" style="display: block;margin-left: auto;margin-right: auto;">View Extra Projects</button>
-                <div id="portfolio-see-more" style="display: none;">
-                    <!-- CMP203, CMP304 and Kevin -->
-                    <div class="flexbox">
-                        <div class="flex33 center portCard">
+                            
+                        </div>
+                        <div class="flex50 center portCard">
                             
                             <img src="./media/portfolio/SecondYearGraphics/Room3.jpg">
                             <h2>2nd Year Graphics Project</h2>
@@ -261,8 +264,10 @@
                             <button onclick="location.href='https://github.com/Corcso/Second-Year-Graphics-Project'" type="button">View Source</button>
                         
                         </div>
-                    
-                        <div class="flex33 center portCard">
+                    </div>
+                    <!-- CMP304 and Kevin -->
+                    <div class="flexbox">
+                        <div class="flex50 center portCard">
                                 
                                 <img src="./media/portfolio/KarateKevin/screenshot3.png">
                                 <h2>Karate Kevin</h2>
@@ -274,7 +279,7 @@
                                 <button onclick="location.href='./portfolio/karate-kevin/'" type="button">Read More</button>
                             
                         </div>
-                        <div class="flex33 center portCard">
+                        <div class="flex50 center portCard">
                                 <img src="./media/portfolio/ThirdYearAI/main.gif">
                                 <h2>Genetic Algorithm Fish</h2>
                                 <h3>AI Coursework</h3>
@@ -284,9 +289,9 @@
                                 <button onclick="location.href='https://github.com/Corcso/CMP304-Coursework'" type="button">View Source</button>
                         </div>
                     </div>
-                    <!-- CMP202 and Debugger -->
+                    <!-- CMP202 Both -->
                     <div class="flexbox">
-                        <div class="flex33 center portCard">
+                        <div class="flex50 center portCard">
                             <img src="./media/portfolio/SecondYearMultiCPU/main.gif">
                             <h2>Multithreaded Database Software</h2>
                             <h3>2nd Year CPU Multithreading Project</h3>
@@ -296,7 +301,7 @@
                             <button onclick="location.href='https://github.com/Corcso/CMP202-Unit1-CPU-Project'" type="button">View Source</button>
                         </div>
                     
-                        <div class="flex33 center portCard">
+                        <div class="flex50 center portCard">
                             <img src="./media/portfolio/SecondYearMultiGPU/mainStatic.PNG">
                             <h2>Mandelbrot Viewer</h2>
                             <h3>2nd Year GPU Multithreading Project</h3>
@@ -305,21 +310,10 @@
                             
                             <button onclick="location.href='https://github.com/Corcso/CMP202-Unit1-GPU-Project'" type="button">View Source</button>
                         </div>
-                        <div class="flex33 center portCard">
-                            <img src="./media/portfolio/Debugger/screenshot1.png">
-                            <h2>Debugger</h2>
-                            <h3>Global Game Jam 2023</h3>
-                            <ul class="tagsList"><li>Team</li><li>C#</li><li>Unity</li><li>2D</li><li>Top Down</li><li>Git</li><li>Enemy AI & Spawning</li><li>VFX</li></ul>
-                            <p>Debugger is a top down 2D endless shooter which has you shooting a variety of bugs which are coming your way.  We used unity to develop this project and Git for the source control. I worked on the enemy spawning, title screen and parts of the player control. I learned more about unity development from this project as well as source control management and git branching and merging. <a style="border-bottom: #D0CCD0 2px solid;" href="./portfolio/debugger/">Read More</a></p>  
-                            
-                            <button onclick="location.href='./portfolio/debugger/'" type="button">Read More</button>
-                            <button onclick="location.href='https://v3.globalgamejam.org/2023/games/debugger-7'" type="button">View on GGJ</button>
-                            <button onclick="location.href='https://github.com/Corcso/Debugger_GGJ23'" type="button">View Source</button>
-                        </div>
                     </div>
-                    <!-- CMP105 -->
+                    <!-- Debugger & CMP105 -->
                     <div class="flexbox">
-                        <div class="flex33 center portCard">
+                        <div class="flex50 center portCard">
                         
                             <a href="./portfolio/the-forever-heist/" style="all: revert;"><img src="./media/portfolio/TheForeverHeist/InGame.PNG"></a>
                             <h2>The Forever Heist</h2>
@@ -330,17 +324,8 @@
                             <button onclick="location.href='./portfolio/the-forever-heist/'" type="button">Read More</button>
                         
                         </div>
-                    
-                        <!--<div class="flex33 center portCard">
-                            <img src="./media/portfolio/SecondYearMultiGPU/mainStatic.PNG">
-                            <h2>Mandelbrot Viewer</h2>
-                            <h3>2nd Year GPU Multithreading Project</h3>
-                            <ul class="tagsList"><li>Solo</li><li>C++</li><li>Multithreading</li><li>GPGPU</li><li>SYCL</li><li>Buffers</li></ul>
-                            <p>For my GPU second year multithreading project I chose to develop a Mandelbrot set viewer. With the program you can zoom into parts of the Mandelbrot set and tweak parameters. The parts in and out of the set are calculated on the GPU using the SYCL framework and rendered using SFML.</p>    
-                            
-                            <button onclick="location.href='https://github.com/Corcso/CMP202-Unit1-GPU-Project'" type="button">View Source</button>
-                        </div>
-                        <div class="flex33 center portCard">
+
+                        <div class="flex50 center portCard">
                             <img src="./media/portfolio/Debugger/screenshot1.png">
                             <h2>Debugger</h2>
                             <h3>Global Game Jam 2023</h3>
@@ -350,7 +335,7 @@
                             <button onclick="location.href='./portfolio/debugger/'" type="button">Read More</button>
                             <button onclick="location.href='https://v3.globalgamejam.org/2023/games/debugger-7'" type="button">View on GGJ</button>
                             <button onclick="location.href='https://github.com/Corcso/Debugger_GGJ23'" type="button">View Source</button>
-                        </div>-->
+                        </div>
                     </div>
                     <button onclick="document.getElementById('portfolio-see-more').style.display = 'none'; " type="button" style="display: block;margin-left: auto;margin-right: auto;">Hide Extra Projects</button>
                 </div>

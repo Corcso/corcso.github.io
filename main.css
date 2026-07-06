@@ -43,6 +43,9 @@ nav{
     font-family: RubikWide;
     font-size: 24px;
     overflow: hidden;
+    max-width: 1400px;
+    margin: auto;
+    box-sizing: border-box;
 }
 
 nav p{
@@ -75,8 +78,13 @@ nav a:hover{
     -webkit-text-fill-color: transparent;
 }
 
-
-
+body{
+    background-color: #D0CCD0;
+}
+main{
+    max-width: 1400px;
+    margin: auto;
+}
 /* Page Hero */
 #hero{
     background-image: url("./media/background-cliffsBW.jpg");   
@@ -87,7 +95,7 @@ nav a:hover{
 }
 #hero h1{
     font-family: RubikWide;
-    font-size: 10vw;
+    font-size: 4vw;
     color: #E7CB14;
 }
 
@@ -104,6 +112,7 @@ main>div{
 .segment{
     color: #2A2D34;
     font-family: Rubik;
+    background-color: #ffffff;
 }
 .alternate{
     background-color: #e4e4e4;
@@ -163,7 +172,7 @@ main>div{
 }
 
 .expCard{
-    background-color: #FBFCFF;
+    background-color: #D0CCD0;
     border-radius: 25px;
     margin: 10px 10px;
     padding: 10px !important;
@@ -352,6 +361,9 @@ footer img{
     #hero{
         padding: 1rem;
     }
+    #hero h1{
+        font-size: 8vw;
+    }
     .segment{
         padding: 10px 0px;
     }
@@ -370,7 +382,6 @@ footer img{
     .just{text-align: center;}
 
     .expCard{
-        background-color: #FBFCFF;
         border-radius: 0px;
         margin: 10px 0px;
         padding: 10px !important;
